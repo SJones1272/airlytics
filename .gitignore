@@ -2,6 +2,7 @@
 .DS_STORE
 .build
 .firebase
+airlytics-service-key.json
 
 # Logs
 logs
