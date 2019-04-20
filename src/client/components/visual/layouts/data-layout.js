@@ -1,4 +1,5 @@
-// import * as PIXI from "pixi.js";
+import * as d3 from 'd3';
+
 //
 // initAxis(){
 //     const size = 2;
@@ -31,12 +32,27 @@ class DataLayout extends Layout{
         const composer = this.composer;
         composer.clearLayoutHolder();
         let width = composer.getWidth();
+        let height = composer.getHeight();
         composer.hideHeatMap();
 
-        composer.airlines.forEach(airline => {
+
+        let xScale = d3.scaleLinear()
+            .domain(d3.extent(composer.airlines, function(d) { return d.data[3].food; }))
+            .range([width/-2, width/2 - 850]);
+
+        let yScale = d3.scaleLinear()
+            .domain(d3.extent(composer.airlines, function(d) { return d.score; }))
+            .range([height/-2, height]);
+
+        composer.airlines.forEach((airline, index) => {
+            console.log(airline.data[2].ratings);
             airline.props.alpha.set(1);
+            var num = (airline.score); // this will get a number between 1 and 99;
+            airline.props.x.set(xScale(num));
+            airline.props.y.set(yScale(airline.data[2].ratings));
         airline.props.scale.set(.25);
         })
+
 
     }
 

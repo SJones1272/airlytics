@@ -11,6 +11,8 @@ class AirplaneLayout extends Layout {
         composer.airlines.forEach(a => {
             if (a.name != airline) {
                 a.props.alpha.set(0);
+                //bug fix
+                a.props.x.set(-1000);
             } else {
                 a.props.alpha.set(1);
                 console.log(a);
