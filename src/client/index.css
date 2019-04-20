@@ -13,6 +13,15 @@ body {
     position: fixed;
 }
 
+#routes{
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+    position: fixed;
+    background-color: #43ed2d;
+    visibility: hidden;
+}
+
 .app {
     position: fixed;
     user-select: none;

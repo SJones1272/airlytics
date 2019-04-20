@@ -14,7 +14,8 @@ class App extends Component {
         };
 
         this.rankings = ['Overall Score', 'Country', 'Sentiment', 'Recommended'];
-
+        //TODO add rest
+        this.dataAxis = ['Food & Beverage', 'Wifi', 'Recommended', 'Score', 'Seat Comfort', 'Entertainment', "Ground Service", "Cabin Crew"];
         this.initialState = {
             layout: 'ranking',
             airline: '',
@@ -23,6 +24,8 @@ class App extends Component {
             z: 8,
             a: 0,
             rankingSortIndex: 0,
+            xAxisIndex: 0,
+            yAxisIndex: 7,
             showAbout: false,
             isHovering: false,
             activeVisual: "ranking",
@@ -37,12 +40,36 @@ class App extends Component {
     }
 
     updateRankingIndex = (value) => {
+        let data = this.handleBounds(this.state.rankingSortIndex + value, this.rankings.length -1);
         this.setState({
-            rankingSortIndex: Math.min(Math.max(0, this.state.rankingSortIndex + value), this.rankings.length -1)
+            rankingSortIndex: data
         });
+    };
 
-    }
+    updateXDataIndex = (value) => {
+        let data = this.handleBounds(this.state.xAxisIndex + value, this.dataAxis.length -1);
+        this.setState({
+            xAxisIndex: data
+        });
+    };
 
+    updateYDataIndex = (value) => {
+        let data = this.handleBounds(this.state.yAxisIndex + value, this.dataAxis.length -1);
+        this.setState({
+            yAxisIndex: data
+        });
+    };
+
+    handleBounds = (value, upper) => {
+        if(value > upper){
+            return 0;
+        }
+        else if(value < 0){
+            return upper;
+        }else{
+            return value;
+        }
+    };
 
     async componentDidMount() {
         this.visual.load(this.data);
@@ -54,13 +81,9 @@ class App extends Component {
         this.refreshVisual();
     }
 
-    componentDidUpdate(prevProps, prevState) {
-
-
+    componentDidUpdate() {
         this.refreshAirline();
         this.refreshVisual();
-
-
     }
 
     refreshVisual() {
@@ -70,16 +93,28 @@ class App extends Component {
                 this.visual.setLayout('ranking', {
                     sort: this.rankings[this.state.rankingSortIndex]
                 });
+                this.visual.composer.container.interactive = true;
                 break;
             case 'airline':
                 this.visual.composer.setSize(0.25);
                 this.visual.setLayout('airline', {
                     airline: this.state.activeAirline
                 });
+                this.visual.composer.container.interactive = true;
                 break;
             case 'data':
                 this.visual.composer.setSize(0.25);
-                this.visual.setLayout('data');
+                this.visual.setLayout('data', {
+                    xAxis: this.dataAxis[this.state.xAxisIndex],
+                    yAxis: this.dataAxis[this.state.yAxisIndex],
+                });
+                this.visual.composer.container.interactive = true;
+                break;
+            case 'route':
+                this.visual.composer.setSize(0.25);
+                this.visual.setLayout('route');
+                this.visual.composer.container.interactive = false;
+                break;
             default:
                 console.error('layout not found', this.state.layout);
         }
@@ -95,7 +130,6 @@ class App extends Component {
             layout: topic
         });
     };
-
 
     render() {
        if(this.state.isHovering) {
@@ -143,7 +177,7 @@ class App extends Component {
 							<span
                                 className="left icon-arrow-simple"
                                 onClick={() => {
-                                    alert("left")
+                                    this.updateXDataIndex(-1)
                                 }}
                             />
                             <span
@@ -152,12 +186,12 @@ class App extends Component {
                                     maxWidth: window.innerWidth - 100,
                                 }}
                             >
-								Feature 2
+                                {this.dataAxis[this.state.xAxisIndex]}
 							</span>
                             <span
                                 className="right icon-arrow-simple"
                                 onClick={() => {
-                                    alert("right")
+                                    this.updateXDataIndex(1)
                                 }}
                             />
                         </div>
@@ -171,7 +205,7 @@ class App extends Component {
 							<span
                                 className="left icon-arrow-simple"
                                 onClick={() => {
-                                    alert("left")
+                                    this.updateYDataIndex(-1)
                                 }}
 
                             />
@@ -181,17 +215,24 @@ class App extends Component {
                                     maxWidth: window.innerWidth - 100,
                                 }}
                             >
-								Feature 1
+								{this.dataAxis[this.state.yAxisIndex]}
 							</span>
                             <span
                                 className="right icon-arrow-simple"
                                 onClick={() => {
-                                    alert("right")
+                                    this.updateYDataIndex(1)
                                 }}
                             />
                         </div>
                     </div> : <div></div>}
 
+                {this.state.activeVisual === 'route' ?
+                    <div id="routes" style={ {visibility: "visible"}}>
+
+                    </div> :
+                    <div id="routes">
+                    </div>
+                }
 
             </div>
         );

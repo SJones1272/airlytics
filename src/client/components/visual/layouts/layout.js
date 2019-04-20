@@ -5,7 +5,6 @@ class Layout {
     }
 
     apply(options = {}) {
-        console.log(options);
         this.options = options;
         this.layout(this.options);
     }

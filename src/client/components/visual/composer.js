@@ -5,6 +5,7 @@ import RankingLayout from "./layouts/ranking-layout";
 import Airline from "./common/airline";
 import AirplaneLayout from "./layouts/airplane-layout";
 import DataLayout from "./layouts/data-layout";
+import RouteLayout from "./layouts/route-layout";
 
 
 class Composer {
@@ -25,7 +26,8 @@ class Composer {
         this.layouts = {
             ranking: new RankingLayout(layoutOptions),
             airline: new AirplaneLayout(layoutOptions),
-            data: new DataLayout(layoutOptions)
+            data: new DataLayout(layoutOptions),
+            route: new RouteLayout(layoutOptions)
         };
 
         this.layout = null;
@@ -67,6 +69,7 @@ class Composer {
             airline.onAirplaneMouseDown = this.onAirplaneMouseDown;
             airline.onHeatMapHover = this.onHeatMapHover;
             airline.onHeatMapHoverOut = this.onHeatMapHoverOut;
+            airline.onHeatMapClick = this.onHeatMapClick;
 
             let airlineObject = new Airline(airline);
             this.airlines.push(airlineObject);
@@ -79,7 +82,7 @@ class Composer {
         this.layout.apply(options);
     }
 
-    clearLayoutHolder(){
+    clearLayoutHolder() {
         this.container.removeChild(this.layoutHolder);
         this.layoutHolder = new PIXI.Container();
         this.container.addChild(this.layoutHolder);
@@ -121,7 +124,7 @@ class Composer {
         });
     }
 
-    onAirplaneMouseDown = (airline) =>{
+    onAirplaneMouseDown = (airline) => {
         let options = {
             activeAirline: airline.name,
             layout: 'airline',
@@ -144,6 +147,16 @@ class Composer {
         this.visual.setState({
             isHovering: false
         })
+    }
+
+    onHeatMapClick = (values) => {
+        this.visual.setState({
+            activeVisual: 'data',
+            activeAirline: values[0]
+        })
+        this.visual.setLayout('data', {
+            xAxis: values[1]
+        });
     }
 
     animate() {

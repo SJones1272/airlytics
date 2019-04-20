@@ -26,31 +26,57 @@ import * as d3 from 'd3';
 
 import Layout from "./layout";
 
-class DataLayout extends Layout{
+//        this.dataAxis = ['Food & Beverage', 'Wifi', 'Recommended', 'Score', 'Seat Comfort', 'Entertainment', "Ground Service", "Cabin Crew"];
+const axisToLocation = {
+    'Food & Beverage': {
+        dataIndex: 3,
+        key: 'food'
+    },
+    'wifi': {},
+    'Recommended': {},
+    'score': {},
+    'Seat Comfort': {},
+    'Entertainment': {},
+    'Ground Service': {},
+    'Cabin Crew': {
+        dataIndex: 4,
+        key: 'ground'
+    }
+};
 
-    layout(){
+
+class DataLayout extends Layout {
+
+    layout({xAxis, yAxis}) {
         const composer = this.composer;
         composer.clearLayoutHolder();
         let width = composer.getWidth();
         let height = composer.getHeight();
         composer.hideHeatMap();
 
+        let xIndex = axisToLocation[xAxis]['dataIndex'];
+        let xKey = axisToLocation[xAxis]['key'];
+        let yIndex = axisToLocation[yAxis]['dataIndex'];
+        let yKey = axisToLocation[yAxis]['key'];
 
         let xScale = d3.scaleLinear()
-            .domain(d3.extent(composer.airlines, function(d) { return d.data[3].food; }))
-            .range([width/-2, width/2 - 850]);
+            .domain(d3.extent(composer.airlines, function (d) {
+                return d.data[xIndex][xKey];
+            }))
+            .range([width / -2, width / 2 - 850]);
 
         let yScale = d3.scaleLinear()
-            .domain(d3.extent(composer.airlines, function(d) { return d.score; }))
-            .range([height/-2, height]);
+            .domain(d3.extent(composer.airlines, function (d) {
+                return d.data[yIndex][yKey];
+            }))
+            .range([height / -2, height]);
 
         composer.airlines.forEach((airline, index) => {
-            console.log(airline.data[2].ratings);
             airline.props.alpha.set(1);
             var num = (airline.score); // this will get a number between 1 and 99;
             airline.props.x.set(xScale(num));
             airline.props.y.set(yScale(airline.data[2].ratings));
-        airline.props.scale.set(.25);
+            airline.props.scale.set(.25);
         })
 
 

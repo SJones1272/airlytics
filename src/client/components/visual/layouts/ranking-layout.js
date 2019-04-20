@@ -9,7 +9,6 @@ class RankingLayout extends Layout {
     }
 
     layout({ sort }) {
-        console.log(sort);
         const composer = this.composer;
         composer.clearLayoutHolder();
         let width = composer.getWidth() + composer.padding;

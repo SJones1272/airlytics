@@ -15,7 +15,6 @@ class AirplaneLayout extends Layout {
                 a.props.x.set(-1000);
             } else {
                 a.props.alpha.set(1);
-                console.log(a);
                 let launchContainer = new PIXI.Container();
                 this.airplaneText = new PIXI.Text(a.name, {
                     fontSize: '600%',

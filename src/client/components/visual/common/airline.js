@@ -30,11 +30,10 @@ class Airline {
     initialize() {
         const container = this.container = new PIXI.Container();
         this.airplane = new PIXI.Container();
-        // Extra
+
         this.extra = new PIXI.Container();
         container.addChild(this.extra);
 
-        // DNA
         this.heatmap = new PIXI.Container();
         this.extra.addChild(this.heatmap);
 
@@ -119,7 +118,15 @@ class Airline {
                 sprite.buttonMode = true;
                 let key = Object.keys(d)[0];
                 //TODO fix color schemes
-                sprite.tint = Color(0x25354f).mix(Color(this.color), d[key] * .3).rgbNumber();
+                if(d[key] === 0){
+                    sprite.tint = 0x613a51;
+                }else {
+                    let value = d[key];
+                    if(key === 'polarity' || key === 'subjectivity'){
+                        value = value * 5;
+                    }
+                    sprite.tint = Color(0x7851a9).mix(Color(this.color), value * .4).rgbNumber();
+                }
 
                 sprite.on('pointerover', e => {
                    this.onHeatMapHover([this.name, key, d[key]]);
@@ -127,6 +134,10 @@ class Airline {
 
                 sprite.on('pointerout', e => {
                     this.onHeatMapHoverOut();
+                });
+
+                sprite.on("pointerdown", e => {
+                    this.onHeatMapClick([this.name, key]);
                 });
 
                 this.heatValues.push(sprite);

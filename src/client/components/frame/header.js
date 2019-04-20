@@ -43,10 +43,10 @@ const Header = (props) => {
                     />
                     <div
                         className={classnames('button icon-historical', {
-                            active: props.activeVisual === "historical",
+                            active: props.activeVisual === "route",
                         })}
                         onClick={() => {
-                            props.setActive("historical")
+                            props.setActive("route")
                         }}
                         title="Historical"
                     />
