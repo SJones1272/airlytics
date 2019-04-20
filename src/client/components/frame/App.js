@@ -13,6 +13,8 @@ class App extends Component {
             airlines: data
         };
 
+        this.rankings = ['Overall Score', 'Country', 'Sentiment', 'Recommended'];
+
         this.initialState = {
             layout: 'ranking',
             airline: '',
@@ -20,6 +22,7 @@ class App extends Component {
             y: 5,
             z: 8,
             a: 0,
+            rankingSortIndex: 0,
             showAbout: false,
             isHovering: false,
             activeVisual: "ranking",
@@ -31,6 +34,13 @@ class App extends Component {
         this.visual = new Visual({
             setState: this.setState.bind(this),
         });
+    }
+
+    updateRankingIndex = (value) => {
+        this.setState({
+            rankingSortIndex: Math.min(Math.max(0, this.state.rankingSortIndex + value), this.rankings.length -1)
+        });
+
     }
 
 
@@ -45,18 +55,11 @@ class App extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (
-            prevState !== this.state &&
-            (this.state.x !== prevState.x ||
-                this.state.y !== prevState.y ||
-                this.state.z !== prevState.z ||
-                this.state.a !== prevState.a ||
-                this.state.layout !== prevState.layout)
-        ) {
-            this.refreshVisual();
-        }
+
 
         this.refreshAirline();
+        this.refreshVisual();
+
 
     }
 
@@ -64,7 +67,9 @@ class App extends Component {
         switch (this.state.layout) {
             case 'ranking':
                 this.visual.composer.setSize(0.25);
-                this.visual.setLayout('ranking');
+                this.visual.setLayout('ranking', {
+                    sort: this.rankings[this.state.rankingSortIndex]
+                });
                 break;
             case 'airline':
                 this.visual.composer.setSize(0.25);
@@ -110,7 +115,7 @@ class App extends Component {
 							<span
                                 className="left icon-arrow-simple"
                                 onClick={() => {
-                                    alert("left")
+                                    this.updateRankingIndex(-1);
                                 }}
                             />
                             <span
@@ -119,12 +124,12 @@ class App extends Component {
                                     maxWidth: window.innerWidth - 100,
                                 }}
                             >
-								Ranking
+                                {this.rankings[this.state.rankingSortIndex]}
 							</span>
                             <span
                                 className="right icon-arrow-simple"
                                 onClick={() => {
-                                    alert("right")
+                                   this.updateRankingIndex(1);
                                 }}
                             />
                         </div>

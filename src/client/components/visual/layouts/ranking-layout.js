@@ -2,7 +2,14 @@ import Layout from "./layout";
 import data from "../../frame/airline-data"
 
 class RankingLayout extends Layout {
-    layout() {
+
+    constructor(props){
+        super(props)
+        this.airlines = []
+    }
+
+    layout({ sort }) {
+        console.log(sort);
         const composer = this.composer;
         composer.clearLayoutHolder();
         let width = composer.getWidth() + composer.padding;
@@ -15,8 +22,10 @@ class RankingLayout extends Layout {
 
         let padding = composer.padding/2;
 
+        this.airlines = this.composer.airlines;
+        this.sortAirlines(sort);
 
-        this.composer.airlines.forEach((airline, index) => {
+        this.airlines.forEach((airline, index) => {
             airline.props.alpha.set(1);
             airline.props.x.set(padding + width / -2 + Math.floor(index / perCol) * colWidth);
             airline.props.y.set(padding + height / -2 + (index % perCol) * rowHeight);
@@ -30,6 +39,49 @@ class RankingLayout extends Layout {
 
         })
     }
+
+    sortAirlines = (sort) => {
+        switch(sort){
+            case 'Country':
+                this.sortAirlinesByCountry();
+                break;
+            case 'Recommended':
+                this.sortAirlinesByRecommended();
+                break;
+            case 'Sentiment':
+                this.sortAirlineBySentiment();
+                break;
+            default:
+                this.sortAirlinesByScore();
+        }
+    }
+
+    sortAirlinesByCountry = () => {
+        this.airlines = this.airlines.slice().sort((a,b) => {
+            return a.country > b.country ? -1 : 1;
+        })
+    }
+
+    sortAirlinesByScore = () => {
+        this.airlines = this.airlines.slice().sort((a,b) => {
+            return a.score > b.score ? -1 : 1;
+        })
+    }
+
+    //TODO fix buggy
+    sortAirlinesByRecommended = () => {
+        this.airlines = this.airlines.slice().sort((a,b) => {
+            return a.data[7].recommendedPercentage > b.data[7].recommendedPercentage ? -1 : 1;
+        })
+    }
+
+    sortAirlineBySentiment = () => {
+        this.airlines = this.airlines.slice().sort((a,b) => {
+            return a.data[0].polarity > b.data[0].polarity ? -1 : 1;
+        })
+    }
+
+
 }
 
 export default RankingLayout;
