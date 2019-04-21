@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import {Map, Marker, Popup, TileLayer} from 'react-leaflet'
 import axios from "axios";
 import HeatmapLayer from "react-leaflet-heatmap-layer";
 
-class Route extends Component{
+class Route extends Component {
 
     constructor(props) {
         super(props);
@@ -13,9 +13,9 @@ class Route extends Component{
         }
     }
 
-    async componentDidMount(){
+    async componentDidMount() {
         let results = await axios.get(`/api/routes/airline/${this.props.iata}/traffic`).catch(err => console.log(err));
-        console.log(traffic);
+        console.log(results);
         let airports = await axios.get("/api/airports").catch(err => console.log(err));
         this.setState({
             airports: airports.data,
@@ -24,14 +24,8 @@ class Route extends Component{
     }
 
 
-    render(){
-
-        // let markers = this.state.airports.map(airport => <Marker position={[airport.latitude, airport.longitude]}>
-        //         <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
-        //     </Marker>
-        // );
-
-        return(
+    render() {
+        return (
             <div style={{display: 'flex', position: 'fixed', width: '100%', height: '100%'}}>
 
                 <div id="map">
@@ -41,7 +35,6 @@ class Route extends Component{
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                 attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                             />
-                            {/*{markers}*/}
                         </Map>
                         :
                         <Map center={[40, -95]} zoom={4}>
