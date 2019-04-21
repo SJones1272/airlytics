@@ -31,7 +31,7 @@ const axisToLocation = {
         dataIndex: 3,
         key: 'food'
     },
-    'Sentiment':{
+    'polarity':{
         dataIndex: 0,
         key: 'polarity'
     },
@@ -83,6 +83,10 @@ const axisToLocation = {
     'Security Delays':{
         dataIndex: 13,
         key: 'securityDelay'
+    },
+    'Ratings':{
+        dataIndex: -1,
+        key: 'ratings'
     }
 };
 
@@ -96,6 +100,7 @@ class DataLayout extends Layout {
         let height = composer.getHeight();
         composer.hideHeatMap();
         this.drawAxis();
+        yAxis = yAxis === undefined ? 'polarity' : yAxis;
 
         let xIndex = axisToLocation[xAxis]['dataIndex'];
         let xKey = axisToLocation[xAxis]['key'];
@@ -118,7 +123,7 @@ class DataLayout extends Layout {
             airline.props.alpha.set(1);
             airline.props.x.set(xScale(airline.data[xIndex][xKey]));
             airline.props.y.set(yScale(airline.data[yIndex][yKey]));
-            airline.props.scale.set(.25);
+            airline.props.scale.set(.35);
         });
     }
 

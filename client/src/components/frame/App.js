@@ -9,15 +9,7 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-
-        this.data = {
-            airlines: data
-        };
-
-        this.rankings = ['Overall Score', 'Country', 'Sentiment', 'Recommended'];
-        //TODO add rest
-        this.dataAxis = ['Food & Beverage', 'Wifi', 'Recommended', 'Seat Comfort', 'Entertainment', "Ground Service", "Cabin Crew"];
-        this.initialState = {
+        this.state = {
             layout: 'ranking',
             airline: '',
             x: 32,
@@ -28,16 +20,23 @@ class App extends Component {
             xAxisIndex: 0,
             yAxisIndex: 6,
             showAbout: false,
-            isHovering: false,
+            heatmapHover: false,
             activeVisual: "ranking",
             activeAirline: "american-airlines"
+        }
+
+        this.data = {
+            airlines: data
         };
 
-        this.state = Object.assign({}, this.initialState);
+        this.rankings = ['Overall Score', 'Country', 'Sentiment', 'Recommended'];
+        //TODO add rest
+        this.dataAxis = ['Food & Beverage', 'Wifi', 'Recommended', 'Seat Comfort', 'Entertainment', "Ground Service", "Cabin Crew"];
 
         this.visual = new Visual({
             setState: this.setState.bind(this),
         });
+
     }
 
     updateRankingIndex = (value) => {
@@ -79,12 +78,26 @@ class App extends Component {
             this.forceUpdate();
         });
 
+
+        document.addEventListener('mousemove', e => {
+            this.setState({_hoverX: e.pageX, _hoverY: e.pageY});
+        });
+
         this.refreshVisual();
+
+
     }
 
-    componentDidUpdate() {
-        this.refreshAirline();
-        this.refreshVisual();
+    componentDidUpdate(prevProps, prevState) {
+
+        if(prevState !== this.state && this.state.activeVisual !== prevState.activeVisual) {
+
+            this.refreshAirline();
+            this.refreshVisual();
+        }
+        else if(this.state.rankingSortIndex !== prevState.rankingSortIndex){
+            this.refreshVisual();
+        }
     }
 
     refreshVisual() {
@@ -131,14 +144,13 @@ class App extends Component {
     };
 
     render() {
-        if (this.state.isHovering) {
-            console.log(this.state.key);
-            console.log(this.state.airline);
-            console.log(this.state.value);
-        }
+        const displayHeatHoverDiv = (this.state.activeVisual === 'ranking' || this.state.activeVisual === 'airline') && this.state.heatmapHover;
+        const displayAirlineHoverDiv = this.state.airlineHover;
         return (
             <div className="app">
 
+                {displayHeatHoverDiv ? <div style={{position: 'fixed', backgroundColor: 'rgba(255,255,0,0.8)',  fontSize: 20, pointerEvents: 'none', top: this.state._hoverY, left: this.state._hoverX}}>{this.state.key} - {this.state.value}</div> : null}
+                {displayAirlineHoverDiv ? <div style={{position: 'fixed', backgroundColor: 'rgba(255,255,0,0.8)',  fontSize: 20, pointerEvents: 'none', top: this.state._hoverY, left: this.state._hoverX}}>{this.state.name} </div> : null}
                 <Header setActive={this.setActive} activeVisual={this.state.activeVisual}/>
                 {this.state.activeVisual === 'ranking' ?
                     <div>
@@ -167,6 +179,7 @@ class App extends Component {
                             />
                         </div>
                     </div> : <div></div>}
+
 
                 {this.state.activeVisual === 'data' ?
                     <div>

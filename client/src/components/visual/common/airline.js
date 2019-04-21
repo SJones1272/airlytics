@@ -54,11 +54,11 @@ class Airline {
         });
 
         this.airplane.on('pointerover', e => {
-            console.log(this.name);
+            this.onAirplaneHover(this);
         })
 
         this.airplane.on('pointerout', e => {
-            console.log('left');
+           this.onAirplaneHoverOut();
         })
     }
 

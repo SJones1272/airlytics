@@ -67,6 +67,9 @@ class Composer {
             airline.name = airline.airline;
             airline.color = Color(airline.color).rgbNumber();
             airline.onAirplaneMouseDown = this.onAirplaneMouseDown;
+            airline.onAirplaneHover = this.onAirplaneHover;
+            airline.onAirplaneHoverOut = this.onAirplaneHoverOut;
+
             airline.onHeatMapHover = this.onHeatMapHover;
             airline.onHeatMapHoverOut = this.onHeatMapHoverOut;
             airline.onHeatMapClick = this.onHeatMapClick;
@@ -134,25 +137,41 @@ class Composer {
         this.visual.setState(options);
     }
 
+    onAirplaneHover = (airline) => {
+        this.visual.setState({
+            airlineHover: true,
+            name: airline.name
+        })
+    }
+
+    onAirplaneHoverOut = () => {
+        this.visual.setState({
+            airlineHover: false
+        })
+    }
+
+
     onHeatMapHover = (values) => {
         this.visual.setState({
             airline: values[0],
             key: values[1],
             value: values[2],
-            isHovering: true
+            heatmapHover: true
         })
     }
 
     onHeatMapHoverOut = () => {
         this.visual.setState({
-            isHovering: false
+            heatmapHover: false
         })
     }
 
     onHeatMapClick = (values) => {
+
         this.visual.setState({
             activeVisual: 'data',
-            activeAirline: values[0]
+            activeAirline: values[0],
+            xAxis: 1
         })
         this.visual.setLayout('data', {
             xAxis: values[1]
