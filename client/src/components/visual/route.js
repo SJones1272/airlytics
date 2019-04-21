@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import {Map, Marker, Popup, TileLayer} from 'react-leaflet'
 import axios from "axios";
 import HeatmapLayer from "react-leaflet-heatmap-layer";
+import chordMpr from "./utils";
+
 
 class Route extends Component {
 
@@ -9,18 +11,40 @@ class Route extends Component {
         super(props);
         this.state = {
             airports: [],
-            traffic: []
+            traffic: [],
+            routes: []
         }
     }
 
     async componentDidMount() {
         let results = await axios.get(`/api/routes/airline/${this.props.iata}/traffic`).catch(err => console.log(err));
-        console.log(results);
         let airports = await axios.get("/api/airports").catch(err => console.log(err));
+        let routes = await axios.get(`/api/routes/airline/${this.props.iata}`).catch(err => console.log(err));
         this.setState({
             airports: airports.data,
-            traffic: results.data.data
+            traffic: results.data.data,
+            routes: routes.data
         });
+
+        this.generateChordMatrix();
+    }
+
+    generateChordMatrix() {
+        let mpr = new chordMpr(this.state.routes);
+        mpr.addValuesToMap('sourceAirport');
+        mpr.addValuesToMap('destinationAirport');
+        mpr.setFilter(function (row, a, b) {
+            if (row.Source_airport_ID != "\N" && row.Destination_airport_ID != "\N") {
+                return (row.Source_airport_ID === a.name && row.Destination_airport_ID === b.name)
+            }
+        })
+            .setAccessor(function (recs, a, b) {
+                if (!recs[0]) return 0;
+                return 1;
+            });
+
+        console.log(mpr.getMatrix());
+        console.log(mpr.getMmap());
     }
 
 
@@ -65,7 +89,7 @@ class Route extends Component {
                         <h1>Form</h1>
                     </div>
                     <div>
-                        Results
+                        chord diagram of routes
                     </div>
 
                 </div>
@@ -74,7 +98,6 @@ class Route extends Component {
             </div>
         )
     }
-
 }
 
 export default Route;

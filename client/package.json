@@ -6,16 +6,17 @@
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "color": "^3.1.0",
+    "d3": "^5.9.2",
+    "leaflet": "^1.4.0",
     "pixi-viewport": "^3.21.2",
     "pixi.js": "^4.8.7",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-leaflet": "^2.2.1",
+    "react-leaflet-heatmap-layer": "^2.0.0",
     "react-redux": "^6.0.1",
     "react-scripts": "2.1.8",
-    "d3": "^5.9.2",
-    "leaflet": "^1.4.0",
-    "react-leaflet": "^2.2.1",
-    "react-leaflet-heatmap-layer": "^2.0.0"
+    "underscore": "^1.9.1"
   },
   "scripts": {
     "start": "react-scripts start",
