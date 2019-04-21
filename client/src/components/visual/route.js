@@ -14,12 +14,12 @@ class Route extends Component{
     }
 
     async componentDidMount(){
-        let traffic = await axios.get(`/api/routes/airline/${this.props.iata}/traffic`).catch(err => console.log(err));
+        let results = await axios.get(`/api/routes/airline/${this.props.iata}/traffic`).catch(err => console.log(err));
         console.log(traffic);
         let airports = await axios.get("/api/airports").catch(err => console.log(err));
         this.setState({
             airports: airports.data,
-            traffic: traffic.data.data
+            traffic: results.data.data
         });
     }
 
