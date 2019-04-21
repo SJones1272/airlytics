@@ -1,20 +1,17 @@
 const data = [
     {
+        "icao": "JOR",
+        "score": 5.91,
         "color": "#425206",
         "iata": "0B",
         "airline": "blue-air",
         "country": "Romania",
-        "icao": "JOR",
-        "score": 5.91,
         "data": [
             {
                 "polarity": 0.09
             },
             {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
+                "subjectivity": 0.49
             },
             {
                 "ratings": 4.94
@@ -41,23 +38,26 @@ const data = [
                 "wifi": 1
             },
             {
-                "subjectivity": 0.49
-            },
-            {
                 "avgDepDelay": 0
             },
             {
                 "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
+        "iata": "1I",
         "airline": "novair",
         "country": "Sweden",
         "icao": "NVR",
         "score": 0.09,
         "color": "#E07221",
-        "iata": "1I",
         "data": [
             {
                 "polarity": 0.37
@@ -104,12 +104,12 @@ const data = [
         ]
     },
     {
-        "icao": "VBW",
-        "score": 5.17,
         "color": "#DC55F8",
         "iata": "2J",
         "airline": "air-burkina",
         "country": "Burkina Faso",
+        "icao": "VBW",
+        "score": 5.17,
         "data": [
             {
                 "polarity": 0.15
@@ -156,12 +156,12 @@ const data = [
         ]
     },
     {
-        "color": "#5A47E1",
-        "iata": "2M",
         "airline": "moldavian-airlines",
         "country": "Moldova",
         "icao": "MDV",
         "score": 0.05,
+        "color": "#5A47E1",
+        "iata": "2M",
         "data": [
             {
                 "polarity": 0.19
@@ -222,18 +222,6 @@ const data = [
                 "subjectivity": 0.5
             },
             {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
-            },
-            {
                 "ratings": 3
             },
             {
@@ -256,22 +244,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#76860D",
-        "iata": "3L",
-        "airline": "intersky",
-        "country": "Austria",
-        "icao": "ISK",
-        "score": 0.91,
-        "data": [
-            {
-                "polarity": 0.23
-            },
-            {
-                "subjectivity": 0.57
             },
             {
                 "avgDepDelay": 0
@@ -284,6 +256,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "ISK",
+        "score": 0.91,
+        "color": "#76860D",
+        "iata": "3L",
+        "airline": "intersky",
+        "country": "Austria",
+        "data": [
+            {
+                "polarity": 0.23
+            },
+            {
+                "subjectivity": 0.57
             },
             {
                 "ratings": 5.75
@@ -308,6 +296,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -324,18 +324,6 @@ const data = [
             },
             {
                 "subjectivity": 0.46
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.83
@@ -360,22 +348,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "airline": "malawian-airlines",
-        "country": "Malawi",
-        "icao": "\\N",
-        "score": 5.19,
-        "color": "#702261",
-        "iata": "3W",
-        "data": [
-            {
-                "polarity": 0.15
-            },
-            {
-                "subjectivity": 0.56
             },
             {
                 "avgDepDelay": 0
@@ -388,6 +360,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#702261",
+        "iata": "3W",
+        "airline": "malawian-airlines",
+        "country": "Malawi",
+        "icao": "\\N",
+        "score": 5.19,
+        "data": [
+            {
+                "polarity": 0.15
+            },
+            {
+                "subjectivity": 0.56
             },
             {
                 "ratings": 4.88
@@ -412,22 +400,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "country": "Germany",
-        "icao": "GWI",
-        "score": 5.12,
-        "color": "#11CB43",
-        "iata": "4U",
-        "airline": "germanwings",
-        "data": [
-            {
-                "polarity": 0.13
-            },
-            {
-                "subjectivity": 0.49
             },
             {
                 "avgDepDelay": 0
@@ -440,6 +412,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "GWI",
+        "score": 5.12,
+        "color": "#11CB43",
+        "iata": "4U",
+        "airline": "germanwings",
+        "country": "Germany",
+        "data": [
+            {
+                "polarity": 0.13
+            },
+            {
+                "subjectivity": 0.49
             },
             {
                 "ratings": 5.64
@@ -464,22 +452,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "country": "Philippines",
-        "icao": "CEB",
-        "score": 3.69,
-        "color": "#47A9F8",
-        "iata": "5J",
-        "airline": "cebu-pacific",
-        "data": [
-            {
-                "polarity": 0.09
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -492,6 +464,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "5J",
+        "airline": "cebu-pacific",
+        "country": "Philippines",
+        "icao": "CEB",
+        "score": 3.69,
+        "color": "#47A9F8",
+        "data": [
+            {
+                "polarity": 0.09
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 4.84
@@ -516,22 +504,6 @@ const data = [
             },
             {
                 "wifi": 1.05
-            }
-        ]
-    },
-    {
-        "color": "#E5DEB7",
-        "iata": "5L",
-        "airline": "aerosur",
-        "country": "Bolivia",
-        "icao": "RSU",
-        "score": 0.56,
-        "data": [
-            {
-                "polarity": 0.12
-            },
-            {
-                "subjectivity": 0.46
             },
             {
                 "avgDepDelay": 0
@@ -544,6 +516,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "RSU",
+        "score": 0.56,
+        "color": "#E5DEB7",
+        "iata": "5L",
+        "airline": "aerosur",
+        "country": "Bolivia",
+        "data": [
+            {
+                "polarity": 0.12
+            },
+            {
+                "subjectivity": 0.46
             },
             {
                 "ratings": 4.5
@@ -568,22 +556,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#AC6788",
-        "iata": "5T",
-        "airline": "canadian-north",
-        "country": "Canada",
-        "icao": "MPE",
-        "score": 5.47,
-        "data": [
-            {
-                "polarity": 0.28
-            },
-            {
-                "subjectivity": 0.59
             },
             {
                 "avgDepDelay": 0
@@ -596,6 +568,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "MPE",
+        "score": 5.47,
+        "color": "#AC6788",
+        "iata": "5T",
+        "airline": "canadian-north",
+        "country": "Canada",
+        "data": [
+            {
+                "polarity": 0.28
+            },
+            {
+                "subjectivity": 0.59
             },
             {
                 "ratings": 6.43
@@ -620,22 +608,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "score": 2.58,
-        "color": "#4713BC",
-        "iata": "5Z",
-        "airline": "vivacolombia",
-        "country": "Colombia",
-        "icao": "VVC",
-        "data": [
-            {
-                "polarity": -0.02
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -648,6 +620,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "vivacolombia",
+        "country": "Colombia",
+        "icao": "VVC",
+        "score": 2.58,
+        "color": "#4713BC",
+        "iata": "5Z",
+        "data": [
+            {
+                "polarity": -0.02
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 1.69
@@ -672,22 +660,6 @@ const data = [
             },
             {
                 "wifi": 1.17
-            }
-        ]
-    },
-    {
-        "country": "Sweden",
-        "icao": "BLX",
-        "score": 2.48,
-        "color": "#3F72D5",
-        "iata": "6B",
-        "airline": "tuifly-nordic",
-        "data": [
-            {
-                "polarity": -0.02
-            },
-            {
-                "subjectivity": 0.68
             },
             {
                 "avgDepDelay": 0
@@ -700,6 +672,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "tuifly-nordic",
+        "country": "Sweden",
+        "icao": "BLX",
+        "score": 2.48,
+        "color": "#3F72D5",
+        "iata": "6B",
+        "data": [
+            {
+                "polarity": -0.02
+            },
+            {
+                "subjectivity": 0.68
             },
             {
                 "ratings": 5
@@ -724,22 +712,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#D97384",
-        "iata": "6E",
-        "airline": "indigo-airlines",
-        "country": "India",
-        "icao": "IGO",
-        "score": 5.95,
-        "data": [
-            {
-                "polarity": 0.18
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -752,6 +724,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "indigo-airlines",
+        "country": "India",
+        "icao": "IGO",
+        "score": 5.95,
+        "color": "#D97384",
+        "iata": "6E",
+        "data": [
+            {
+                "polarity": 0.18
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 6.87
@@ -776,22 +764,6 @@ const data = [
             },
             {
                 "wifi": 2.07
-            }
-        ]
-    },
-    {
-        "airline": "jeju-air",
-        "country": "Republic of Korea",
-        "icao": "JJA",
-        "score": 2.33,
-        "color": "#C610AE",
-        "iata": "7C",
-        "data": [
-            {
-                "polarity": 0.09
-            },
-            {
-                "subjectivity": 0.49
             },
             {
                 "avgDepDelay": 0
@@ -804,6 +776,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#C610AE",
+        "iata": "7C",
+        "airline": "jeju-air",
+        "country": "Republic of Korea",
+        "icao": "JJA",
+        "score": 2.33,
+        "data": [
+            {
+                "polarity": 0.09
+            },
+            {
+                "subjectivity": 0.49
             },
             {
                 "ratings": 4.33
@@ -828,22 +816,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "country": "Turkey",
-        "icao": "OHY",
-        "score": 3.44,
-        "color": "#F704D7",
-        "iata": "8Q",
-        "airline": "onur-air",
-        "data": [
-            {
-                "polarity": 0.09
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -856,6 +828,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "onur-air",
+        "country": "Turkey",
+        "icao": "OHY",
+        "score": 3.44,
+        "color": "#F704D7",
+        "iata": "8Q",
+        "data": [
+            {
+                "polarity": 0.09
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.44
@@ -880,22 +868,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "color": "#634E1E",
-        "iata": "8U",
-        "airline": "afriqiyah-airways",
-        "country": "Libya",
-        "icao": "AAW",
-        "score": 0.03,
-        "data": [
-            {
-                "polarity": 0.13
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -908,6 +880,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Libya",
+        "icao": "AAW",
+        "score": 0.03,
+        "color": "#634E1E",
+        "iata": "8U",
+        "airline": "afriqiyah-airways",
+        "data": [
+            {
+                "polarity": 0.13
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 4.89
@@ -932,22 +920,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#2BC013",
-        "iata": "9K",
-        "airline": "cape-air",
-        "country": "United States",
-        "icao": "KAP",
-        "score": 0.02,
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.48
             },
             {
                 "avgDepDelay": 0
@@ -960,6 +932,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "9K",
+        "airline": "cape-air",
+        "country": "United States",
+        "icao": "KAP",
+        "score": 0.02,
+        "color": "#2BC013",
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.48
             },
             {
                 "ratings": 4.83
@@ -984,22 +972,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "iata": "9R",
-        "airline": "satena",
-        "country": "Colombia",
-        "icao": "NSE",
-        "score": -0.01,
-        "color": "#8AC4CD",
-        "data": [
-            {
-                "polarity": -0.06
-            },
-            {
-                "subjectivity": 0.19
             },
             {
                 "avgDepDelay": 0
@@ -1012,6 +984,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Colombia",
+        "icao": "NSE",
+        "score": -0.01,
+        "color": "#8AC4CD",
+        "iata": "9R",
+        "airline": "satena",
+        "data": [
+            {
+                "polarity": -0.06
+            },
+            {
+                "subjectivity": 0.19
             },
             {
                 "ratings": 5
@@ -1036,6 +1024,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -1052,18 +1052,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.39
@@ -1088,22 +1076,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "country": "India",
-        "icao": "JAI",
-        "score": 4.52,
-        "color": "#3017C2",
-        "iata": "9W",
-        "airline": "jet-airways",
-        "data": [
-            {
-                "polarity": 0.1
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -1116,6 +1088,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#3017C2",
+        "iata": "9W",
+        "airline": "jet-airways",
+        "country": "India",
+        "icao": "JAI",
+        "score": 4.52,
+        "data": [
+            {
+                "polarity": 0.1
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 4.92
@@ -1140,22 +1128,6 @@ const data = [
             },
             {
                 "wifi": 1.32
-            }
-        ]
-    },
-    {
-        "iata": "A3",
-        "airline": "aegean-airlines",
-        "country": "Greece",
-        "icao": "AEE",
-        "score": 7.23,
-        "color": "#420AFA",
-        "data": [
-            {
-                "polarity": 0.24
-            },
-            {
-                "subjectivity": 0.55
             },
             {
                 "avgDepDelay": 0
@@ -1168,6 +1140,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#420AFA",
+        "iata": "A3",
+        "airline": "aegean-airlines",
+        "country": "Greece",
+        "icao": "AEE",
+        "score": 7.23,
+        "data": [
+            {
+                "polarity": 0.24
+            },
+            {
+                "subjectivity": 0.55
             },
             {
                 "ratings": 7.8
@@ -1192,22 +1180,6 @@ const data = [
             },
             {
                 "wifi": 2.22
-            }
-        ]
-    },
-    {
-        "score": 4.81,
-        "color": "#D10F23",
-        "iata": "A9",
-        "airline": "georgian-airways",
-        "country": "Georgia",
-        "icao": "TGZ",
-        "data": [
-            {
-                "polarity": 0.12
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -1220,6 +1192,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "A9",
+        "airline": "georgian-airways",
+        "country": "Georgia",
+        "icao": "TGZ",
+        "score": 4.81,
+        "color": "#D10F23",
+        "data": [
+            {
+                "polarity": 0.12
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 4.37
@@ -1244,6 +1232,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -1260,18 +1260,6 @@ const data = [
             },
             {
                 "subjectivity": 0.46
-            },
-            {
-                "avgDepDelay": 5.06
-            },
-            {
-                "carrierDelay": 3.86
-            },
-            {
-                "lateAircraftDelay": 4.45
-            },
-            {
-                "securityDelay": 0.02
             },
             {
                 "ratings": 2.91
@@ -1296,34 +1284,34 @@ const data = [
             },
             {
                 "wifi": 1.77
+            },
+            {
+                "avgDepDelay": 5.06
+            },
+            {
+                "carrierDelay": 3.86
+            },
+            {
+                "lateAircraftDelay": 4.45
+            },
+            {
+                "securityDelay": 0.02
             }
         ]
     },
     {
-        "color": "#933F41",
-        "iata": "AB",
-        "airline": "air-berlin",
         "country": "Germany",
         "icao": "BER",
         "score": 5.65,
+        "color": "#933F41",
+        "iata": "AB",
+        "airline": "air-berlin",
         "data": [
             {
                 "polarity": 0.12
             },
             {
                 "subjectivity": 0.51
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.38
@@ -1348,22 +1336,6 @@ const data = [
             },
             {
                 "wifi": 2.62
-            }
-        ]
-    },
-    {
-        "country": "Canada",
-        "icao": "ACA",
-        "score": 5.28,
-        "color": "#D130EC",
-        "iata": "AC",
-        "airline": "air-canada",
-        "data": [
-            {
-                "polarity": 0.09
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -1376,6 +1348,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#D130EC",
+        "iata": "AC",
+        "airline": "air-canada",
+        "country": "Canada",
+        "icao": "ACA",
+        "score": 5.28,
+        "data": [
+            {
+                "polarity": 0.09
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 4.46
@@ -1400,6 +1388,18 @@ const data = [
             },
             {
                 "wifi": 2.3
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -1416,18 +1416,6 @@ const data = [
             },
             {
                 "subjectivity": 0.67
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 7.33
@@ -1452,6 +1440,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -1468,18 +1468,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.49
@@ -1504,6 +1492,18 @@ const data = [
             },
             {
                 "wifi": 2.31
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -1520,18 +1520,6 @@ const data = [
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.44
@@ -1556,6 +1544,18 @@ const data = [
             },
             {
                 "wifi": 2
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -1572,18 +1572,6 @@ const data = [
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.65
@@ -1608,22 +1596,6 @@ const data = [
             },
             {
                 "wifi": 1.44
-            }
-        ]
-    },
-    {
-        "country": "Mexico",
-        "icao": "AMX",
-        "score": 5.05,
-        "color": "#947A9A",
-        "iata": "AM",
-        "airline": "aeromexico",
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -1636,6 +1608,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#947A9A",
+        "iata": "AM",
+        "airline": "aeromexico",
+        "country": "Mexico",
+        "icao": "AMX",
+        "score": 5.05,
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 4.95
@@ -1660,22 +1648,6 @@ const data = [
             },
             {
                 "wifi": 1.62
-            }
-        ]
-    },
-    {
-        "score": 4.97,
-        "color": "#095DF3",
-        "iata": "AR",
-        "airline": "aerolineas-argentinas",
-        "country": "Argentina",
-        "icao": "ARG",
-        "data": [
-            {
-                "polarity": 0.09
-            },
-            {
-                "subjectivity": 0.49
             },
             {
                 "avgDepDelay": 0
@@ -1688,6 +1660,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Argentina",
+        "icao": "ARG",
+        "score": 4.97,
+        "color": "#095DF3",
+        "iata": "AR",
+        "airline": "aerolineas-argentinas",
+        "data": [
+            {
+                "polarity": 0.09
+            },
+            {
+                "subjectivity": 0.49
             },
             {
                 "ratings": 5.01
@@ -1712,34 +1700,34 @@ const data = [
             },
             {
                 "wifi": 1.82
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
+        "country": "ALASKA",
         "icao": "ASA",
         "score": 6.75,
         "color": "#C3B81F",
         "iata": "AS",
         "airline": "alaska-airlines",
-        "country": "ALASKA",
         "data": [
             {
                 "polarity": 0.12
             },
             {
                 "subjectivity": 0.51
-            },
-            {
-                "avgDepDelay": -0.68
-            },
-            {
-                "carrierDelay": 1.93
-            },
-            {
-                "lateAircraftDelay": 2.17
-            },
-            {
-                "securityDelay": 0.03
             },
             {
                 "ratings": 5.65
@@ -1764,6 +1752,18 @@ const data = [
             },
             {
                 "wifi": 2.77
+            },
+            {
+                "avgDepDelay": -0.68
+            },
+            {
+                "carrierDelay": 1.93
+            },
+            {
+                "lateAircraftDelay": 2.17
+            },
+            {
+                "securityDelay": 0.03
             }
         ]
     },
@@ -1780,18 +1780,6 @@ const data = [
             },
             {
                 "subjectivity": 0.53
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.59
@@ -1816,22 +1804,6 @@ const data = [
             },
             {
                 "wifi": 2.53
-            }
-        ]
-    },
-    {
-        "airline": "finnair",
-        "country": "Finland",
-        "icao": "FIN",
-        "score": 5.73,
-        "color": "#DAB953",
-        "iata": "AY",
-        "data": [
-            {
-                "polarity": 0.14
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -1844,6 +1816,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "AY",
+        "airline": "finnair",
+        "country": "Finland",
+        "icao": "FIN",
+        "score": 5.73,
+        "color": "#DAB953",
+        "data": [
+            {
+                "polarity": 0.14
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.86
@@ -1868,22 +1856,6 @@ const data = [
             },
             {
                 "wifi": 2.51
-            }
-        ]
-    },
-    {
-        "country": "Italy",
-        "icao": "AZA",
-        "score": 5.24,
-        "color": "#151EB5",
-        "iata": "AZ",
-        "airline": "alitalia",
-        "data": [
-            {
-                "polarity": 0.09
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -1896,6 +1868,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "alitalia",
+        "country": "Italy",
+        "icao": "AZA",
+        "score": 5.24,
+        "color": "#151EB5",
+        "iata": "AZ",
+        "data": [
+            {
+                "polarity": 0.09
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 5.05
@@ -1920,34 +1908,34 @@ const data = [
             },
             {
                 "wifi": 1.87
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
+        "color": "#CAC4FB",
+        "iata": "B6",
         "airline": "jetblue-airways",
         "country": "United States",
         "icao": "JBU",
         "score": 15.52,
-        "color": "#CAC4FB",
-        "iata": "B6",
         "data": [
             {
                 "polarity": 0.13
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 8.75
-            },
-            {
-                "carrierDelay": 4.7
-            },
-            {
-                "lateAircraftDelay": 6.37
-            },
-            {
-                "securityDelay": 0.04
             },
             {
                 "ratings": 5.19
@@ -1972,34 +1960,34 @@ const data = [
             },
             {
                 "wifi": 2.95
+            },
+            {
+                "avgDepDelay": 8.75
+            },
+            {
+                "carrierDelay": 4.7
+            },
+            {
+                "lateAircraftDelay": 6.37
+            },
+            {
+                "securityDelay": 0.04
             }
         ]
     },
     {
+        "airline": "eritrean-airlines",
         "country": "Eritrea",
         "icao": "ERT",
         "score": 0.06,
         "color": "#10CB8D",
         "iata": "B8",
-        "airline": "eritrean-airlines",
         "data": [
             {
                 "polarity": 0.22
             },
             {
                 "subjectivity": 0.45
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6
@@ -2024,22 +2012,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#E3BDB8",
-        "iata": "BA",
-        "airline": "british-airways",
-        "country": "United Kingdom",
-        "icao": "BAW",
-        "score": 4.99,
-        "data": [
-            {
-                "polarity": 0.1
-            },
-            {
-                "subjectivity": 0.49
             },
             {
                 "avgDepDelay": 0
@@ -2052,6 +2024,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "british-airways",
+        "country": "United Kingdom",
+        "icao": "BAW",
+        "score": 4.99,
+        "color": "#E3BDB8",
+        "iata": "BA",
+        "data": [
+            {
+                "polarity": 0.1
+            },
+            {
+                "subjectivity": 0.49
             },
             {
                 "ratings": 4.93
@@ -2076,22 +2064,6 @@ const data = [
             },
             {
                 "wifi": 1.69
-            }
-        ]
-    },
-    {
-        "country": "United States",
-        "icao": "SBS",
-        "score": 1.42,
-        "color": "#29B094",
-        "iata": "BB",
-        "airline": "seaborne-airlines",
-        "data": [
-            {
-                "polarity": 0.02
-            },
-            {
-                "subjectivity": 0.48
             },
             {
                 "avgDepDelay": 0
@@ -2104,6 +2076,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "seaborne-airlines",
+        "country": "United States",
+        "icao": "SBS",
+        "score": 1.42,
+        "color": "#29B094",
+        "iata": "BB",
+        "data": [
+            {
+                "polarity": 0.02
+            },
+            {
+                "subjectivity": 0.48
             },
             {
                 "ratings": 1.86
@@ -2128,22 +2116,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "iata": "BC",
-        "airline": "skymark-airlines",
-        "country": "Japan",
-        "icao": "SKY",
-        "score": 7.74,
-        "color": "#445517",
-        "data": [
-            {
-                "polarity": 0.27
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -2156,6 +2128,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#445517",
+        "iata": "BC",
+        "airline": "skymark-airlines",
+        "country": "Japan",
+        "icao": "SKY",
+        "score": 7.74,
+        "data": [
+            {
+                "polarity": 0.27
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 8.69
@@ -2180,6 +2168,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -2196,18 +2196,6 @@ const data = [
             },
             {
                 "subjectivity": 0.49
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.85
@@ -2232,6 +2220,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -2248,18 +2248,6 @@ const data = [
             },
             {
                 "subjectivity": 0.55
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 7.52
@@ -2284,6 +2272,18 @@ const data = [
             },
             {
                 "wifi": 3.22
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -2300,18 +2300,6 @@ const data = [
             },
             {
                 "subjectivity": 0.48
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 2.86
@@ -2336,22 +2324,6 @@ const data = [
             },
             {
                 "wifi": 1.17
-            }
-        ]
-    },
-    {
-        "country": "Botswana",
-        "icao": "BOT",
-        "score": 5.07,
-        "color": "#6E3E14",
-        "iata": "BP",
-        "airline": "air-botswana",
-        "data": [
-            {
-                "polarity": 0.16
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -2364,6 +2336,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#6E3E14",
+        "iata": "BP",
+        "airline": "air-botswana",
+        "country": "Botswana",
+        "icao": "BOT",
+        "score": 5.07,
+        "data": [
+            {
+                "polarity": 0.16
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 6.13
@@ -2388,6 +2376,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -2404,18 +2404,6 @@ const data = [
             },
             {
                 "subjectivity": 0.55
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 8.12
@@ -2440,22 +2428,6 @@ const data = [
             },
             {
                 "wifi": 3.75
-            }
-        ]
-    },
-    {
-        "iata": "BV",
-        "airline": "blue-panorama-airlines",
-        "country": "Italy",
-        "icao": "BPA",
-        "score": 3.86,
-        "color": "#598E6E",
-        "data": [
-            {
-                "polarity": 0.07
-            },
-            {
-                "subjectivity": 0.47
             },
             {
                 "avgDepDelay": 0
@@ -2468,6 +2440,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#598E6E",
+        "iata": "BV",
+        "airline": "blue-panorama-airlines",
+        "country": "Italy",
+        "icao": "BPA",
+        "score": 3.86,
+        "data": [
+            {
+                "polarity": 0.07
+            },
+            {
+                "subjectivity": 0.47
             },
             {
                 "ratings": 1.84
@@ -2492,22 +2480,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "color": "#D9E814",
-        "iata": "BW",
-        "airline": "caribbean-airlines",
-        "country": "Trinidad and Tobago",
-        "icao": "BWA",
-        "score": 4.76,
-        "data": [
-            {
-                "polarity": 0.13
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -2520,6 +2492,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "BWA",
+        "score": 4.76,
+        "color": "#D9E814",
+        "iata": "BW",
+        "airline": "caribbean-airlines",
+        "country": "Trinidad and Tobago",
+        "data": [
+            {
+                "polarity": 0.13
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 5.32
@@ -2544,22 +2532,6 @@ const data = [
             },
             {
                 "wifi": 1.56
-            }
-        ]
-    },
-    {
-        "color": "#8BA02F",
-        "iata": "BX",
-        "airline": "air-busan",
-        "country": "Republic of Korea",
-        "icao": "ABL",
-        "score": 6.97,
-        "data": [
-            {
-                "polarity": 0.29
-            },
-            {
-                "subjectivity": 0.55
             },
             {
                 "avgDepDelay": 0
@@ -2572,6 +2544,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "air-busan",
+        "country": "Republic of Korea",
+        "icao": "ABL",
+        "score": 6.97,
+        "color": "#8BA02F",
+        "iata": "BX",
+        "data": [
+            {
+                "polarity": 0.29
+            },
+            {
+                "subjectivity": 0.55
             },
             {
                 "ratings": 9
@@ -2596,22 +2584,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "country": "China",
-        "icao": "CCA",
-        "score": 4.66,
-        "color": "#8BCF21",
-        "iata": "CA",
-        "airline": "air-china",
-        "data": [
-            {
-                "polarity": 0.05
-            },
-            {
-                "subjectivity": 0.48
             },
             {
                 "avgDepDelay": 0
@@ -2624,6 +2596,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#8BCF21",
+        "iata": "CA",
+        "airline": "air-china",
+        "country": "China",
+        "icao": "CCA",
+        "score": 4.66,
+        "data": [
+            {
+                "polarity": 0.05
+            },
+            {
+                "subjectivity": 0.48
             },
             {
                 "ratings": 4.17
@@ -2648,22 +2636,6 @@ const data = [
             },
             {
                 "wifi": 1.24
-            }
-        ]
-    },
-    {
-        "color": "#ED4BE8",
-        "iata": "CI",
-        "airline": "china-airlines",
-        "country": "Taiwan",
-        "icao": "CAL",
-        "score": 6.68,
-        "data": [
-            {
-                "polarity": 0.16
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -2676,6 +2648,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "CI",
+        "airline": "china-airlines",
+        "country": "Taiwan",
+        "icao": "CAL",
+        "score": 6.68,
+        "color": "#ED4BE8",
+        "data": [
+            {
+                "polarity": 0.16
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 6.43
@@ -2700,22 +2688,6 @@ const data = [
             },
             {
                 "wifi": 3
-            }
-        ]
-    },
-    {
-        "country": "United Kingdom",
-        "icao": "CFE",
-        "score": 6.4,
-        "color": "#91E7EB",
-        "iata": "CJ",
-        "airline": "ba-cityflyer",
-        "data": [
-            {
-                "polarity": 0.21
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -2728,6 +2700,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#91E7EB",
+        "iata": "CJ",
+        "airline": "ba-cityflyer",
+        "country": "United Kingdom",
+        "icao": "CFE",
+        "score": 6.4,
+        "data": [
+            {
+                "polarity": 0.21
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 8.22
@@ -2752,22 +2740,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "country": "Panama",
-        "icao": "CMP",
-        "score": 5.02,
-        "color": "#98E335",
-        "iata": "CM",
-        "airline": "copa-airlines",
-        "data": [
-            {
-                "polarity": 0.13
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -2780,6 +2752,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "copa-airlines",
+        "country": "Panama",
+        "icao": "CMP",
+        "score": 5.02,
+        "color": "#98E335",
+        "iata": "CM",
+        "data": [
+            {
+                "polarity": 0.13
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 5.61
@@ -2804,22 +2792,6 @@ const data = [
             },
             {
                 "wifi": 1.31
-            }
-        ]
-    },
-    {
-        "country": "Cyprus",
-        "icao": "CYP",
-        "score": 1.44,
-        "color": "#EB8BCA",
-        "iata": "CY",
-        "airline": "cyprus-airways",
-        "data": [
-            {
-                "polarity": 0.1
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -2832,6 +2804,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "CY",
+        "airline": "cyprus-airways",
+        "country": "Cyprus",
+        "icao": "CYP",
+        "score": 1.44,
+        "color": "#EB8BCA",
+        "data": [
+            {
+                "polarity": 0.1
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 1
@@ -2856,6 +2844,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -2872,18 +2872,6 @@ const data = [
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 7.78
@@ -2908,22 +2896,6 @@ const data = [
             },
             {
                 "wifi": 2.96
-            }
-        ]
-    },
-    {
-        "color": "#7376CF",
-        "iata": "D7",
-        "airline": "airasia-x",
-        "country": "Malaysia",
-        "icao": "XAX",
-        "score": 6.62,
-        "data": [
-            {
-                "polarity": 0.2
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -2936,6 +2908,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "airasia-x",
+        "country": "Malaysia",
+        "icao": "XAX",
+        "score": 6.62,
+        "color": "#7376CF",
+        "iata": "D7",
+        "data": [
+            {
+                "polarity": 0.2
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 7.36
@@ -2960,6 +2948,18 @@ const data = [
             },
             {
                 "wifi": 2
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -2976,18 +2976,6 @@ const data = [
             },
             {
                 "subjectivity": 0.53
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6.37
@@ -3012,34 +3000,34 @@ const data = [
             },
             {
                 "wifi": 2
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
+        "airline": "delta-air-lines",
+        "country": "United States",
         "icao": "DAL",
         "score": 7.31,
         "color": "#10FE0D",
         "iata": "DL",
-        "airline": "delta-air-lines",
-        "country": "United States",
         "data": [
             {
                 "polarity": 0.09
             },
             {
                 "subjectivity": 0.51
-            },
-            {
-                "avgDepDelay": 0.6
-            },
-            {
-                "carrierDelay": 3.39
-            },
-            {
-                "lateAircraftDelay": 2.57
-            },
-            {
-                "securityDelay": 0.01
             },
             {
                 "ratings": 4.69
@@ -3064,34 +3052,34 @@ const data = [
             },
             {
                 "wifi": 2.42
+            },
+            {
+                "avgDepDelay": 0.6
+            },
+            {
+                "carrierDelay": 3.39
+            },
+            {
+                "lateAircraftDelay": 2.57
+            },
+            {
+                "securityDelay": 0.01
             }
         ]
     },
     {
-        "color": "#4DF1A5",
         "iata": "DR",
         "airline": "air-mediterranee",
         "country": "France",
         "icao": "BIE",
         "score": 0.75,
+        "color": "#4DF1A5",
         "data": [
             {
                 "polarity": 0.08
             },
             {
                 "subjectivity": 0.42
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.25
@@ -3116,22 +3104,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "airline": "taag-angola-airlines",
-        "country": "Angola",
-        "icao": "DTA",
-        "score": 6.24,
-        "color": "#FDD0B0",
-        "iata": "DT",
-        "data": [
-            {
-                "polarity": 0.13
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -3144,6 +3116,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "DTA",
+        "score": 6.24,
+        "color": "#FDD0B0",
+        "iata": "DT",
+        "airline": "taag-angola-airlines",
+        "country": "Angola",
+        "data": [
+            {
+                "polarity": 0.13
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 4.91
@@ -3168,22 +3156,6 @@ const data = [
             },
             {
                 "wifi": 1.33
-            }
-        ]
-    },
-    {
-        "color": "#7362BE",
-        "iata": "EE",
-        "airline": "nordica",
-        "country": "Estonia",
-        "icao": "\\N",
-        "score": 5.62,
-        "data": [
-            {
-                "polarity": 0.36
-            },
-            {
-                "subjectivity": 0.66
             },
             {
                 "avgDepDelay": 0
@@ -3196,6 +3168,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "nordica",
+        "country": "Estonia",
+        "icao": "\\N",
+        "score": 5.62,
+        "color": "#7362BE",
+        "iata": "EE",
+        "data": [
+            {
+                "polarity": 0.36
+            },
+            {
+                "subjectivity": 0.66
             },
             {
                 "ratings": 8.5
@@ -3220,22 +3208,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "airline": "aer-lingus",
-        "country": "Ireland",
-        "icao": "EIN",
-        "score": 5.97,
-        "color": "#A5A1A7",
-        "iata": "EI",
-        "data": [
-            {
-                "polarity": 0.15
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -3248,6 +3220,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#A5A1A7",
+        "iata": "EI",
+        "airline": "aer-lingus",
+        "country": "Ireland",
+        "icao": "EIN",
+        "score": 5.97,
+        "data": [
+            {
+                "polarity": 0.15
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 6.46
@@ -3272,6 +3260,18 @@ const data = [
             },
             {
                 "wifi": 2.91
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -3288,18 +3288,6 @@ const data = [
             },
             {
                 "subjectivity": 0.53
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.75
@@ -3324,22 +3312,6 @@ const data = [
             },
             {
                 "wifi": 3.11
-            }
-        ]
-    },
-    {
-        "color": "#A52B55",
-        "iata": "EN",
-        "airline": "air-dolomiti",
-        "country": "Italy",
-        "icao": "DLA",
-        "score": 7.24,
-        "data": [
-            {
-                "polarity": 0.28
-            },
-            {
-                "subjectivity": 0.57
             },
             {
                 "avgDepDelay": 0
@@ -3352,6 +3324,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "EN",
+        "airline": "air-dolomiti",
+        "country": "Italy",
+        "icao": "DLA",
+        "score": 7.24,
+        "color": "#A52B55",
+        "data": [
+            {
+                "polarity": 0.28
+            },
+            {
+                "subjectivity": 0.57
             },
             {
                 "ratings": 6.76
@@ -3376,22 +3364,6 @@ const data = [
             },
             {
                 "wifi": 3
-            }
-        ]
-    },
-    {
-        "iata": "EQ",
-        "airline": "tame",
-        "country": "Ecuador",
-        "icao": "TAE",
-        "score": 2.62,
-        "color": "#7FF6D5",
-        "data": [
-            {
-                "polarity": 0.06
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -3404,6 +3376,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "tame",
+        "country": "Ecuador",
+        "icao": "TAE",
+        "score": 2.62,
+        "color": "#7FF6D5",
+        "iata": "EQ",
+        "data": [
+            {
+                "polarity": 0.06
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 2.33
@@ -3428,22 +3416,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "icao": "ETH",
-        "score": 5.36,
-        "color": "#80F25D",
-        "iata": "ET",
-        "airline": "ethiopian-airlines",
-        "country": "Ethiopia",
-        "data": [
-            {
-                "polarity": 0.09
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -3456,6 +3428,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "ethiopian-airlines",
+        "country": "Ethiopia",
+        "icao": "ETH",
+        "score": 5.36,
+        "color": "#80F25D",
+        "iata": "ET",
+        "data": [
+            {
+                "polarity": 0.09
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 4.84
@@ -3480,22 +3468,6 @@ const data = [
             },
             {
                 "wifi": 1.71
-            }
-        ]
-    },
-    {
-        "score": 3.97,
-        "color": "#60A76B",
-        "iata": "EW",
-        "airline": "eurowings",
-        "country": "Germany",
-        "icao": "EWG",
-        "data": [
-            {
-                "polarity": 0.05
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -3508,6 +3480,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "EWG",
+        "score": 3.97,
+        "color": "#60A76B",
+        "iata": "EW",
+        "airline": "eurowings",
+        "country": "Germany",
+        "data": [
+            {
+                "polarity": 0.05
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 3.36
@@ -3532,22 +3520,6 @@ const data = [
             },
             {
                 "wifi": 1.21
-            }
-        ]
-    },
-    {
-        "color": "#440008",
-        "iata": "EY",
-        "airline": "etihad-airways",
-        "country": "United Arab Emirates",
-        "icao": "ETD",
-        "score": 5.14,
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -3560,6 +3532,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "United Arab Emirates",
+        "icao": "ETD",
+        "score": 5.14,
+        "color": "#440008",
+        "iata": "EY",
+        "airline": "etihad-airways",
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 4.45
@@ -3584,34 +3572,34 @@ const data = [
             },
             {
                 "wifi": 2.39
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
+        "airline": "frontier-airlines",
         "country": "United States",
         "icao": "FFT",
         "score": 14.71,
         "color": "#0D259F",
         "iata": "F9",
-        "airline": "frontier-airlines",
         "data": [
             {
                 "polarity": 0.01
             },
             {
                 "subjectivity": 0.51
-            },
-            {
-                "avgDepDelay": 10.88
-            },
-            {
-                "carrierDelay": 3.91
-            },
-            {
-                "lateAircraftDelay": 7.55
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 2.41
@@ -3636,34 +3624,34 @@ const data = [
             },
             {
                 "wifi": 1.05
+            },
+            {
+                "avgDepDelay": 10.88
+            },
+            {
+                "carrierDelay": 3.91
+            },
+            {
+                "lateAircraftDelay": 7.55
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
-        "icao": "LZB",
-        "score": 5.93,
         "color": "#153EC6",
         "iata": "FB",
         "airline": "bulgaria-air",
         "country": "Bulgaria",
+        "icao": "LZB",
+        "score": 5.93,
         "data": [
             {
                 "polarity": 0.17
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6.31
@@ -3688,6 +3676,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -3704,18 +3704,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.81
@@ -3740,22 +3728,6 @@ const data = [
             },
             {
                 "wifi": 2
-            }
-        ]
-    },
-    {
-        "iata": "FG",
-        "airline": "ariana-afghan-airlines",
-        "country": "Afghanistan",
-        "icao": "AFG",
-        "score": 6.25,
-        "color": "#D3FA9C",
-        "data": [
-            {
-                "polarity": 0.41
-            },
-            {
-                "subjectivity": 0.58
             },
             {
                 "avgDepDelay": 0
@@ -3768,6 +3740,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "ariana-afghan-airlines",
+        "country": "Afghanistan",
+        "icao": "AFG",
+        "score": 6.25,
+        "color": "#D3FA9C",
+        "iata": "FG",
+        "data": [
+            {
+                "polarity": 0.41
+            },
+            {
+                "subjectivity": 0.58
             },
             {
                 "ratings": 6
@@ -3792,22 +3780,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "airline": "icelandair",
-        "country": "Iceland",
-        "icao": "ICE",
-        "score": 5.44,
-        "color": "#E12A9D",
-        "iata": "FI",
-        "data": [
-            {
-                "polarity": 0.13
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -3820,6 +3792,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "ICE",
+        "score": 5.44,
+        "color": "#E12A9D",
+        "iata": "FI",
+        "airline": "icelandair",
+        "country": "Iceland",
+        "data": [
+            {
+                "polarity": 0.13
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 5.5
@@ -3844,22 +3832,6 @@ const data = [
             },
             {
                 "wifi": 2.32
-            }
-        ]
-    },
-    {
-        "color": "#110260",
-        "iata": "FM",
-        "airline": "shanghai-airlines",
-        "country": "China",
-        "icao": "CSH",
-        "score": 3.97,
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -3872,6 +3844,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "shanghai-airlines",
+        "country": "China",
+        "icao": "CSH",
+        "score": 3.97,
+        "color": "#110260",
+        "iata": "FM",
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 4.95
@@ -3896,22 +3884,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "color": "#2F58EC",
-        "iata": "FR",
-        "airline": "ryanair",
-        "country": "Ireland",
-        "icao": "RYR",
-        "score": 4.48,
-        "data": [
-            {
-                "polarity": 0.09
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -3924,6 +3896,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "ryanair",
+        "country": "Ireland",
+        "icao": "RYR",
+        "score": 4.48,
+        "color": "#2F58EC",
+        "iata": "FR",
+        "data": [
+            {
+                "polarity": 0.09
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 5.14
@@ -3948,22 +3936,6 @@ const data = [
             },
             {
                 "wifi": 1.08
-            }
-        ]
-    },
-    {
-        "iata": "FU",
-        "airline": "felix-airways",
-        "country": "Yemen",
-        "icao": "FXX",
-        "score": 0.08,
-        "color": "#311808",
-        "data": [
-            {
-                "polarity": 0.33
-            },
-            {
-                "subjectivity": 0.59
             },
             {
                 "avgDepDelay": 0
@@ -3976,6 +3948,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "felix-airways",
+        "country": "Yemen",
+        "icao": "FXX",
+        "score": 0.08,
+        "color": "#311808",
+        "iata": "FU",
+        "data": [
+            {
+                "polarity": 0.33
+            },
+            {
+                "subjectivity": 0.59
             },
             {
                 "ratings": 7.5
@@ -4000,22 +3988,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#D7268E",
-        "iata": "FY",
-        "airline": "firefly",
-        "country": "Malaysia",
-        "icao": "FFM",
-        "score": 6.86,
-        "data": [
-            {
-                "polarity": 0.22
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -4028,6 +4000,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Malaysia",
+        "icao": "FFM",
+        "score": 6.86,
+        "color": "#D7268E",
+        "iata": "FY",
+        "airline": "firefly",
+        "data": [
+            {
+                "polarity": 0.22
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 7.11
@@ -4052,6 +4040,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -4068,18 +4068,6 @@ const data = [
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 10.25
-            },
-            {
-                "carrierDelay": 6.26
-            },
-            {
-                "lateAircraftDelay": 7.03
-            },
-            {
-                "securityDelay": 0.04
             },
             {
                 "ratings": 3.31
@@ -4104,6 +4092,18 @@ const data = [
             },
             {
                 "wifi": 1.14
+            },
+            {
+                "avgDepDelay": 10.25
+            },
+            {
+                "carrierDelay": 6.26
+            },
+            {
+                "lateAircraftDelay": 7.03
+            },
+            {
+                "securityDelay": 0.04
             }
         ]
     },
@@ -4120,18 +4120,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 3.45
@@ -4156,6 +4144,18 @@ const data = [
             },
             {
                 "wifi": 1.38
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -4172,18 +4172,6 @@ const data = [
             },
             {
                 "subjectivity": 0.55
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 8.28
@@ -4208,6 +4196,18 @@ const data = [
             },
             {
                 "wifi": 3.86
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -4224,18 +4224,6 @@ const data = [
             },
             {
                 "subjectivity": 0.54
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 8
@@ -4260,16 +4248,28 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
-        "color": "#1DDFFE",
-        "iata": "GL",
-        "airline": "air-greenland",
         "country": "Denmark",
         "icao": "GRL",
         "score": 2.83,
+        "color": "#1DDFFE",
+        "iata": "GL",
+        "airline": "air-greenland",
         "data": [
             {
                 "polarity": 0.12
@@ -4316,30 +4316,18 @@ const data = [
         ]
     },
     {
-        "airline": "air-rarotonga",
         "country": "Cook Islands",
         "icao": "RAR",
         "score": 7.17,
         "color": "#EEC1EA",
         "iata": "GZ",
+        "airline": "air-rarotonga",
         "data": [
             {
                 "polarity": 0.28
             },
             {
                 "subjectivity": 0.48
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 10
@@ -4364,22 +4352,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#1D95E6",
-        "iata": "H2",
-        "airline": "sky-airline",
-        "country": "Chile",
-        "icao": "SKU",
-        "score": 5.45,
-        "data": [
-            {
-                "polarity": 0.13
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -4392,6 +4364,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "H2",
+        "airline": "sky-airline",
+        "country": "Chile",
+        "icao": "SKU",
+        "score": 5.45,
+        "color": "#1D95E6",
+        "data": [
+            {
+                "polarity": 0.13
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 5.26
@@ -4416,6 +4404,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -4432,18 +4432,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0.87
-            },
-            {
-                "carrierDelay": 2.48
-            },
-            {
-                "lateAircraftDelay": 1.29
-            },
-            {
-                "securityDelay": 0.01
             },
             {
                 "ratings": 5.37
@@ -4468,6 +4456,18 @@ const data = [
             },
             {
                 "wifi": 1.57
+            },
+            {
+                "avgDepDelay": 0.87
+            },
+            {
+                "carrierDelay": 2.48
+            },
+            {
+                "lateAircraftDelay": 1.29
+            },
+            {
+                "securityDelay": 0.01
             }
         ]
     },
@@ -4484,18 +4484,6 @@ const data = [
             },
             {
                 "subjectivity": 0.57
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 7.85
@@ -4520,6 +4508,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -4536,18 +4536,6 @@ const data = [
             },
             {
                 "subjectivity": 0.56
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 8.5
@@ -4572,22 +4560,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "iata": "HM",
-        "airline": "air-seychelles",
-        "country": "Seychelles",
-        "icao": "SEY",
-        "score": 4.01,
-        "color": "#788A85",
-        "data": [
-            {
-                "polarity": 0.1
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -4600,6 +4572,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Seychelles",
+        "icao": "SEY",
+        "score": 4.01,
+        "color": "#788A85",
+        "iata": "HM",
+        "airline": "air-seychelles",
+        "data": [
+            {
+                "polarity": 0.1
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 4.98
@@ -4624,22 +4612,6 @@ const data = [
             },
             {
                 "wifi": 1.69
-            }
-        ]
-    },
-    {
-        "airline": "juneyao-airlines",
-        "country": "China",
-        "icao": "DKH",
-        "score": 4.08,
-        "color": "#87C6A8",
-        "iata": "HO",
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.46
             },
             {
                 "avgDepDelay": 0
@@ -4652,6 +4624,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#87C6A8",
+        "iata": "HO",
+        "airline": "juneyao-airlines",
+        "country": "China",
+        "icao": "DKH",
+        "score": 4.08,
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.46
             },
             {
                 "ratings": 5
@@ -4676,22 +4664,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "icao": "CUA",
-        "score": 4.8,
-        "color": "#25DB0A",
-        "iata": "HR",
-        "airline": "china-united-airlines",
-        "country": "China",
-        "data": [
-            {
-                "polarity": 0.06
-            },
-            {
-                "subjectivity": 0.57
             },
             {
                 "avgDepDelay": 0
@@ -4704,6 +4676,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "china-united-airlines",
+        "country": "China",
+        "icao": "CUA",
+        "score": 4.8,
+        "color": "#25DB0A",
+        "iata": "HR",
+        "data": [
+            {
+                "polarity": 0.06
+            },
+            {
+                "subjectivity": 0.57
             },
             {
                 "ratings": 3.67
@@ -4728,22 +4716,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#C906CA",
-        "iata": "HX",
-        "airline": "hong-kong-airlines",
-        "country": "Hong Kong SAR of China",
-        "icao": "CRK",
-        "score": 6.44,
-        "data": [
-            {
-                "polarity": 0.14
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -4756,6 +4728,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "hong-kong-airlines",
+        "country": "Hong Kong SAR of China",
+        "icao": "CRK",
+        "score": 6.44,
+        "color": "#C906CA",
+        "iata": "HX",
+        "data": [
+            {
+                "polarity": 0.14
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 5.48
@@ -4780,6 +4768,18 @@ const data = [
             },
             {
                 "wifi": 2
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -4796,18 +4796,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.51
@@ -4832,22 +4820,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "color": "#D494C5",
-        "iata": "I2",
-        "airline": "iberia-express",
-        "country": "Spain",
-        "icao": "IBS",
-        "score": 4.03,
-        "data": [
-            {
-                "polarity": 0.03
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -4860,6 +4832,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "iberia-express",
+        "country": "Spain",
+        "icao": "IBS",
+        "score": 4.03,
+        "color": "#D494C5",
+        "iata": "I2",
+        "data": [
+            {
+                "polarity": 0.03
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 3.9
@@ -4884,6 +4872,18 @@ const data = [
             },
             {
                 "wifi": 2.2
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -4900,18 +4900,6 @@ const data = [
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.67
@@ -4936,6 +4924,18 @@ const data = [
             },
             {
                 "wifi": 2.5
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -4952,18 +4952,6 @@ const data = [
             },
             {
                 "subjectivity": 0.4
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 9
@@ -4988,22 +4976,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "country": "Solomon Islands",
-        "icao": "SOL",
-        "score": 5.93,
-        "color": "#E643F9",
-        "iata": "IE",
-        "airline": "solomon-airlines",
-        "data": [
-            {
-                "polarity": 0.25
-            },
-            {
-                "subjectivity": 0.55
             },
             {
                 "avgDepDelay": 0
@@ -5016,6 +4988,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "solomon-airlines",
+        "country": "Solomon Islands",
+        "icao": "SOL",
+        "score": 5.93,
+        "color": "#E643F9",
+        "iata": "IE",
+        "data": [
+            {
+                "polarity": 0.25
+            },
+            {
+                "subjectivity": 0.55
             },
             {
                 "ratings": 7.5
@@ -5040,22 +5028,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "country": "Italy",
-        "icao": "ISS",
-        "score": 4.77,
-        "color": "#32688A",
-        "iata": "IG",
-        "airline": "meridiana",
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -5068,6 +5040,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "ISS",
+        "score": 4.77,
+        "color": "#32688A",
+        "iata": "IG",
+        "airline": "meridiana",
+        "country": "Italy",
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 5.03
@@ -5092,22 +5080,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "icao": "IRA",
-        "score": 6.7,
-        "color": "#06D01C",
-        "iata": "IR",
-        "airline": "iran-air",
-        "country": "Iran",
-        "data": [
-            {
-                "polarity": 0.18
-            },
-            {
-                "subjectivity": 0.49
             },
             {
                 "avgDepDelay": 0
@@ -5120,6 +5092,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#06D01C",
+        "iata": "IR",
+        "airline": "iran-air",
+        "country": "Iran",
+        "icao": "IRA",
+        "score": 6.7,
+        "data": [
+            {
+                "polarity": 0.18
+            },
+            {
+                "subjectivity": 0.49
             },
             {
                 "ratings": 5.36
@@ -5144,6 +5132,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -5160,18 +5160,6 @@ const data = [
             },
             {
                 "subjectivity": 0.55
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 2.09
@@ -5196,22 +5184,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "score": 3.71,
-        "color": "#648DFF",
-        "iata": "IX",
-        "airline": "air-india-express",
-        "country": "India",
-        "icao": "AXB",
-        "data": [
-            {
-                "polarity": 0.05
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -5224,6 +5196,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "air-india-express",
+        "country": "India",
+        "icao": "AXB",
+        "score": 3.71,
+        "color": "#648DFF",
+        "iata": "IX",
+        "data": [
+            {
+                "polarity": 0.05
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 3.49
@@ -5248,6 +5236,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -5264,18 +5264,6 @@ const data = [
             },
             {
                 "subjectivity": 0.43
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.4
@@ -5300,6 +5288,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -5316,18 +5316,6 @@ const data = [
             },
             {
                 "subjectivity": 0.57
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 7.06
@@ -5352,22 +5340,6 @@ const data = [
             },
             {
                 "wifi": 2.5
-            }
-        ]
-    },
-    {
-        "country": "Malaysia",
-        "icao": "BVT",
-        "score": 0.65,
-        "color": "#F184BB",
-        "iata": "J8",
-        "airline": "berjaya-air",
-        "data": [
-            {
-                "polarity": 0.21
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -5380,6 +5352,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#F184BB",
+        "iata": "J8",
+        "airline": "berjaya-air",
+        "country": "Malaysia",
+        "icao": "BVT",
+        "score": 0.65,
+        "data": [
+            {
+                "polarity": 0.21
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 7.89
@@ -5404,22 +5392,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "country": "Kuwait",
-        "icao": "JZR",
-        "score": 3.34,
-        "color": "#261995",
-        "iata": "J9",
-        "airline": "jazeera-airways",
-        "data": [
-            {
-                "polarity": 0.15
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -5432,6 +5404,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#261995",
+        "iata": "J9",
+        "airline": "jazeera-airways",
+        "country": "Kuwait",
+        "icao": "JZR",
+        "score": 3.34,
+        "data": [
+            {
+                "polarity": 0.15
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 3.67
@@ -5456,22 +5444,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "country": "South Africa",
-        "icao": "MNO",
-        "score": 4.52,
-        "color": "#901DED",
-        "iata": "JE",
-        "airline": "mango",
-        "data": [
-            {
-                "polarity": 0.1
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -5484,6 +5456,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#901DED",
+        "iata": "JE",
+        "airline": "mango",
+        "country": "South Africa",
+        "icao": "MNO",
+        "score": 4.52,
+        "data": [
+            {
+                "polarity": 0.1
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 4.41
@@ -5508,22 +5496,6 @@ const data = [
             },
             {
                 "wifi": 1.5
-            }
-        ]
-    },
-    {
-        "icao": "JAF",
-        "score": 6.07,
-        "color": "#337EBF",
-        "iata": "JF",
-        "airline": "jetairfly",
-        "country": "Belgium",
-        "data": [
-            {
-                "polarity": 0.09
-            },
-            {
-                "subjectivity": 0.48
             },
             {
                 "avgDepDelay": 0
@@ -5536,6 +5508,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#337EBF",
+        "iata": "JF",
+        "airline": "jetairfly",
+        "country": "Belgium",
+        "icao": "JAF",
+        "score": 6.07,
+        "data": [
+            {
+                "polarity": 0.09
+            },
+            {
+                "subjectivity": 0.48
             },
             {
                 "ratings": 5.3
@@ -5560,6 +5548,18 @@ const data = [
             },
             {
                 "wifi": 3
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -5576,18 +5576,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 7.42
@@ -5612,6 +5600,18 @@ const data = [
             },
             {
                 "wifi": 3.22
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -5628,18 +5628,6 @@ const data = [
             },
             {
                 "subjectivity": 0.54
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6.19
@@ -5664,22 +5652,6 @@ const data = [
             },
             {
                 "wifi": 3.25
-            }
-        ]
-    },
-    {
-        "color": "#52183A",
-        "iata": "JQ",
-        "airline": "jetstar-airways",
-        "country": "Australia",
-        "icao": "JST",
-        "score": 4.35,
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -5692,6 +5664,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "jetstar-airways",
+        "country": "Australia",
+        "icao": "JST",
+        "score": 4.35,
+        "color": "#52183A",
+        "iata": "JQ",
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 4.52
@@ -5716,6 +5704,18 @@ const data = [
             },
             {
                 "wifi": 1.18
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -5732,18 +5732,6 @@ const data = [
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6.42
@@ -5768,22 +5756,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "color": "#C9046D",
-        "iata": "JU",
-        "airline": "air-serbia",
-        "country": "Serbia",
-        "icao": "ASL",
-        "score": 5.77,
-        "data": [
-            {
-                "polarity": 0.18
-            },
-            {
-                "subjectivity": 0.55
             },
             {
                 "avgDepDelay": 0
@@ -5796,6 +5768,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "air-serbia",
+        "country": "Serbia",
+        "icao": "ASL",
+        "score": 5.77,
+        "color": "#C9046D",
+        "iata": "JU",
+        "data": [
+            {
+                "polarity": 0.18
+            },
+            {
+                "subjectivity": 0.55
             },
             {
                 "ratings": 6.15
@@ -5820,6 +5808,18 @@ const data = [
             },
             {
                 "wifi": 2.06
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -5836,18 +5836,6 @@ const data = [
             },
             {
                 "subjectivity": 0.54
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 7.38
@@ -5872,22 +5860,6 @@ const data = [
             },
             {
                 "wifi": 1.6
-            }
-        ]
-    },
-    {
-        "score": 6.32,
-        "color": "#BBC396",
-        "iata": "KB",
-        "airline": "druk-air",
-        "country": "Bhutan",
-        "icao": "DRK",
-        "data": [
-            {
-                "polarity": 0.3
-            },
-            {
-                "subjectivity": 0.56
             },
             {
                 "avgDepDelay": 0
@@ -5900,6 +5872,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#BBC396",
+        "iata": "KB",
+        "airline": "druk-air",
+        "country": "Bhutan",
+        "icao": "DRK",
+        "score": 6.32,
+        "data": [
+            {
+                "polarity": 0.3
+            },
+            {
+                "subjectivity": 0.56
             },
             {
                 "ratings": 7.79
@@ -5924,22 +5912,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "iata": "KC",
-        "airline": "air-astana",
-        "country": "Kazakhstan",
-        "icao": "KZR",
-        "score": 7.73,
-        "color": "#B3E5D9",
-        "data": [
-            {
-                "polarity": 0.25
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -5952,6 +5924,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Kazakhstan",
+        "icao": "KZR",
+        "score": 7.73,
+        "color": "#B3E5D9",
+        "iata": "KC",
+        "airline": "air-astana",
+        "data": [
+            {
+                "polarity": 0.25
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 8.03
@@ -5976,22 +5964,6 @@ const data = [
             },
             {
                 "wifi": 3.52
-            }
-        ]
-    },
-    {
-        "airline": "korean-air",
-        "country": "Republic of Korea",
-        "icao": "KAL",
-        "score": 7.12,
-        "color": "#3C95D1",
-        "iata": "KE",
-        "data": [
-            {
-                "polarity": 0.23
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -6004,6 +5976,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Republic of Korea",
+        "icao": "KAL",
+        "score": 7.12,
+        "color": "#3C95D1",
+        "iata": "KE",
+        "airline": "korean-air",
+        "data": [
+            {
+                "polarity": 0.23
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 7.64
@@ -6028,6 +6016,18 @@ const data = [
             },
             {
                 "wifi": 2.68
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -6044,18 +6044,6 @@ const data = [
             },
             {
                 "subjectivity": 0.55
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.85
@@ -6080,22 +6068,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "country": "Netherlands",
-        "icao": "KLM",
-        "score": 6.33,
-        "color": "#FC1F78",
-        "iata": "KL",
-        "airline": "klm-royal-dutch-airlines",
-        "data": [
-            {
-                "polarity": 0.17
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -6108,6 +6080,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "klm-royal-dutch-airlines",
+        "country": "Netherlands",
+        "icao": "KLM",
+        "score": 6.33,
+        "color": "#FC1F78",
+        "iata": "KL",
+        "data": [
+            {
+                "polarity": 0.17
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 6.56
@@ -6132,6 +6120,18 @@ const data = [
             },
             {
                 "wifi": 2.13
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -6148,18 +6148,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.31
@@ -6184,6 +6172,18 @@ const data = [
             },
             {
                 "wifi": 1.36
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -6200,18 +6200,6 @@ const data = [
             },
             {
                 "subjectivity": 0.53
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.85
@@ -6236,22 +6224,6 @@ const data = [
             },
             {
                 "wifi": 1.43
-            }
-        ]
-    },
-    {
-        "iata": "KU",
-        "airline": "kuwait-airways",
-        "country": "Kuwait",
-        "icao": "KAC",
-        "score": 4.89,
-        "color": "#68E3E0",
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -6264,6 +6236,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "KAC",
+        "score": 4.89,
+        "color": "#68E3E0",
+        "iata": "KU",
+        "airline": "kuwait-airways",
+        "country": "Kuwait",
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 4.43
@@ -6288,22 +6276,6 @@ const data = [
             },
             {
                 "wifi": 1.65
-            }
-        ]
-    },
-    {
-        "airline": "cayman-airways",
-        "country": "Cayman Islands",
-        "icao": "CAY",
-        "score": 2.39,
-        "color": "#067D12",
-        "iata": "KX",
-        "data": [
-            {
-                "polarity": 0.15
-            },
-            {
-                "subjectivity": 0.56
             },
             {
                 "avgDepDelay": 0
@@ -6316,6 +6288,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#067D12",
+        "iata": "KX",
+        "airline": "cayman-airways",
+        "country": "Cayman Islands",
+        "icao": "CAY",
+        "score": 2.39,
+        "data": [
+            {
+                "polarity": 0.15
+            },
+            {
+                "subjectivity": 0.56
             },
             {
                 "ratings": 3.82
@@ -6340,22 +6328,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#0A642D",
-        "iata": "LA",
-        "airline": "lan-airlines",
-        "country": "Chile",
-        "icao": "LAN",
-        "score": 5.81,
-        "data": [
-            {
-                "polarity": 0.17
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -6368,6 +6340,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Chile",
+        "icao": "LAN",
+        "score": 5.81,
+        "color": "#0A642D",
+        "iata": "LA",
+        "airline": "lan-airlines",
+        "data": [
+            {
+                "polarity": 0.17
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 6.23
@@ -6392,22 +6380,6 @@ const data = [
             },
             {
                 "wifi": 2.56
-            }
-        ]
-    },
-    {
-        "color": "#354C7D",
-        "iata": "LB",
-        "airline": "air-costa",
-        "country": "India",
-        "icao": "\\N",
-        "score": 7.16,
-        "data": [
-            {
-                "polarity": 0.25
-            },
-            {
-                "subjectivity": 0.61
             },
             {
                 "avgDepDelay": 0
@@ -6420,6 +6392,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "air-costa",
+        "country": "India",
+        "icao": "\\N",
+        "score": 7.16,
+        "color": "#354C7D",
+        "iata": "LB",
+        "data": [
+            {
+                "polarity": 0.25
+            },
+            {
+                "subjectivity": 0.61
             },
             {
                 "ratings": 8
@@ -6444,22 +6432,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "airline": "luxair",
-        "country": "Luxembourg",
-        "icao": "LGL",
-        "score": 5.75,
-        "color": "#412961",
-        "iata": "LG",
-        "data": [
-            {
-                "polarity": 0.18
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -6472,6 +6444,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Luxembourg",
+        "icao": "LGL",
+        "score": 5.75,
+        "color": "#412961",
+        "iata": "LG",
+        "airline": "luxair",
+        "data": [
+            {
+                "polarity": 0.18
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 6.3
@@ -6496,6 +6484,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -6512,18 +6512,6 @@ const data = [
             },
             {
                 "subjectivity": 0.53
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6.66
@@ -6548,22 +6536,6 @@ const data = [
             },
             {
                 "wifi": 3.39
-            }
-        ]
-    },
-    {
-        "iata": "LJ",
-        "airline": "jin-air",
-        "country": "South Korea",
-        "icao": "JNA",
-        "score": 6.09,
-        "color": "#B6B006",
-        "data": [
-            {
-                "polarity": 0.23
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -6576,6 +6548,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#B6B006",
+        "iata": "LJ",
+        "airline": "jin-air",
+        "country": "South Korea",
+        "icao": "JNA",
+        "score": 6.09,
+        "data": [
+            {
+                "polarity": 0.23
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 7
@@ -6600,6 +6588,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -6616,18 +6616,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.17
@@ -6652,6 +6640,18 @@ const data = [
             },
             {
                 "wifi": 1.47
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -6668,18 +6668,6 @@ const data = [
             },
             {
                 "subjectivity": 0.49
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.06
@@ -6704,22 +6692,6 @@ const data = [
             },
             {
                 "wifi": 5
-            }
-        ]
-    },
-    {
-        "color": "#19A855",
-        "iata": "LX",
-        "airline": "swiss-international-air-lines",
-        "country": "Switzerland",
-        "icao": "SWR",
-        "score": 6.51,
-        "data": [
-            {
-                "polarity": 0.18
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -6732,6 +6704,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "LX",
+        "airline": "swiss-international-air-lines",
+        "country": "Switzerland",
+        "icao": "SWR",
+        "score": 6.51,
+        "color": "#19A855",
+        "data": [
+            {
+                "polarity": 0.18
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 6.63
@@ -6756,22 +6744,6 @@ const data = [
             },
             {
                 "wifi": 2.65
-            }
-        ]
-    },
-    {
-        "iata": "LY",
-        "airline": "el-al-israel-airlines",
-        "country": "Israel",
-        "icao": "ELY",
-        "score": 5.1,
-        "color": "#44AA6A",
-        "data": [
-            {
-                "polarity": 0.11
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -6784,6 +6756,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#44AA6A",
+        "iata": "LY",
+        "airline": "el-al-israel-airlines",
+        "country": "Israel",
+        "icao": "ELY",
+        "score": 5.1,
+        "data": [
+            {
+                "polarity": 0.11
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.23
@@ -6808,22 +6796,6 @@ const data = [
             },
             {
                 "wifi": 2.22
-            }
-        ]
-    },
-    {
-        "iata": "MD",
-        "airline": "air-madagascar",
-        "country": "Madagascar",
-        "icao": "MDG",
-        "score": 3.51,
-        "color": "#666D7F",
-        "data": [
-            {
-                "polarity": 0.06
-            },
-            {
-                "subjectivity": 0.48
             },
             {
                 "avgDepDelay": 0
@@ -6836,6 +6808,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#666D7F",
+        "iata": "MD",
+        "airline": "air-madagascar",
+        "country": "Madagascar",
+        "icao": "MDG",
+        "score": 3.51,
+        "data": [
+            {
+                "polarity": 0.06
+            },
+            {
+                "subjectivity": 0.48
             },
             {
                 "ratings": 3.53
@@ -6860,22 +6848,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "country": "China",
-        "icao": "CXA",
-        "score": 5.92,
-        "color": "#2534F7",
-        "iata": "MF",
-        "airline": "xiamen-airlines",
-        "data": [
-            {
-                "polarity": 0.12
-            },
-            {
-                "subjectivity": 0.48
             },
             {
                 "avgDepDelay": 0
@@ -6888,6 +6860,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "xiamen-airlines",
+        "country": "China",
+        "icao": "CXA",
+        "score": 5.92,
+        "color": "#2534F7",
+        "iata": "MF",
+        "data": [
+            {
+                "polarity": 0.12
+            },
+            {
+                "subjectivity": 0.48
             },
             {
                 "ratings": 5.47
@@ -6912,6 +6900,18 @@ const data = [
             },
             {
                 "wifi": 1.14
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -6928,18 +6928,6 @@ const data = [
             },
             {
                 "subjectivity": 0.53
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6
@@ -6964,6 +6952,18 @@ const data = [
             },
             {
                 "wifi": 2
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -6980,18 +6980,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6.82
@@ -7016,6 +7004,18 @@ const data = [
             },
             {
                 "wifi": 2.43
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -7032,18 +7032,6 @@ const data = [
             },
             {
                 "subjectivity": 0.54
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.07
@@ -7068,22 +7056,6 @@ const data = [
             },
             {
                 "wifi": 1.27
-            }
-        ]
-    },
-    {
-        "iata": "MM",
-        "airline": "peach-aviation",
-        "country": "Japan",
-        "icao": "\\N",
-        "score": 5.23,
-        "color": "#31A815",
-        "data": [
-            {
-                "polarity": 0.06
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -7096,6 +7068,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#31A815",
+        "iata": "MM",
+        "airline": "peach-aviation",
+        "country": "Japan",
+        "icao": "\\N",
+        "score": 5.23,
+        "data": [
+            {
+                "polarity": 0.06
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 4.87
@@ -7120,22 +7108,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "color": "#238F8B",
-        "iata": "MN",
-        "airline": "comair",
-        "country": "South Africa",
-        "icao": "CAW",
-        "score": 5.66,
-        "data": [
-            {
-                "polarity": 0.14
-            },
-            {
-                "subjectivity": 0.49
             },
             {
                 "avgDepDelay": 0
@@ -7148,6 +7120,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "comair",
+        "country": "South Africa",
+        "icao": "CAW",
+        "score": 5.66,
+        "color": "#238F8B",
+        "iata": "MN",
+        "data": [
+            {
+                "polarity": 0.14
+            },
+            {
+                "subjectivity": 0.49
             },
             {
                 "ratings": 5.57
@@ -7172,22 +7160,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#7334A2",
-        "iata": "MP",
-        "airline": "martinair",
-        "country": "Netherlands",
-        "icao": "MPH",
-        "score": 0.03,
-        "data": [
-            {
-                "polarity": 0.13
-            },
-            {
-                "subjectivity": 0.49
             },
             {
                 "avgDepDelay": 0
@@ -7200,6 +7172,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "martinair",
+        "country": "Netherlands",
+        "icao": "MPH",
+        "score": 0.03,
+        "color": "#7334A2",
+        "iata": "MP",
+        "data": [
+            {
+                "polarity": 0.13
+            },
+            {
+                "subjectivity": 0.49
             },
             {
                 "ratings": 3.47
@@ -7224,22 +7212,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#470DA3",
-        "iata": "MS",
-        "airline": "egyptair",
-        "country": "Egypt",
-        "icao": "MSR",
-        "score": 5.4,
-        "data": [
-            {
-                "polarity": 0.12
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -7252,6 +7224,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "MSR",
+        "score": 5.4,
+        "color": "#470DA3",
+        "iata": "MS",
+        "airline": "egyptair",
+        "country": "Egypt",
+        "data": [
+            {
+                "polarity": 0.12
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.51
@@ -7276,22 +7264,6 @@ const data = [
             },
             {
                 "wifi": 1.94
-            }
-        ]
-    },
-    {
-        "country": "United Kingdom",
-        "icao": "TCX",
-        "score": 5.13,
-        "color": "#6D6B2A",
-        "iata": "MT",
-        "airline": "thomas-cook-airlines",
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -7304,6 +7276,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#6D6B2A",
+        "iata": "MT",
+        "airline": "thomas-cook-airlines",
+        "country": "United Kingdom",
+        "icao": "TCX",
+        "score": 5.13,
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 4.91
@@ -7328,22 +7316,6 @@ const data = [
             },
             {
                 "wifi": 1.62
-            }
-        ]
-    },
-    {
-        "icao": "CES",
-        "score": 5.05,
-        "color": "#09886B",
-        "iata": "MU",
-        "airline": "china-eastern-airlines",
-        "country": "China",
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.49
             },
             {
                 "avgDepDelay": 0
@@ -7356,6 +7328,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#09886B",
+        "iata": "MU",
+        "airline": "china-eastern-airlines",
+        "country": "China",
+        "icao": "CES",
+        "score": 5.05,
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.49
             },
             {
                 "ratings": 4.92
@@ -7380,34 +7368,34 @@ const data = [
             },
             {
                 "wifi": 1.59
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
-        "country": "United States",
-        "icao": "NKS",
-        "score": 10.76,
         "color": "#C22BD2",
         "iata": "NK",
         "airline": "spirit-airlines",
+        "country": "United States",
+        "icao": "NKS",
+        "score": 10.76,
         "data": [
             {
                 "polarity": 0.01
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 8.13
-            },
-            {
-                "carrierDelay": 2.82
-            },
-            {
-                "lateAircraftDelay": 4.03
-            },
-            {
-                "securityDelay": 0.03
             },
             {
                 "ratings": 2.66
@@ -7432,34 +7420,34 @@ const data = [
             },
             {
                 "wifi": 1.06
+            },
+            {
+                "avgDepDelay": 8.13
+            },
+            {
+                "carrierDelay": 2.82
+            },
+            {
+                "lateAircraftDelay": 4.03
+            },
+            {
+                "securityDelay": 0.03
             }
         ]
     },
     {
-        "iata": "NP",
-        "airline": "nile-air",
         "country": "Egypt",
         "icao": "NIA",
         "score": 6.38,
         "color": "#B4F7CF",
+        "iata": "NP",
+        "airline": "nile-air",
         "data": [
             {
                 "polarity": 0.13
             },
             {
                 "subjectivity": 0.45
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 8
@@ -7484,22 +7472,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#8BCFCC",
-        "iata": "NT",
-        "airline": "binter-canarias",
-        "country": "Spain",
-        "icao": "IBB",
-        "score": 6.91,
-        "data": [
-            {
-                "polarity": 0.27
-            },
-            {
-                "subjectivity": 0.57
             },
             {
                 "avgDepDelay": 0
@@ -7512,6 +7484,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "IBB",
+        "score": 6.91,
+        "color": "#8BCFCC",
+        "iata": "NT",
+        "airline": "binter-canarias",
+        "country": "Spain",
+        "data": [
+            {
+                "polarity": 0.27
+            },
+            {
+                "subjectivity": 0.57
             },
             {
                 "ratings": 9
@@ -7536,22 +7524,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "country": "Macao",
-        "icao": "AMU",
-        "score": 4.3,
-        "color": "#E5D992",
-        "iata": "NX",
-        "airline": "air-macau",
-        "data": [
-            {
-                "polarity": 0.05
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -7564,6 +7536,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#E5D992",
+        "iata": "NX",
+        "airline": "air-macau",
+        "country": "Macao",
+        "icao": "AMU",
+        "score": 4.3,
+        "data": [
+            {
+                "polarity": 0.05
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 3.87
@@ -7588,22 +7576,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "score": 6.26,
-        "color": "#60EF5A",
-        "iata": "NZ",
-        "airline": "air-new-zealand",
-        "country": "New Zealand",
-        "icao": "ANZ",
-        "data": [
-            {
-                "polarity": 0.16
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -7616,6 +7588,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "NZ",
+        "airline": "air-new-zealand",
+        "country": "New Zealand",
+        "icao": "ANZ",
+        "score": 6.26,
+        "color": "#60EF5A",
+        "data": [
+            {
+                "polarity": 0.16
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 6.26
@@ -7640,22 +7628,6 @@ const data = [
             },
             {
                 "wifi": 2.37
-            }
-        ]
-    },
-    {
-        "color": "#A8771C",
-        "iata": "OA",
-        "airline": "olympic-air",
-        "country": "Greece",
-        "icao": "OAL",
-        "score": 7.85,
-        "data": [
-            {
-                "polarity": 0.2
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -7668,6 +7640,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "olympic-air",
+        "country": "Greece",
+        "icao": "OAL",
+        "score": 7.85,
+        "color": "#A8771C",
+        "iata": "OA",
+        "data": [
+            {
+                "polarity": 0.2
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 7.72
@@ -7692,22 +7680,6 @@ const data = [
             },
             {
                 "wifi": 3
-            }
-        ]
-    },
-    {
-        "country": "Malaysia",
-        "icao": "MXD",
-        "score": 5.73,
-        "color": "#DC05BD",
-        "iata": "OD",
-        "airline": "malindo-air",
-        "data": [
-            {
-                "polarity": 0.11
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -7720,6 +7692,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "malindo-air",
+        "country": "Malaysia",
+        "icao": "MXD",
+        "score": 5.73,
+        "color": "#DC05BD",
+        "iata": "OD",
+        "data": [
+            {
+                "polarity": 0.11
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 5.05
@@ -7744,34 +7732,34 @@ const data = [
             },
             {
                 "wifi": 1.88
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
-        "airline": "skywest-airlines",
         "country": "United States",
         "icao": "SKW",
         "score": 7.65,
         "color": "#D8AA1D",
         "iata": "OO",
+        "airline": "skywest-airlines",
         "data": [
             {
                 "polarity": 0.22
             },
             {
                 "subjectivity": 0.55
-            },
-            {
-                "avgDepDelay": 6.15
-            },
-            {
-                "carrierDelay": 3.84
-            },
-            {
-                "lateAircraftDelay": 5.3
-            },
-            {
-                "securityDelay": 0.01
             },
             {
                 "ratings": 7
@@ -7796,6 +7784,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 6.15
+            },
+            {
+                "carrierDelay": 3.84
+            },
+            {
+                "lateAircraftDelay": 5.3
+            },
+            {
+                "securityDelay": 0.01
             }
         ]
     },
@@ -7812,18 +7812,6 @@ const data = [
             },
             {
                 "subjectivity": 0.46
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 3.33
@@ -7848,22 +7836,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "country": "Netherlands",
-        "icao": "TFL",
-        "score": 2.45,
-        "color": "#549EBB",
-        "iata": "OR",
-        "airline": "arkefly",
-        "data": [
-            {
-                "polarity": 0.05
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -7876,6 +7848,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "arkefly",
+        "country": "Netherlands",
+        "icao": "TFL",
+        "score": 2.45,
+        "color": "#549EBB",
+        "iata": "OR",
+        "data": [
+            {
+                "polarity": 0.05
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 4.59
@@ -7900,22 +7888,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "airline": "austrian-airlines",
-        "country": "Austria",
-        "icao": "AUA",
-        "score": 5.88,
-        "color": "#D74658",
-        "iata": "OS",
-        "data": [
-            {
-                "polarity": 0.15
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -7928,6 +7900,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Austria",
+        "icao": "AUA",
+        "score": 5.88,
+        "color": "#D74658",
+        "iata": "OS",
+        "airline": "austrian-airlines",
+        "data": [
+            {
+                "polarity": 0.15
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 5.88
@@ -7952,22 +7940,6 @@ const data = [
             },
             {
                 "wifi": 1.5
-            }
-        ]
-    },
-    {
-        "score": 5.17,
-        "color": "#F6B542",
-        "iata": "OU",
-        "airline": "croatia-airlines",
-        "country": "Croatia",
-        "icao": "CTN",
-        "data": [
-            {
-                "polarity": 0.15
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -7980,6 +7952,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#F6B542",
+        "iata": "OU",
+        "airline": "croatia-airlines",
+        "country": "Croatia",
+        "icao": "CTN",
+        "score": 5.17,
+        "data": [
+            {
+                "polarity": 0.15
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 6.3
@@ -8004,22 +7992,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "color": "#C24C98",
-        "iata": "OV",
-        "airline": "estonian-air",
-        "country": "Estonia",
-        "icao": "ELL",
-        "score": 5.88,
-        "data": [
-            {
-                "polarity": 0.11
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -8032,6 +8004,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "OV",
+        "airline": "estonian-air",
+        "country": "Estonia",
+        "icao": "ELL",
+        "score": 5.88,
+        "color": "#C24C98",
+        "data": [
+            {
+                "polarity": 0.11
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 5.5
@@ -8056,22 +8044,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "airline": "omni-air-international",
-        "country": "United States",
-        "icao": "OAE",
-        "score": 5.46,
-        "color": "#840CA7",
-        "iata": "OY",
-        "data": [
-            {
-                "polarity": 0.11
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -8084,6 +8056,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#840CA7",
+        "iata": "OY",
+        "airline": "omni-air-international",
+        "country": "United States",
+        "icao": "OAE",
+        "score": 5.46,
+        "data": [
+            {
+                "polarity": 0.11
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.5
@@ -8108,22 +8096,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "airline": "asiana-airlines",
-        "country": "Republic of Korea",
-        "icao": "AAR",
-        "score": 7.64,
-        "color": "#D53B6B",
-        "iata": "OZ",
-        "data": [
-            {
-                "polarity": 0.25
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -8136,6 +8108,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#D53B6B",
+        "iata": "OZ",
+        "airline": "asiana-airlines",
+        "country": "Republic of Korea",
+        "icao": "AAR",
+        "score": 7.64,
+        "data": [
+            {
+                "polarity": 0.25
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 8.07
@@ -8160,22 +8148,6 @@ const data = [
             },
             {
                 "wifi": 3.72
-            }
-        ]
-    },
-    {
-        "color": "#2F8473",
-        "iata": "P9",
-        "airline": "peruvian-airlines",
-        "country": "Peru",
-        "icao": "\\N",
-        "score": 2.89,
-        "data": [
-            {
-                "polarity": -0.02
-            },
-            {
-                "subjectivity": 0.45
             },
             {
                 "avgDepDelay": 0
@@ -8188,6 +8160,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Peru",
+        "icao": "\\N",
+        "score": 2.89,
+        "color": "#2F8473",
+        "iata": "P9",
+        "airline": "peruvian-airlines",
+        "data": [
+            {
+                "polarity": -0.02
+            },
+            {
+                "subjectivity": 0.45
             },
             {
                 "ratings": 1.78
@@ -8212,22 +8200,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "country": "Turkey",
-        "icao": "PGT",
-        "score": 3.54,
-        "color": "#FE2570",
-        "iata": "PC",
-        "airline": "pegasus-airlines",
-        "data": [
-            {
-                "polarity": 0.05
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -8240,6 +8212,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#FE2570",
+        "iata": "PC",
+        "airline": "pegasus-airlines",
+        "country": "Turkey",
+        "icao": "PGT",
+        "score": 3.54,
+        "data": [
+            {
+                "polarity": 0.05
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 4.39
@@ -8264,22 +8252,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "country": "Canada",
-        "icao": "POE",
-        "score": 4.13,
-        "color": "#72A8AD",
-        "iata": "PD",
-        "airline": "porter-airlines",
-        "data": [
-            {
-                "polarity": 0.1
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -8292,6 +8264,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#72A8AD",
+        "iata": "PD",
+        "airline": "porter-airlines",
+        "country": "Canada",
+        "icao": "POE",
+        "score": 4.13,
+        "data": [
+            {
+                "polarity": 0.1
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 4.27
@@ -8316,22 +8304,6 @@ const data = [
             },
             {
                 "wifi": 1.12
-            }
-        ]
-    },
-    {
-        "color": "#17807E",
-        "iata": "PF",
-        "airline": "primera-air",
-        "country": "Iceland",
-        "icao": "\\N",
-        "score": 4.94,
-        "data": [
-            {
-                "polarity": 0.07
-            },
-            {
-                "subjectivity": 0.57
             },
             {
                 "avgDepDelay": 0
@@ -8344,6 +8316,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Iceland",
+        "icao": "\\N",
+        "score": 4.94,
+        "color": "#17807E",
+        "iata": "PF",
+        "airline": "primera-air",
+        "data": [
+            {
+                "polarity": 0.07
+            },
+            {
+                "subjectivity": 0.57
             },
             {
                 "ratings": 2.57
@@ -8368,6 +8356,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -8384,18 +8384,6 @@ const data = [
             },
             {
                 "subjectivity": 0.55
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 7.58
@@ -8420,22 +8408,6 @@ const data = [
             },
             {
                 "wifi": 1.8
-            }
-        ]
-    },
-    {
-        "iata": "PR",
-        "airline": "philippine-airlines",
-        "country": "Philippines",
-        "icao": "PAL",
-        "score": 6.1,
-        "color": "#165A9A",
-        "data": [
-            {
-                "polarity": 0.15
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -8448,6 +8420,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#165A9A",
+        "iata": "PR",
+        "airline": "philippine-airlines",
+        "country": "Philippines",
+        "icao": "PAL",
+        "score": 6.1,
+        "data": [
+            {
+                "polarity": 0.15
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 6.04
@@ -8472,22 +8460,6 @@ const data = [
             },
             {
                 "wifi": 2.75
-            }
-        ]
-    },
-    {
-        "country": "Ukraine",
-        "icao": "AUI",
-        "score": 4.23,
-        "color": "#6AFDAE",
-        "iata": "PS",
-        "airline": "ukraine-international-airlines",
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -8500,6 +8472,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "ukraine-international-airlines",
+        "country": "Ukraine",
+        "icao": "AUI",
+        "score": 4.23,
+        "color": "#6AFDAE",
+        "iata": "PS",
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 4.34
@@ -8524,6 +8512,18 @@ const data = [
             },
             {
                 "wifi": 1.15
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -8540,18 +8540,6 @@ const data = [
             },
             {
                 "subjectivity": 0.51
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.72
@@ -8576,22 +8564,6 @@ const data = [
             },
             {
                 "wifi": 1.6
-            }
-        ]
-    },
-    {
-        "country": "Suriname",
-        "icao": "SLM",
-        "score": 4.18,
-        "color": "#320ADD",
-        "iata": "PY",
-        "airline": "surinam-airways",
-        "data": [
-            {
-                "polarity": 0.17
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -8604,6 +8576,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#320ADD",
+        "iata": "PY",
+        "airline": "surinam-airways",
+        "country": "Suriname",
+        "icao": "SLM",
+        "score": 4.18,
+        "data": [
+            {
+                "polarity": 0.17
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.67
@@ -8628,22 +8616,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "iata": "Q2",
-        "airline": "maldivian",
-        "country": "Maldives",
-        "icao": "\\N",
-        "score": 5.98,
-        "color": "#821DE1",
-        "data": [
-            {
-                "polarity": 0.17
-            },
-            {
-                "subjectivity": 0.44
             },
             {
                 "avgDepDelay": 0
@@ -8656,6 +8628,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Maldives",
+        "icao": "\\N",
+        "score": 5.98,
+        "color": "#821DE1",
+        "iata": "Q2",
+        "airline": "maldivian",
+        "data": [
+            {
+                "polarity": 0.17
+            },
+            {
+                "subjectivity": 0.44
             },
             {
                 "ratings": 5.25
@@ -8680,6 +8668,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -8696,18 +8696,6 @@ const data = [
             },
             {
                 "subjectivity": 0.55
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 3.5
@@ -8732,22 +8720,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "airline": "alliance-airlines",
-        "country": "Australia",
-        "icao": "UTY",
-        "score": 4.62,
-        "color": "#6CDA3C",
-        "iata": "QQ",
-        "data": [
-            {
-                "polarity": 0.1
-            },
-            {
-                "subjectivity": 0.41
             },
             {
                 "avgDepDelay": 0
@@ -8760,6 +8732,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "QQ",
+        "airline": "alliance-airlines",
+        "country": "Australia",
+        "icao": "UTY",
+        "score": 4.62,
+        "color": "#6CDA3C",
+        "data": [
+            {
+                "polarity": 0.1
+            },
+            {
+                "subjectivity": 0.41
             },
             {
                 "ratings": 6
@@ -8784,22 +8772,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "iata": "QR",
-        "airline": "qatar-airways",
-        "country": "Qatar",
-        "icao": "QTR",
-        "score": 7.74,
-        "color": "#E0E0F5",
-        "data": [
-            {
-                "polarity": 0.23
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -8812,6 +8784,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#E0E0F5",
+        "iata": "QR",
+        "airline": "qatar-airways",
+        "country": "Qatar",
+        "icao": "QTR",
+        "score": 7.74,
+        "data": [
+            {
+                "polarity": 0.23
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 7.49
@@ -8836,22 +8824,6 @@ const data = [
             },
             {
                 "wifi": 3.53
-            }
-        ]
-    },
-    {
-        "color": "#952877",
-        "iata": "QV",
-        "airline": "lao-airlines",
-        "country": "Lao Peoples Democratic Republic",
-        "icao": "LAO",
-        "score": 6.06,
-        "data": [
-            {
-                "polarity": 0.23
-            },
-            {
-                "subjectivity": 0.56
             },
             {
                 "avgDepDelay": 0
@@ -8864,6 +8836,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "lao-airlines",
+        "country": "Lao Peoples Democratic Republic",
+        "icao": "LAO",
+        "score": 6.06,
+        "color": "#952877",
+        "iata": "QV",
+        "data": [
+            {
+                "polarity": 0.23
+            },
+            {
+                "subjectivity": 0.56
             },
             {
                 "ratings": 7.94
@@ -8888,22 +8876,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "iata": "QX",
-        "airline": "horizon-air",
-        "country": "United States",
-        "icao": "QXE",
-        "score": 5.42,
-        "color": "#2C322F",
-        "data": [
-            {
-                "polarity": 0.24
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -8916,6 +8888,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#2C322F",
+        "iata": "QX",
+        "airline": "horizon-air",
+        "country": "United States",
+        "icao": "QXE",
+        "score": 5.42,
+        "data": [
+            {
+                "polarity": 0.24
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 6
@@ -8940,6 +8928,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -8956,18 +8956,6 @@ const data = [
             },
             {
                 "subjectivity": 0.55
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6.05
@@ -8992,22 +8980,6 @@ const data = [
             },
             {
                 "wifi": 1.14
-            }
-        ]
-    },
-    {
-        "country": "Faroe Islands",
-        "icao": "FLI",
-        "score": 7.35,
-        "color": "#ED687B",
-        "iata": "RC",
-        "airline": "atlantic-airways",
-        "data": [
-            {
-                "polarity": 0.33
-            },
-            {
-                "subjectivity": 0.57
             },
             {
                 "avgDepDelay": 0
@@ -9020,6 +8992,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "atlantic-airways",
+        "country": "Faroe Islands",
+        "icao": "FLI",
+        "score": 7.35,
+        "color": "#ED687B",
+        "iata": "RC",
+        "data": [
+            {
+                "polarity": 0.33
+            },
+            {
+                "subjectivity": 0.57
             },
             {
                 "ratings": 9.11
@@ -9044,22 +9032,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "airline": "kam-air",
-        "country": "Afghanistan",
-        "icao": "KMF",
-        "score": 0.03,
-        "color": "#3DF8A9",
-        "iata": "RQ",
-        "data": [
-            {
-                "polarity": 0.11
-            },
-            {
-                "subjectivity": 0.46
             },
             {
                 "avgDepDelay": 0
@@ -9072,6 +9044,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#3DF8A9",
+        "iata": "RQ",
+        "airline": "kam-air",
+        "country": "Afghanistan",
+        "icao": "KMF",
+        "score": 0.03,
+        "data": [
+            {
+                "polarity": 0.11
+            },
+            {
+                "subjectivity": 0.46
             },
             {
                 "ratings": 2.69
@@ -9096,22 +9084,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "icao": "SAA",
-        "score": 5.28,
-        "color": "#A3A375",
-        "iata": "SA",
-        "airline": "south-african-airways",
-        "country": "South Africa",
-        "data": [
-            {
-                "polarity": 0.14
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -9124,6 +9096,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "SA",
+        "airline": "south-african-airways",
+        "country": "South Africa",
+        "icao": "SAA",
+        "score": 5.28,
+        "color": "#A3A375",
+        "data": [
+            {
+                "polarity": 0.14
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 5.93
@@ -9148,22 +9136,6 @@ const data = [
             },
             {
                 "wifi": 1.37
-            }
-        ]
-    },
-    {
-        "airline": "shandong-airlines",
-        "country": "China",
-        "icao": "CDG",
-        "score": 4.96,
-        "color": "#12CEC6",
-        "iata": "SC",
-        "data": [
-            {
-                "polarity": 0.15
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -9176,6 +9148,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "CDG",
+        "score": 4.96,
+        "color": "#12CEC6",
+        "iata": "SC",
+        "airline": "shandong-airlines",
+        "country": "China",
+        "data": [
+            {
+                "polarity": 0.15
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 5.61
@@ -9200,6 +9188,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -9216,18 +9216,6 @@ const data = [
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 1
@@ -9252,22 +9240,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "iata": "SE",
-        "airline": "xl-airways-france",
-        "country": "France",
-        "icao": "SEU",
-        "score": 4.75,
-        "color": "#93E898",
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.47
             },
             {
                 "avgDepDelay": 0
@@ -9280,6 +9252,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "xl-airways-france",
+        "country": "France",
+        "icao": "SEU",
+        "score": 4.75,
+        "color": "#93E898",
+        "iata": "SE",
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.47
             },
             {
                 "ratings": 5.23
@@ -9304,6 +9292,18 @@ const data = [
             },
             {
                 "wifi": 1.75
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -9320,18 +9320,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 3.9
@@ -9356,6 +9344,18 @@ const data = [
             },
             {
                 "wifi": 1.33
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -9372,18 +9372,6 @@ const data = [
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.74
@@ -9408,22 +9396,6 @@ const data = [
             },
             {
                 "wifi": 1.67
-            }
-        ]
-    },
-    {
-        "color": "#F9462D",
-        "iata": "SL",
-        "airline": "thai-lion-air",
-        "country": "Thailand",
-        "icao": "\\N",
-        "score": 4.4,
-        "data": [
-            {
-                "polarity": 0.03
-            },
-            {
-                "subjectivity": 0.55
             },
             {
                 "avgDepDelay": 0
@@ -9436,6 +9408,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "\\N",
+        "score": 4.4,
+        "color": "#F9462D",
+        "iata": "SL",
+        "airline": "thai-lion-air",
+        "country": "Thailand",
+        "data": [
+            {
+                "polarity": 0.03
+            },
+            {
+                "subjectivity": 0.55
             },
             {
                 "ratings": 3.41
@@ -9460,22 +9448,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "color": "#B02907",
-        "iata": "SN",
-        "airline": "brussels-airlines",
-        "country": "Belgium",
-        "icao": "DAT",
-        "score": 4.84,
-        "data": [
-            {
-                "polarity": 0.12
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -9488,6 +9460,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Belgium",
+        "icao": "DAT",
+        "score": 4.84,
+        "color": "#B02907",
+        "iata": "SN",
+        "airline": "brussels-airlines",
+        "data": [
+            {
+                "polarity": 0.12
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 4.96
@@ -9512,22 +9500,6 @@ const data = [
             },
             {
                 "wifi": 1.41
-            }
-        ]
-    },
-    {
-        "airline": "singapore-airlines",
-        "country": "Singapore",
-        "icao": "SIA",
-        "score": 7.42,
-        "color": "#CFFED7",
-        "iata": "SQ",
-        "data": [
-            {
-                "polarity": 0.22
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -9540,6 +9512,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#CFFED7",
+        "iata": "SQ",
+        "airline": "singapore-airlines",
+        "country": "Singapore",
+        "icao": "SIA",
+        "score": 7.42,
+        "data": [
+            {
+                "polarity": 0.22
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 7.5
@@ -9564,6 +9552,18 @@ const data = [
             },
             {
                 "wifi": 3.33
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -9580,18 +9580,6 @@ const data = [
             },
             {
                 "subjectivity": 0.51
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6.24
@@ -9616,22 +9604,6 @@ const data = [
             },
             {
                 "wifi": 3.02
-            }
-        ]
-    },
-    {
-        "country": "Saudi Arabia",
-        "icao": "SVA",
-        "score": 5.76,
-        "color": "#0E93C8",
-        "iata": "SV",
-        "airline": "saudi-arabian-airlines",
-        "data": [
-            {
-                "polarity": 0.12
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -9644,6 +9616,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#0E93C8",
+        "iata": "SV",
+        "airline": "saudi-arabian-airlines",
+        "country": "Saudi Arabia",
+        "icao": "SVA",
+        "score": 5.76,
+        "data": [
+            {
+                "polarity": 0.12
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.43
@@ -9668,22 +9656,6 @@ const data = [
             },
             {
                 "wifi": 2.45
-            }
-        ]
-    },
-    {
-        "color": "#EA4D40",
-        "iata": "SW",
-        "airline": "air-namibia",
-        "country": "Namibia",
-        "icao": "NMB",
-        "score": 5.75,
-        "data": [
-            {
-                "polarity": 0.17
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -9696,6 +9668,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Namibia",
+        "icao": "NMB",
+        "score": 5.75,
+        "color": "#EA4D40",
+        "iata": "SW",
+        "airline": "air-namibia",
+        "data": [
+            {
+                "polarity": 0.17
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 6.13
@@ -9720,22 +9708,6 @@ const data = [
             },
             {
                 "wifi": 1.67
-            }
-        ]
-    },
-    {
-        "country": "United States",
-        "icao": "SCX",
-        "score": 4.28,
-        "color": "#855E85",
-        "iata": "SY",
-        "airline": "sun-country-airlines",
-        "data": [
-            {
-                "polarity": 0.12
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -9748,6 +9720,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "sun-country-airlines",
+        "country": "United States",
+        "icao": "SCX",
+        "score": 4.28,
+        "color": "#855E85",
+        "iata": "SY",
+        "data": [
+            {
+                "polarity": 0.12
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 4.21
@@ -9772,22 +9760,6 @@ const data = [
             },
             {
                 "wifi": 1.25
-            }
-        ]
-    },
-    {
-        "country": "United Kingdom",
-        "icao": "EZE",
-        "score": 4.1,
-        "color": "#3A31E3",
-        "iata": "T3",
-        "airline": "eastern-airways",
-        "data": [
-            {
-                "polarity": 0.16
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -9800,6 +9772,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "eastern-airways",
+        "country": "United Kingdom",
+        "icao": "EZE",
+        "score": 4.1,
+        "color": "#3A31E3",
+        "iata": "T3",
+        "data": [
+            {
+                "polarity": 0.16
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.39
@@ -9824,22 +9812,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "iata": "T5",
-        "airline": "turkmenistan-airlines",
-        "country": "Turkmenistan",
-        "icao": "TUA",
-        "score": 3.81,
-        "color": "#59033B",
-        "data": [
-            {
-                "polarity": 0.06
-            },
-            {
-                "subjectivity": 0.48
             },
             {
                 "avgDepDelay": 0
@@ -9852,6 +9824,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#59033B",
+        "iata": "T5",
+        "airline": "turkmenistan-airlines",
+        "country": "Turkmenistan",
+        "icao": "TUA",
+        "score": 3.81,
+        "data": [
+            {
+                "polarity": 0.06
+            },
+            {
+                "subjectivity": 0.48
             },
             {
                 "ratings": 4.34
@@ -9876,22 +9864,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "color": "#35A066",
-        "iata": "TK",
-        "airline": "turkish-airlines",
-        "country": "Turkey",
-        "icao": "THY",
-        "score": 5.98,
-        "data": [
-            {
-                "polarity": 0.12
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -9904,6 +9876,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "turkish-airlines",
+        "country": "Turkey",
+        "icao": "THY",
+        "score": 5.98,
+        "color": "#35A066",
+        "iata": "TK",
+        "data": [
+            {
+                "polarity": 0.12
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.29
@@ -9928,22 +9916,6 @@ const data = [
             },
             {
                 "wifi": 2.61
-            }
-        ]
-    },
-    {
-        "airline": "airnorth",
-        "country": "Australia",
-        "icao": "ANO",
-        "score": 5.1,
-        "color": "#9AC2B1",
-        "iata": "TL",
-        "data": [
-            {
-                "polarity": 0.16
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -9956,6 +9928,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#9AC2B1",
+        "iata": "TL",
+        "airline": "airnorth",
+        "country": "Australia",
+        "icao": "ANO",
+        "score": 5.1,
+        "data": [
+            {
+                "polarity": 0.16
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 6.65
@@ -9980,22 +9968,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "iata": "TN",
-        "airline": "air-tahiti-nui",
-        "country": "France",
-        "icao": "THT",
-        "score": 4.62,
-        "color": "#FF19DF",
-        "data": [
-            {
-                "polarity": 0.06
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -10008,6 +9980,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "air-tahiti-nui",
+        "country": "France",
+        "icao": "THT",
+        "score": 4.62,
+        "color": "#FF19DF",
+        "iata": "TN",
+        "data": [
+            {
+                "polarity": 0.06
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 4.68
@@ -10032,22 +10020,6 @@ const data = [
             },
             {
                 "wifi": 2.8
-            }
-        ]
-    },
-    {
-        "score": 4.78,
-        "color": "#B85473",
-        "iata": "TP",
-        "airline": "tap-portugal",
-        "country": "Portugal",
-        "icao": "TAP",
-        "data": [
-            {
-                "polarity": 0.09
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -10060,6 +10032,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#B85473",
+        "iata": "TP",
+        "airline": "tap-portugal",
+        "country": "Portugal",
+        "icao": "TAP",
+        "score": 4.78,
+        "data": [
+            {
+                "polarity": 0.09
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 4.73
@@ -10084,22 +10072,6 @@ const data = [
             },
             {
                 "wifi": 1.3
-            }
-        ]
-    },
-    {
-        "airline": "air-transat",
-        "country": "Canada",
-        "icao": "TSC",
-        "score": 4.88,
-        "color": "#F91AC2",
-        "iata": "TS",
-        "data": [
-            {
-                "polarity": 0.11
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -10112,6 +10084,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "TS",
+        "airline": "air-transat",
+        "country": "Canada",
+        "icao": "TSC",
+        "score": 4.88,
+        "color": "#F91AC2",
+        "data": [
+            {
+                "polarity": 0.11
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.34
@@ -10136,22 +10124,6 @@ const data = [
             },
             {
                 "wifi": 1.91
-            }
-        ]
-    },
-    {
-        "country": "Tunisia",
-        "icao": "TAR",
-        "score": 5.13,
-        "color": "#9C158E",
-        "iata": "TU",
-        "airline": "tunisair",
-        "data": [
-            {
-                "polarity": 0.14
-            },
-            {
-                "subjectivity": 0.55
             },
             {
                 "avgDepDelay": 0
@@ -10164,6 +10136,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "tunisair",
+        "country": "Tunisia",
+        "icao": "TAR",
+        "score": 5.13,
+        "color": "#9C158E",
+        "iata": "TU",
+        "data": [
+            {
+                "polarity": 0.14
+            },
+            {
+                "subjectivity": 0.55
             },
             {
                 "ratings": 5
@@ -10188,22 +10176,6 @@ const data = [
             },
             {
                 "wifi": 1.8
-            }
-        ]
-    },
-    {
-        "country": "France",
-        "icao": "FWI",
-        "score": 3.44,
-        "color": "#3D9871",
-        "iata": "TX",
-        "airline": "air-caraibes",
-        "data": [
-            {
-                "polarity": 0.1
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -10216,6 +10188,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "TX",
+        "airline": "air-caraibes",
+        "country": "France",
+        "icao": "FWI",
+        "score": 3.44,
+        "color": "#3D9871",
+        "data": [
+            {
+                "polarity": 0.1
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 4.35
@@ -10240,22 +10228,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "country": "Singapore",
-        "icao": "SCO",
-        "score": 4.72,
-        "color": "#FC675B",
-        "iata": "TZ",
-        "airline": "scoot",
-        "data": [
-            {
-                "polarity": 0.11
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -10268,6 +10240,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#FC675B",
+        "iata": "TZ",
+        "airline": "scoot",
+        "country": "Singapore",
+        "icao": "SCO",
+        "score": 4.72,
+        "data": [
+            {
+                "polarity": 0.11
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 5.25
@@ -10292,6 +10280,18 @@ const data = [
             },
             {
                 "wifi": 1.77
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -10308,18 +10308,6 @@ const data = [
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.75
@@ -10344,22 +10332,6 @@ const data = [
             },
             {
                 "wifi": 1.27
-            }
-        ]
-    },
-    {
-        "icao": "SVR",
-        "score": 5.58,
-        "color": "#239454",
-        "iata": "U6",
-        "airline": "ural-airlines",
-        "country": "Russia",
-        "data": [
-            {
-                "polarity": 0.1
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -10372,6 +10344,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Russia",
+        "icao": "SVR",
+        "score": 5.58,
+        "color": "#239454",
+        "iata": "U6",
+        "airline": "ural-airlines",
+        "data": [
+            {
+                "polarity": 0.1
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 4.57
@@ -10396,34 +10384,34 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
-        "airline": "united-airlines",
         "country": "United States",
         "icao": "UAL",
         "score": 9.81,
         "color": "#C0494D",
         "iata": "UA",
+        "airline": "united-airlines",
         "data": [
             {
                 "polarity": 0.03
             },
             {
                 "subjectivity": 0.51
-            },
-            {
-                "avgDepDelay": 4.12
-            },
-            {
-                "carrierDelay": 3.49
-            },
-            {
-                "lateAircraftDelay": 4.79
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 3.09
@@ -10448,34 +10436,34 @@ const data = [
             },
             {
                 "wifi": 1.87
+            },
+            {
+                "avgDepDelay": 4.12
+            },
+            {
+                "carrierDelay": 3.49
+            },
+            {
+                "lateAircraftDelay": 4.79
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
-        "color": "#8FCD4D",
         "iata": "UL",
         "airline": "srilankan-airlines",
         "country": "Sri Lanka",
         "icao": "ALK",
         "score": 6.67,
+        "color": "#8FCD4D",
         "data": [
             {
                 "polarity": 0.18
             },
             {
                 "subjectivity": 0.53
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6.42
@@ -10500,22 +10488,6 @@ const data = [
             },
             {
                 "wifi": 2.42
-            }
-        ]
-    },
-    {
-        "color": "#F6C6DB",
-        "iata": "UM",
-        "airline": "air-zimbabwe",
-        "country": "Zimbabwe",
-        "icao": "AZW",
-        "score": 4.85,
-        "data": [
-            {
-                "polarity": 0.11
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -10528,6 +10500,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Zimbabwe",
+        "icao": "AZW",
+        "score": 4.85,
+        "color": "#F6C6DB",
+        "iata": "UM",
+        "airline": "air-zimbabwe",
+        "data": [
+            {
+                "polarity": 0.11
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 4.44
@@ -10552,22 +10540,6 @@ const data = [
             },
             {
                 "wifi": 2
-            }
-        ]
-    },
-    {
-        "score": 3.09,
-        "color": "#4ACB1D",
-        "iata": "UN",
-        "airline": "transaero-airlines",
-        "country": "Russia",
-        "icao": "TSO",
-        "data": [
-            {
-                "polarity": 0.09
-            },
-            {
-                "subjectivity": 0.49
             },
             {
                 "avgDepDelay": 0
@@ -10580,6 +10552,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "TSO",
+        "score": 3.09,
+        "color": "#4ACB1D",
+        "iata": "UN",
+        "airline": "transaero-airlines",
+        "country": "Russia",
+        "data": [
+            {
+                "polarity": 0.09
+            },
+            {
+                "subjectivity": 0.49
             },
             {
                 "ratings": 5.11
@@ -10604,22 +10592,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "icao": "BHS",
-        "score": 4.17,
-        "color": "#423E29",
-        "iata": "UP",
-        "airline": "bahamasair",
-        "country": "Bahamas",
-        "data": [
-            {
-                "polarity": 0.02
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -10632,6 +10604,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "bahamasair",
+        "country": "Bahamas",
+        "icao": "BHS",
+        "score": 4.17,
+        "color": "#423E29",
+        "iata": "UP",
+        "data": [
+            {
+                "polarity": 0.02
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 2.97
@@ -10656,34 +10644,34 @@ const data = [
             },
             {
                 "wifi": 1.83
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
+        "color": "#2F2E92",
+        "iata": "US",
         "airline": "us-airways",
         "country": "United States",
         "icao": "USA",
         "score": 7.53,
-        "color": "#2F2E92",
-        "iata": "US",
         "data": [
             {
                 "polarity": 0.04
             },
             {
                 "subjectivity": 0.47
-            },
-            {
-                "avgDepDelay": 3.05
-            },
-            {
-                "carrierDelay": 2.92
-            },
-            {
-                "lateAircraftDelay": 2.38
-            },
-            {
-                "securityDelay": 0.03
             },
             {
                 "ratings": 4.21
@@ -10708,6 +10696,18 @@ const data = [
             },
             {
                 "wifi": 1.64
+            },
+            {
+                "avgDepDelay": 3.05
+            },
+            {
+                "carrierDelay": 2.92
+            },
+            {
+                "lateAircraftDelay": 2.38
+            },
+            {
+                "securityDelay": 0.03
             }
         ]
     },
@@ -10724,18 +10724,6 @@ const data = [
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6
@@ -10760,22 +10748,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#C8171A",
-        "iata": "UU",
-        "airline": "air-austral",
-        "country": "France",
-        "icao": "REU",
-        "score": 5.17,
-        "data": [
-            {
-                "polarity": 0.21
-            },
-            {
-                "subjectivity": 0.56
             },
             {
                 "avgDepDelay": 0
@@ -10788,6 +10760,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "air-austral",
+        "country": "France",
+        "icao": "REU",
+        "score": 5.17,
+        "color": "#C8171A",
+        "iata": "UU",
+        "data": [
+            {
+                "polarity": 0.21
+            },
+            {
+                "subjectivity": 0.56
             },
             {
                 "ratings": 5.9
@@ -10812,22 +10800,6 @@ const data = [
             },
             {
                 "wifi": 2.25
-            }
-        ]
-    },
-    {
-        "color": "#951137",
-        "iata": "UX",
-        "airline": "air-europa",
-        "country": "Spain",
-        "icao": "AEA",
-        "score": 4.12,
-        "data": [
-            {
-                "polarity": 0.05
-            },
-            {
-                "subjectivity": 0.53
             },
             {
                 "avgDepDelay": 0
@@ -10840,6 +10812,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Spain",
+        "icao": "AEA",
+        "score": 4.12,
+        "color": "#951137",
+        "iata": "UX",
+        "airline": "air-europa",
+        "data": [
+            {
+                "polarity": 0.05
+            },
+            {
+                "subjectivity": 0.53
             },
             {
                 "ratings": 4.24
@@ -10864,6 +10852,18 @@ const data = [
             },
             {
                 "wifi": 1.45
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -10880,18 +10880,6 @@ const data = [
             },
             {
                 "subjectivity": 0.53
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 8
@@ -10916,22 +10904,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "iata": "V3",
-        "airline": "carpatair",
-        "country": "Romania",
-        "icao": "KRP",
-        "score": 0.04,
-        "color": "#E602A0",
-        "data": [
-            {
-                "polarity": 0.16
-            },
-            {
-                "subjectivity": 0.48
             },
             {
                 "avgDepDelay": 0
@@ -10944,6 +10916,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "carpatair",
+        "country": "Romania",
+        "icao": "KRP",
+        "score": 0.04,
+        "color": "#E602A0",
+        "iata": "V3",
+        "data": [
+            {
+                "polarity": 0.16
+            },
+            {
+                "subjectivity": 0.48
             },
             {
                 "ratings": 4.17
@@ -10968,22 +10956,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "country": "Australia",
-        "icao": "VOZ",
-        "score": 5.67,
-        "color": "#962A62",
-        "iata": "VA",
-        "airline": "virgin-australia",
-        "data": [
-            {
-                "polarity": 0.14
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -10996,6 +10968,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "virgin-australia",
+        "country": "Australia",
+        "icao": "VOZ",
+        "score": 5.67,
+        "color": "#962A62",
+        "iata": "VA",
+        "data": [
+            {
+                "polarity": 0.14
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.51
@@ -11020,6 +11008,18 @@ const data = [
             },
             {
                 "wifi": 2.63
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -11036,18 +11036,6 @@ const data = [
             },
             {
                 "subjectivity": 0.53
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.47
@@ -11072,22 +11060,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#9B5F96",
-        "iata": "VN",
-        "airline": "vietnam-airlines",
-        "country": "Vietnam",
-        "icao": "HVN",
-        "score": 6.2,
-        "data": [
-            {
-                "polarity": 0.13
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -11100,6 +11072,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "HVN",
+        "score": 6.2,
+        "color": "#9B5F96",
+        "iata": "VN",
+        "airline": "vietnam-airlines",
+        "country": "Vietnam",
+        "data": [
+            {
+                "polarity": 0.13
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 6
@@ -11124,22 +11112,6 @@ const data = [
             },
             {
                 "wifi": 2.09
-            }
-        ]
-    },
-    {
-        "iata": "VS",
-        "airline": "virgin-atlantic-airways",
-        "country": "United Kingdom",
-        "icao": "VIR",
-        "score": 5.75,
-        "color": "#CC3919",
-        "data": [
-            {
-                "polarity": 0.13
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -11152,6 +11124,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "virgin-atlantic-airways",
+        "country": "United Kingdom",
+        "icao": "VIR",
+        "score": 5.75,
+        "color": "#CC3919",
+        "iata": "VS",
+        "data": [
+            {
+                "polarity": 0.13
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 5.49
@@ -11176,22 +11164,6 @@ const data = [
             },
             {
                 "wifi": 2.5
-            }
-        ]
-    },
-    {
-        "color": "#E1E2DA",
-        "iata": "VW",
-        "airline": "aeromar",
-        "country": "Mexico",
-        "icao": "TAO",
-        "score": 3.69,
-        "data": [
-            {
-                "polarity": 0
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -11204,6 +11176,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "aeromar",
+        "country": "Mexico",
+        "icao": "TAO",
+        "score": 3.69,
+        "color": "#E1E2DA",
+        "iata": "VW",
+        "data": [
+            {
+                "polarity": 0
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 2.86
@@ -11228,34 +11216,34 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
-        "airline": "virgin-america",
-        "country": "United States",
         "icao": "VRD",
         "score": 12.99,
         "color": "#163FD3",
         "iata": "VX",
+        "airline": "virgin-america",
+        "country": "United States",
         "data": [
             {
                 "polarity": 0.17
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 6.56
-            },
-            {
-                "carrierDelay": 2.24
-            },
-            {
-                "lateAircraftDelay": 4.52
-            },
-            {
-                "securityDelay": 0.05
             },
             {
                 "ratings": 6.53
@@ -11280,34 +11268,34 @@ const data = [
             },
             {
                 "wifi": 2.74
+            },
+            {
+                "avgDepDelay": 6.56
+            },
+            {
+                "carrierDelay": 2.24
+            },
+            {
+                "lateAircraftDelay": 4.52
+            },
+            {
+                "securityDelay": 0.05
             }
         ]
     },
     {
+        "color": "#98AA4D",
+        "iata": "VY",
         "airline": "vueling-airlines",
         "country": "Spain",
         "icao": "VLG",
         "score": 3.46,
-        "color": "#98AA4D",
-        "iata": "VY",
         "data": [
             {
                 "polarity": 0.03
             },
             {
                 "subjectivity": 0.5
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 3.4
@@ -11332,22 +11320,6 @@ const data = [
             },
             {
                 "wifi": 1.1
-            }
-        ]
-    },
-    {
-        "iata": "W5",
-        "airline": "mahan-air",
-        "country": "Iran",
-        "icao": "IRM",
-        "score": 7.32,
-        "color": "#7A4742",
-        "data": [
-            {
-                "polarity": 0.26
-            },
-            {
-                "subjectivity": 0.55
             },
             {
                 "avgDepDelay": 0
@@ -11360,6 +11332,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#7A4742",
+        "iata": "W5",
+        "airline": "mahan-air",
+        "country": "Iran",
+        "icao": "IRM",
+        "score": 7.32,
+        "data": [
+            {
+                "polarity": 0.26
+            },
+            {
+                "subjectivity": 0.55
             },
             {
                 "ratings": 7.43
@@ -11384,22 +11372,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "country": "Hungary",
-        "icao": "WZZ",
-        "score": 3.64,
-        "color": "#63BAFD",
-        "iata": "W6",
-        "airline": "wizz-air",
-        "data": [
-            {
-                "polarity": 0.06
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -11412,6 +11384,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "W6",
+        "airline": "wizz-air",
+        "country": "Hungary",
+        "icao": "WZZ",
+        "score": 3.64,
+        "color": "#63BAFD",
+        "data": [
+            {
+                "polarity": 0.06
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 4.09
@@ -11436,22 +11424,6 @@ const data = [
             },
             {
                 "wifi": 1.07
-            }
-        ]
-    },
-    {
-        "color": "#FE7D20",
-        "iata": "W9",
-        "airline": "air-bagan",
-        "country": "Myanmar",
-        "icao": "JAB",
-        "score": 0.87,
-        "data": [
-            {
-                "polarity": 0.28
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -11464,6 +11436,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "air-bagan",
+        "country": "Myanmar",
+        "icao": "JAB",
+        "score": 0.87,
+        "color": "#FE7D20",
+        "iata": "W9",
+        "data": [
+            {
+                "polarity": 0.28
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 5.87
@@ -11488,6 +11476,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -11504,18 +11504,6 @@ const data = [
             },
             {
                 "subjectivity": 0.46
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.81
@@ -11540,22 +11528,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#5B1301",
-        "iata": "WK",
-        "airline": "edelweiss-air",
-        "country": "Switzerland",
-        "icao": "EDW",
-        "score": 6.13,
-        "data": [
-            {
-                "polarity": 0.25
-            },
-            {
-                "subjectivity": 0.57
             },
             {
                 "avgDepDelay": 0
@@ -11568,6 +11540,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "EDW",
+        "score": 6.13,
+        "color": "#5B1301",
+        "iata": "WK",
+        "airline": "edelweiss-air",
+        "country": "Switzerland",
+        "data": [
+            {
+                "polarity": 0.25
+            },
+            {
+                "subjectivity": 0.57
             },
             {
                 "ratings": 6.78
@@ -11592,34 +11580,34 @@ const data = [
             },
             {
                 "wifi": 2
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
     {
-        "country": "United States",
-        "icao": "SWA",
-        "score": 12.51,
         "color": "#48C4CE",
         "iata": "WN",
         "airline": "southwest-airlines",
+        "country": "United States",
+        "icao": "SWA",
+        "score": 12.51,
         "data": [
             {
                 "polarity": 0.11
             },
             {
                 "subjectivity": 0.51
-            },
-            {
-                "avgDepDelay": 5.67
-            },
-            {
-                "carrierDelay": 2.96
-            },
-            {
-                "lateAircraftDelay": 5.31
-            },
-            {
-                "securityDelay": 0.02
             },
             {
                 "ratings": 5.32
@@ -11644,34 +11632,34 @@ const data = [
             },
             {
                 "wifi": 2.46
+            },
+            {
+                "avgDepDelay": 5.67
+            },
+            {
+                "carrierDelay": 2.96
+            },
+            {
+                "lateAircraftDelay": 5.31
+            },
+            {
+                "securityDelay": 0.02
             }
         ]
     },
     {
+        "iata": "WS",
         "airline": "westjet",
         "country": "Canada",
         "icao": "WJA",
         "score": 5.07,
         "color": "#F4AF49",
-        "iata": "WS",
         "data": [
             {
                 "polarity": 0.09
             },
             {
                 "subjectivity": 0.51
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.57
@@ -11696,6 +11684,18 @@ const data = [
             },
             {
                 "wifi": 2.31
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -11712,18 +11712,6 @@ const data = [
             },
             {
                 "subjectivity": 0.52
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 5.73
@@ -11748,22 +11736,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "airline": "oman-air",
-        "country": "Oman",
-        "icao": "OMA",
-        "score": 6.75,
-        "color": "#EC9852",
-        "iata": "WY",
-        "data": [
-            {
-                "polarity": 0.21
-            },
-            {
-                "subjectivity": 0.55
             },
             {
                 "avgDepDelay": 0
@@ -11776,6 +11748,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Oman",
+        "icao": "OMA",
+        "score": 6.75,
+        "color": "#EC9852",
+        "iata": "WY",
+        "airline": "oman-air",
+        "data": [
+            {
+                "polarity": 0.21
+            },
+            {
+                "subjectivity": 0.55
             },
             {
                 "ratings": 6.71
@@ -11800,22 +11788,6 @@ const data = [
             },
             {
                 "wifi": 2.79
-            }
-        ]
-    },
-    {
-        "country": "Germany",
-        "icao": "HLX",
-        "score": 4.41,
-        "color": "#A1D806",
-        "iata": "X3",
-        "airline": "tuifly",
-        "data": [
-            {
-                "polarity": 0.16
-            },
-            {
-                "subjectivity": 0.52
             },
             {
                 "avgDepDelay": 0
@@ -11828,6 +11800,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "tuifly",
+        "country": "Germany",
+        "icao": "HLX",
+        "score": 4.41,
+        "color": "#A1D806",
+        "iata": "X3",
+        "data": [
+            {
+                "polarity": 0.16
+            },
+            {
+                "subjectivity": 0.52
             },
             {
                 "ratings": 4.31
@@ -11852,22 +11840,6 @@ const data = [
             },
             {
                 "wifi": 2
-            }
-        ]
-    },
-    {
-        "iata": "Y4",
-        "airline": "volaris",
-        "country": "Mexico",
-        "icao": "VOI",
-        "score": 3.02,
-        "color": "#7D1795",
-        "data": [
-            {
-                "polarity": 0.04
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -11880,6 +11852,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "volaris",
+        "country": "Mexico",
+        "icao": "VOI",
+        "score": 3.02,
+        "color": "#7D1795",
+        "iata": "Y4",
+        "data": [
+            {
+                "polarity": 0.04
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 3.4
@@ -11904,22 +11892,6 @@ const data = [
             },
             {
                 "wifi": 1.07
-            }
-        ]
-    },
-    {
-        "score": 5.21,
-        "color": "#4EDBFE",
-        "iata": "Y9",
-        "airline": "kish-air",
-        "country": "Iran",
-        "icao": "IRK",
-        "data": [
-            {
-                "polarity": 0.08
-            },
-            {
-                "subjectivity": 0.51
             },
             {
                 "avgDepDelay": 0
@@ -11932,6 +11904,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "country": "Iran",
+        "icao": "IRK",
+        "score": 5.21,
+        "color": "#4EDBFE",
+        "iata": "Y9",
+        "airline": "kish-air",
+        "data": [
+            {
+                "polarity": 0.08
+            },
+            {
+                "subjectivity": 0.51
             },
             {
                 "ratings": 5
@@ -11956,22 +11944,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "airline": "montenegro-airlines",
-        "country": "Montenegro",
-        "icao": "MGX",
-        "score": 4.61,
-        "color": "#277E41",
-        "iata": "YM",
-        "data": [
-            {
-                "polarity": 0.15
-            },
-            {
-                "subjectivity": 0.56
             },
             {
                 "avgDepDelay": 0
@@ -11984,6 +11956,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#277E41",
+        "iata": "YM",
+        "airline": "montenegro-airlines",
+        "country": "Montenegro",
+        "icao": "MGX",
+        "score": 4.61,
+        "data": [
+            {
+                "polarity": 0.15
+            },
+            {
+                "subjectivity": 0.56
             },
             {
                 "ratings": 4.88
@@ -12008,22 +11996,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "airline": "air-nostrum",
-        "country": "Spain",
-        "icao": "ANE",
-        "score": 5.64,
-        "color": "#624071",
-        "iata": "YW",
-        "data": [
-            {
-                "polarity": 0.19
-            },
-            {
-                "subjectivity": 0.54
             },
             {
                 "avgDepDelay": 0
@@ -12036,6 +12008,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "color": "#624071",
+        "iata": "YW",
+        "airline": "air-nostrum",
+        "country": "Spain",
+        "icao": "ANE",
+        "score": 5.64,
+        "data": [
+            {
+                "polarity": 0.19
+            },
+            {
+                "subjectivity": 0.54
             },
             {
                 "ratings": 5.87
@@ -12060,22 +12048,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "score": 4.42,
-        "color": "#5AC8F9",
-        "iata": "Z8",
-        "airline": "amaszonas",
-        "country": "Bolivia",
-        "icao": "AZN",
-        "data": [
-            {
-                "polarity": 0.03
-            },
-            {
-                "subjectivity": 0.46
             },
             {
                 "avgDepDelay": 0
@@ -12088,6 +12060,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "amaszonas",
+        "country": "Bolivia",
+        "icao": "AZN",
+        "score": 4.42,
+        "color": "#5AC8F9",
+        "iata": "Z8",
+        "data": [
+            {
+                "polarity": 0.03
+            },
+            {
+                "subjectivity": 0.46
             },
             {
                 "ratings": 2.92
@@ -12112,22 +12100,6 @@ const data = [
             },
             {
                 "wifi": 1.5
-            }
-        ]
-    },
-    {
-        "iata": "ZB",
-        "airline": "monarch-airlines",
-        "country": "United Kingdom",
-        "icao": "MON",
-        "score": 5.32,
-        "color": "#51F382",
-        "data": [
-            {
-                "polarity": 0.11
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -12140,6 +12112,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "airline": "monarch-airlines",
+        "country": "United Kingdom",
+        "icao": "MON",
+        "score": 5.32,
+        "color": "#51F382",
+        "iata": "ZB",
+        "data": [
+            {
+                "polarity": 0.11
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 6.04
@@ -12164,22 +12152,6 @@ const data = [
             },
             {
                 "wifi": 1
-            }
-        ]
-    },
-    {
-        "color": "#22B3F5",
-        "iata": "ZH",
-        "airline": "shenzhen-airlines",
-        "country": "China",
-        "icao": "CSZ",
-        "score": 4.81,
-        "data": [
-            {
-                "polarity": 0.07
-            },
-            {
-                "subjectivity": 0.49
             },
             {
                 "avgDepDelay": 0
@@ -12192,6 +12164,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "icao": "CSZ",
+        "score": 4.81,
+        "color": "#22B3F5",
+        "iata": "ZH",
+        "airline": "shenzhen-airlines",
+        "country": "China",
+        "data": [
+            {
+                "polarity": 0.07
+            },
+            {
+                "subjectivity": 0.49
             },
             {
                 "ratings": 4.54
@@ -12216,6 +12204,18 @@ const data = [
             },
             {
                 "wifi": 1
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -12232,18 +12232,6 @@ const data = [
             },
             {
                 "subjectivity": 0.49
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 4.3
@@ -12268,6 +12256,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     },
@@ -12284,18 +12284,6 @@ const data = [
             },
             {
                 "subjectivity": 0.55
-            },
-            {
-                "avgDepDelay": 0
-            },
-            {
-                "carrierDelay": 0
-            },
-            {
-                "lateAircraftDelay": 0
-            },
-            {
-                "securityDelay": 0
             },
             {
                 "ratings": 6.7
@@ -12320,22 +12308,6 @@ const data = [
             },
             {
                 "wifi": 0
-            }
-        ]
-    },
-    {
-        "color": "#C2E904",
-        "iata": "ZV",
-        "airline": "v-air",
-        "country": "Taiwan",
-        "icao": "VAX",
-        "score": 6.08,
-        "data": [
-            {
-                "polarity": 0.13
-            },
-            {
-                "subjectivity": 0.5
             },
             {
                 "avgDepDelay": 0
@@ -12348,6 +12320,22 @@ const data = [
             },
             {
                 "securityDelay": 0
+            }
+        ]
+    },
+    {
+        "iata": "ZV",
+        "airline": "v-air",
+        "country": "Taiwan",
+        "icao": "VAX",
+        "score": 6.08,
+        "color": "#C2E904",
+        "data": [
+            {
+                "polarity": 0.13
+            },
+            {
+                "subjectivity": 0.5
             },
             {
                 "ratings": 4.86
@@ -12372,6 +12360,18 @@ const data = [
             },
             {
                 "wifi": 0
+            },
+            {
+                "avgDepDelay": 0
+            },
+            {
+                "carrierDelay": 0
+            },
+            {
+                "lateAircraftDelay": 0
+            },
+            {
+                "securityDelay": 0
             }
         ]
     }

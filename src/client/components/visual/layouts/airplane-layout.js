@@ -5,6 +5,7 @@ import airplane from "../../../static/american.png";
 class AirplaneLayout extends Layout {
     layout({airline}) {
         const composer = this.composer;
+        composer.clearLayoutHolder();
         let width = composer.getWidth() + composer.padding;
         let height = composer.getHeight() + composer.padding;
 

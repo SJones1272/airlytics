@@ -15,7 +15,7 @@ class App extends Component {
 
         this.rankings = ['Overall Score', 'Country', 'Sentiment', 'Recommended'];
         //TODO add rest
-        this.dataAxis = ['Food & Beverage', 'Wifi', 'Recommended', 'Score', 'Seat Comfort', 'Entertainment', "Ground Service", "Cabin Crew"];
+        this.dataAxis = ['Food & Beverage', 'Wifi', 'Recommended', 'Seat Comfort', 'Entertainment', "Ground Service", "Cabin Crew"];
         this.initialState = {
             layout: 'ranking',
             airline: '',
@@ -25,7 +25,7 @@ class App extends Component {
             a: 0,
             rankingSortIndex: 0,
             xAxisIndex: 0,
-            yAxisIndex: 7,
+            yAxisIndex: 6,
             showAbout: false,
             isHovering: false,
             activeVisual: "ranking",
@@ -115,8 +115,6 @@ class App extends Component {
                 this.visual.setLayout('route');
                 this.visual.composer.container.interactive = false;
                 break;
-            default:
-                console.error('layout not found', this.state.layout);
         }
     }
 

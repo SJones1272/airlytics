@@ -17,7 +17,13 @@ async function generateEntry(doc){
     bits.forEach(item => {
         data.push(item.data())
     });
-    entry['data'] = data;
+
+    let orderedData = [];
+    orderedData[0] = data[0];
+    orderedData[1] = data[1];
+    data.splice(6,14).forEach(x => orderedData.push(x));
+    data.splice(2,5).forEach(x => orderedData.push(x));
+    entry['data'] = orderedData;
     return entry
 }
 
