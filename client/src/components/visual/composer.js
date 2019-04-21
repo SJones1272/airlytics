@@ -131,7 +131,8 @@ class Composer {
         let options = {
             activeAirline: airline.name,
             layout: 'airline',
-            activeVisual: 'airline'
+            activeVisual: 'airline',
+            activeAirlineIata: airline.iata
         };
 
         this.visual.setState(options);

@@ -150,7 +150,7 @@ class Route extends Component {
         return (
             <div>
                 <Typography variant="h5" gutterBottom style={{color: 'whitesmoke'}}>
-                    Currently Exploring: {this.props.iata}
+                    Currently Exploring: {this.props.airline}
                 </Typography>
                 <div style={{display: 'flex', position: 'fixed', width: '100%', height: '100%'}}>
 
@@ -289,7 +289,7 @@ class Route extends Component {
                             </div>
                             <div style={{width: '60%', height: '80%', textAlign: 'center', borderStyle: 'solid'}}>
                                 <Typography color="inherit" variant="h5" gutterBottom style={{color: '#22bc2b'}}>
-                                    AA Route Connections
+                                    {this.props.airline} Route Connections
                                 </Typography>
                                 {this.state.keys.length !== 0 ?
                                     <ResponsiveChordCanvas

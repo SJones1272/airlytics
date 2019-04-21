@@ -22,7 +22,8 @@ class App extends Component {
             showAbout: false,
             heatmapHover: false,
             activeVisual: "ranking",
-            activeAirline: "american-airlines"
+            activeAirline: "american-airlines",
+            activeAirlineIata: 'AA'
         }
 
         this.data = {
@@ -234,7 +235,7 @@ class App extends Component {
 
                 {this.state.activeVisual === 'route' ?
                     <div id="routes" style={{visibility: "visible"}}>
-                        <Route iata={"AA"}/>
+                        <Route airline={this.state.activeAirline} iata={this.state.activeAirlineIata}/>
                     </div> : null
                 }
 
