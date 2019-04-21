@@ -33,7 +33,7 @@ async function retrieveRoutes() {
                 "originAgg": {
                     "terms": {
                         "field": "sourceAirport.keyword",
-                        "size": 5000,
+                        "size": 300,
                         "order": {
                             "_term": "asc"
                         }
@@ -42,7 +42,7 @@ async function retrieveRoutes() {
                         "destinationAgg": {
                             "terms": {
                                 "field": "destinationAirport.keyword",
-                                "size": 5000,
+                                "size": 300,
                                 "order": {
                                     "_term": "asc"
                                 }
@@ -132,6 +132,7 @@ async function retrieveRoutesForAirline(airlineCode) {
         index: 'routes',
         type: 'routes',
         body: {
+            "size": 8000,
             query: {
                 "bool": {
                     "must": [
@@ -142,44 +143,16 @@ async function retrieveRoutesForAirline(airlineCode) {
                         }
                     ]
                 }
-            },
-            "aggs": {
-                "originAgg": {
-                    "terms": {
-                        "field": "sourceAirport.keyword",
-                        "size": 5000,
-                        "order": {
-                            "_term": "asc"
-                        }
-                    },
-                    "aggs": {
-                        "destinationAgg": {
-                            "terms": {
-                                "field": "destinationAirport.keyword",
-                                "size": 5000,
-                                "order": {
-                                    "_term": "asc"
-                                }
-                            }
-                        }
-                    }
-                }
             }
         }
     });
 
-    let data = elasticResults.aggregations.originAgg.buckets;
+    let data = elasticResults.hits.hits;
     let results = {
-        "iata": airlineCode
+        "iata": airlineCode,
+        data: data.map((x) => x['_source'])
     };
-    for (let i = 0; i < data.length; i++) {
-        let destinations = data[i].destinationAgg.buckets;
-        let destinationEntries = [];
-        for (let j = 0; j < destinations.length; j++) {
-            destinationEntries.push(destinations[j]['key']);
-        }
-        results[data[i].key] = destinationEntries;
-    }
+
     return results
 }
 
