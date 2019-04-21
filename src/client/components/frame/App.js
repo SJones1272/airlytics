@@ -41,33 +41,33 @@ class App extends Component {
     }
 
     updateRankingIndex = (value) => {
-        let data = this.handleBounds(this.state.rankingSortIndex + value, this.rankings.length -1);
+        let data = this.handleBounds(this.state.rankingSortIndex + value, this.rankings.length - 1);
         this.setState({
             rankingSortIndex: data
         });
     };
 
     updateXDataIndex = (value) => {
-        let data = this.handleBounds(this.state.xAxisIndex + value, this.dataAxis.length -1);
+        let data = this.handleBounds(this.state.xAxisIndex + value, this.dataAxis.length - 1);
         this.setState({
             xAxisIndex: data
         });
     };
 
     updateYDataIndex = (value) => {
-        let data = this.handleBounds(this.state.yAxisIndex + value, this.dataAxis.length -1);
+        let data = this.handleBounds(this.state.yAxisIndex + value, this.dataAxis.length - 1);
         this.setState({
             yAxisIndex: data
         });
     };
 
     handleBounds = (value, upper) => {
-        if(value > upper){
+        if (value > upper) {
             return 0;
         }
-        else if(value < 0){
+        else if (value < 0) {
             return upper;
-        }else{
+        } else {
             return value;
         }
     };
@@ -131,11 +131,11 @@ class App extends Component {
     };
 
     render() {
-       if(this.state.isHovering) {
-           console.log(this.state.key);
-           console.log(this.state.airline);
-           console.log(this.state.value);
-       }
+        if (this.state.isHovering) {
+            console.log(this.state.key);
+            console.log(this.state.airline);
+            console.log(this.state.value);
+        }
         return (
             <div className="app">
 
@@ -162,7 +162,7 @@ class App extends Component {
                             <span
                                 className="right icon-arrow-simple"
                                 onClick={() => {
-                                   this.updateRankingIndex(1);
+                                    this.updateRankingIndex(1);
                                 }}
                             />
                         </div>
@@ -226,8 +226,8 @@ class App extends Component {
                     </div> : <div></div>}
 
                 {this.state.activeVisual === 'route' ?
-                    <div id="routes" style={ {visibility: "visible"}}>
-                        <Route/>
+                    <div id="routes" style={{visibility: "visible"}}>
+                        <Route iata={"AA"}/>
                     </div> :
                     <div id="routes">
                     </div>
