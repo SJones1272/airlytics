@@ -8,7 +8,6 @@ import {ClipLoader, RingLoader} from "react-spinners";
 import withStyles from "@material-ui/core/styles/withStyles";
 import TextField from "@material-ui/core/TextField/TextField";
 import Button from "@material-ui/core/Button/Button";
-import Slider from '@material-ui/lab/Slider';
 import Typography from "@material-ui/core/Typography/Typography";
 import Control from 'react-leaflet-control';
 
@@ -27,15 +26,27 @@ const styles = theme => ({
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-    },
-    dense: {
-        marginTop: 16,
-    },
-    menu: {
         width: 200,
     },
-    slider: {
-        margin: 'auto'
+
+    cssLabel: {
+        color : '#22bc2b'
+    },
+
+    cssOutlinedInput: {
+        '&$cssFocused $notchedOutline': {
+            borderColor: `${theme.palette.primary.main} !important`,
+        }
+    },
+
+    cssFocused: {},
+
+    notchedOutline: {
+        borderWidth: '1px',
+        borderColor: 'whitesmoke !important'
+    },
+    multilineColor:{
+        color:'red'
     }
 });
 
@@ -103,7 +114,7 @@ class Route extends Component {
         const {classes} = this.props;
         return (
             <div>
-                <Typography variant="h5" gutterBottom style={{color: 'red'}}>
+                <Typography variant="h5" gutterBottom style={{color: 'whitesmoke'}}>
                     Currently Exploring: {this.props.iata}
                 </Typography>
                 <div style={{display: 'flex', position: 'fixed', width: '100%', height: '100%'}}>
@@ -112,12 +123,11 @@ class Route extends Component {
 
                         {this.state.traffic.length === 0 ?
                             <div style={{position: 'fixed', 'top': '30%', left:'5%'}}>
-
                             <RingLoader
                                 css={override}
                                 sizeUnit={"px"}
                                 size={'300'}
-                                color={'#123abc'}
+                                color={'#22bc2b'}
                                 loading={true}
                             />
                             </div>
@@ -165,11 +175,11 @@ class Route extends Component {
 
                     <div id="predictor">
 
-                        <div style={{textAlign: "center"}}>
-                            <Typography variant="h3" gutterBottom>
+                        <div style={{textAlign: "center", color:'whitesmoke', marginBottom: '10px'}}>
+                            <Typography color="inherit" variant="h3" gutterBottom>
                                 Route Explorer
                             </Typography>
-                            <Typography variant="subtitle1" gutterBottom>
+                            <Typography color="inherit" variant="subtitle1" gutterBottom>
                                 Find the best airline for a specific trip based on your preferences!
                             </Typography>
                             <form className={classes.container} noValidate autoComplete="off">
@@ -179,6 +189,19 @@ class Route extends Component {
                                     className={classes.textField}
                                     margin="normal"
                                     variant="outlined"
+                                    InputLabelProps={{
+                                        classes: {
+                                            root: classes.cssLabel,
+                                            focused: classes.cssFocused,
+                                        },
+                                    }}
+                                    InputProps={{
+                                        classes: {
+                                            root: classes.cssOutlinedInput,
+                                            focused: classes.cssFocused,
+                                            notchedOutline: classes.notchedOutline,
+                                        }
+                                    }}
                                 />
                                 <TextField
                                     id="outlined-uncontrolled"
@@ -186,6 +209,19 @@ class Route extends Component {
                                     className={classes.textField}
                                     margin="normal"
                                     variant="outlined"
+                                    InputLabelProps={{
+                                        classes: {
+                                            root: classes.cssLabel,
+                                            focused: classes.cssFocused,
+                                        },
+                                    }}
+                                    InputProps={{
+                                        classes: {
+                                            root: classes.cssOutlinedInput,
+                                            focused: classes.cssFocused,
+                                            notchedOutline: classes.notchedOutline,
+                                        }
+                                    }}
                                 />
                             </form>
                             <Button variant="contained" color="primary" onClick={this.find}>
@@ -194,9 +230,18 @@ class Route extends Component {
                         </div>
 
                         <div id="results" style={{display: 'flex', flexDirection: 'row', height: '100%'}}>
-                            <div style={{ backgroundColor: 'red', width: '40%', height: '100%'}}>
+                            <div style={{width: '40%', height: '80%', textAlign: 'center', borderStyle:'solid', marginRight: '5px'}}>
+                                <Typography color="inherit" variant="h5" gutterBottom style={{color:'#22bc2b'}}>
+                                    Route Results
+                                </Typography>
+                                <Typography color="inherit" variant="h6" gutterBottom style={{color:'#22bc2b'}}>
+                                    Origin: DFW - Destination: ATL
+                                </Typography>
                             </div>
-                            <div style={{width: '60%', height: '100%'}}>
+                            <div style={{width: '60%', height: '80%', textAlign: 'center' , borderStyle:'solid'}}>
+                                <Typography color="inherit" variant="h5" gutterBottom style={{color:'#22bc2b'}}>
+                                    AA Route Breakdown
+                                </Typography>
                                 {this.state.keys.length !== 0 ?
                                     <ResponsiveChordCanvas
                                         matrix={this.state.matrix.slice(0, 100)}
@@ -204,7 +249,7 @@ class Route extends Component {
                                         margin={{
                                             "top": 60,
                                             "right": 60,
-                                            "bottom": 200,
+                                            "bottom": 150,
                                             "left": 60
                                         }}
                                         pixelRatio={1}
@@ -263,7 +308,7 @@ class Route extends Component {
                                         css={override}
                                         sizeUnit={"px"}
                                         size={'350'}
-                                        color={'#123abc'}
+                                        color={'#22bc2b'}
                                         loading={true}
                                     />
                                     </div>
