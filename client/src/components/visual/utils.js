@@ -47,6 +47,7 @@ class ChordMpr {
     }
 
     addValuesToMap = (varName, info) => {
+        console.log(this.data);
         let values = this.findUniqueValues(this.data.data, varName);
         values.forEach((value) => {
             this.mmap[value] = {name: value, id: this.n++, data: info}
