@@ -111,6 +111,8 @@ class Route extends Component {
                     <div id="map">
 
                         {this.state.traffic.length === 0 ?
+                            <div style={{position: 'fixed', 'top': '30%', left:'5%'}}>
+
                             <RingLoader
                                 css={override}
                                 sizeUnit={"px"}
@@ -118,6 +120,7 @@ class Route extends Component {
                                 color={'#123abc'}
                                 loading={true}
                             />
+                            </div>
                             :
                             <Map center={[40, -95]} zoom={4}>
                                 <HeatmapLayer
@@ -254,13 +257,16 @@ class Route extends Component {
                                         animate={true}
                                         motionStiffness={90}
                                         motionDamping={7}
-                                    /> : <RingLoader
+                                    /> :
+                                    <div style={{position: 'fixed', 'top': '50%'}}>
+                                    <RingLoader
                                         css={override}
                                         sizeUnit={"px"}
-                                        size={'300'}
+                                        size={'350'}
                                         color={'#123abc'}
                                         loading={true}
                                     />
+                                    </div>
                                 }
                             </div>
                         </div>
