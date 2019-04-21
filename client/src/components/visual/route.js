@@ -119,7 +119,7 @@ class Route extends Component {
                 </Typography>
                 <div style={{display: 'flex', position: 'fixed', width: '100%', height: '100%'}}>
 
-                    <div id="map">
+                    <div id="map" style={{pointerEvents: 'auto'}}>
 
                         {this.state.traffic.length === 0 ?
                             <div style={{position: 'fixed', 'top': '30%', left:'5%'}}>

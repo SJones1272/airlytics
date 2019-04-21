@@ -79,6 +79,10 @@ class App extends Component {
             this.forceUpdate();
         });
 
+        document.getElementById("visualization").addEventListener('mousemove', e => {
+            this.setState({_hoverX: e.pageX, _hoverY: e.pageY});
+        });
+
         this.refreshVisual();
 
 
