@@ -27,31 +27,30 @@ class ChordMpr {
     getMatrix = function () {
         let matrix = [];
         let mmap = this.mmap;
-        let data = this.data;
+        let data = this.data.data;
         let filter = this.filter;
         let accessor = this.accessor;
 
-        _.each(this.mmap, function (a) {
-            if (!matrix[a.id]) matrix[a.id] = [];
-            _.each(mmap, function (b) {
-                var recs = _.filter(data, function (row) {
-                    return filter(row, a, b);
+        console.log(data)
+
+        Object.keys(this.mmap).forEach(a => {
+            if(!matrix[mmap[a].id]){
+                matrix[mmap[a].id] = [];
+                Object.keys(this.mmap).forEach(b => {
+                    let recs =  data.filter(entry => entry['sourceAirport'] === a && entry['destinationAirport'] === b);
+                    matrix[mmap[a].id][mmap[b].id] = !recs[0] ? mmap[b].id : mmap[a].id;
                 })
-                matrix[a.id][b.id] = accessor(recs, a, b);
-            });
+            }
         });
+
         return matrix;
     }
 
     addValuesToMap = (varName, info) => {
-        console.log(this.data);
-        console.log(varName);
         let values = this.findUniqueValues(this.data.data, varName);
-        console.log(values);
-        values.forEach((value, index) => {
+        values.forEach((value) => {
             this.mmap[value] = {name: value, id: this.n++, data: info}
         });
-
         return this;
     }
 
@@ -63,8 +62,7 @@ class ChordMpr {
         let result = [];
 
         data.forEach(row => {
-            if(!result.includes(row[varName])){
-                console.log(row[varName]);
+            if(!result.includes(row[varName]) && !this.mmap[row[varName]]){
                 result.push(row[varName])
             }
         });
