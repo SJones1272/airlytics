@@ -463,23 +463,28 @@ async function retrieveAirlinePerformance(airlineCode) {
     let data = elasticResults.aggregations.airlinesAgg.buckets[0].originAgg.buckets;
 
     let results = {
-        "iata": airlineCode
+        "iata": airlineCode,
     }
+
+    let stats = [];
     for (let i = 0; i < data.length; i++) {
         let destinations = data[i].destinationAgg.buckets;
         let destinationEntries = []
         for (let j = 0; j < destinations.length; j++) {
             let destination = {
+                "source": data[i].key,
                 "destination": destinations[j].key,
                 "avgDepDelay": (destinations[j].arrivalDelay.value).toFixed(2),
                 "lateAircraftDelay": (destinations[j].lateAircraftDelay.value).toFixed(2),
                 "securityDelay": (destinations[j].securityDelay.value).toFixed(2),
                 "carrierDelay": (destinations[j].carrierDelay.value).toFixed(2)
             }
-            destinationEntries.push(destination)
+            stats.push(destination)
         }
-        results[data[i].key] = destinationEntries
     }
+
+    results['data'] = stats;
+
     return results
 }
 

@@ -58,6 +58,7 @@ class Route extends Component {
             airports: [],
             traffic: [],
             matrix: [],
+            performance,
             mmp: {},
             keys: [],
             routes: [],
@@ -74,11 +75,13 @@ class Route extends Component {
         let results = await axios.get(`/api/routes/airline/${this.props.iata}/traffic`).catch(err => console.log(err));
         let airports = await axios.get("/api/airports").catch(err => console.log(err));
         let routes = await axios.get(`/api/routes/airline/${this.props.iata}`).catch(err => console.log(err));
+        let performance = await axios.get(`api/performance/airline/${this.props.iata}`).catch(err => console.log(err));
 
         this.setState({
             airports: airports.data,
             traffic: results.data.data,
-            routes: routes.data
+            routes: routes.data,
+            performance: performance.data.data
         });
 
         this.generateRouteLines(routes.data);
@@ -136,16 +139,11 @@ class Route extends Component {
         this.setState({
             activeMap: map
         })
-    };
+    };å
 
 
     render() {
         const {classes} = this.props;
-        const polyline = [[51.505, -0.09], [51.51, -0.1]]
-        const multiPolyline = [
-            [[51.5, -0.1], [51.5, -0.12], [51.52, -0.12]],
-            [[51.5, -0.05], [51.5, -0.06], [51.52, -0.06]],
-        ]
 
         return (
             <div>
@@ -182,13 +180,29 @@ class Route extends Component {
                                             return airport === undefined ? null : airport['latitude'];
                                         }}
                                         intensityExtractor={m => parseFloat(m['intensity'])}/> : null}
+
+                                {this.state.activeMap === 'performance' ?
+                                    <HeatmapLayer
+                                        fitBoundsOnLoad
+                                        fitBoundsOnUpdate
+                                        points={this.state.performance}
+                                        longitudeExtractor={m => {
+                                            let airport = this.state.airports[m['source']];
+                                            return airport === undefined ? null : airport['longitude'];
+                                        }}
+                                        latitudeExtractor={m => {
+                                            let airport = this.state.airports[m['source']];
+                                            return airport === undefined ? null : airport['latitude'];
+                                        }}
+                                        intensityExtractor={m => parseFloat(m['avgDepDelay'])}/> : null}
+
                                 <TileLayer
-                                    url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-                                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                    attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+                                    url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
                                 />
 
                                 {this.state.activeMap === 'routes' ?
-                                    <Polyline color="lime" opacity="0.6" style={{lineWidth: '1px'}}positions={this.state.routeLines}/> : null}
+                                    <Polyline color="#22bc2b" opacity="0.1" style={{lineWidth: '.5px'}}positions={this.state.routeLines}/> : null}
 
 
                                 <Control position="topright">
