@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Map, Marker, Popup, TileLayer} from 'react-leaflet'
+import {Map, Marker, Polyline, Popup, TileLayer} from 'react-leaflet'
 import axios from "axios";
 import HeatmapLayer from "react-leaflet-heatmap-layer";
 import chordMpr from "./utils";
@@ -30,7 +30,7 @@ const styles = theme => ({
     },
 
     cssLabel: {
-        color : '#22bc2b'
+        color: '#22bc2b'
     },
 
     cssOutlinedInput: {
@@ -45,8 +45,8 @@ const styles = theme => ({
         borderWidth: '1px',
         borderColor: 'whitesmoke !important'
     },
-    multilineColor:{
-        color:'red'
+    multilineColor: {
+        color: 'red'
     }
 });
 
@@ -57,10 +57,12 @@ class Route extends Component {
         this.state = {
             airports: [],
             traffic: [],
-            routes: [],
             matrix: [],
             mmp: {},
             keys: [],
+            routes: [],
+            routeLines: [],
+            activeMap: 'traffic'
         }
     }
 
@@ -72,14 +74,37 @@ class Route extends Component {
         let results = await axios.get(`/api/routes/airline/${this.props.iata}/traffic`).catch(err => console.log(err));
         let airports = await axios.get("/api/airports").catch(err => console.log(err));
         let routes = await axios.get(`/api/routes/airline/${this.props.iata}`).catch(err => console.log(err));
+
         this.setState({
             airports: airports.data,
             traffic: results.data.data,
             routes: routes.data
         });
 
+        this.generateRouteLines(routes.data);
         this.generateChordMatrix();
     }
+
+    generateRouteLines = (routes) => {
+
+        let routeLines = [];
+            console.log(this.state.airports['ABE']);
+        routes.data.forEach(route => {
+            try {
+                let source = this.state.airports[route.sourceAirport];
+                let destination = this.state.airports[route.destinationAirport];
+                routeLines.push([[source.latitude, source.longitude], [destination.latitude, destination.longitude]])
+            }catch{
+
+            }
+        });
+
+        this.setState({
+            routeLines: routeLines
+        })
+
+    }
+
 
     generateChordMatrix() {
         let mpr = new chordMpr(this.state.routes);
@@ -96,22 +121,32 @@ class Route extends Component {
             matrix.push(x);
         })
 
-        console.log(keys);
         this.setState({
             matrix: matrix,
-            keys: keys
+            keys: keys,
         });
 
-        console.log(this.state.matrix[0]);
     }
 
     find = () => {
         alert("FOUND");
     }
 
+    changeActive = (map) => {
+        this.setState({
+            activeMap: map
+        })
+    };
+
 
     render() {
         const {classes} = this.props;
+        const polyline = [[51.505, -0.09], [51.51, -0.1]]
+        const multiPolyline = [
+            [[51.5, -0.1], [51.5, -0.12], [51.52, -0.12]],
+            [[51.5, -0.05], [51.5, -0.06], [51.52, -0.06]],
+        ]
+
         return (
             <div>
                 <Typography variant="h5" gutterBottom style={{color: 'whitesmoke'}}>
@@ -122,48 +157,56 @@ class Route extends Component {
                     <div id="map" style={{pointerEvents: 'auto'}}>
 
                         {this.state.traffic.length === 0 ?
-                            <div style={{position: 'fixed', 'top': '30%', left:'5%'}}>
-                            <RingLoader
-                                css={override}
-                                sizeUnit={"px"}
-                                size={'300'}
-                                color={'#22bc2b'}
-                                loading={true}
-                            />
+                            <div style={{position: 'fixed', 'top': '30%', left: '5%'}}>
+                                <RingLoader
+                                    css={override}
+                                    sizeUnit={"px"}
+                                    size={'300'}
+                                    color={'#22bc2b'}
+                                    loading={true}
+                                />
                             </div>
                             :
-                            <Map center={[40, -95]} zoom={15}>
-                                <HeatmapLayer
-                                    fitBoundsOnLoad
-                                    fitBoundsOnUpdate
-                                    points={this.state.traffic}
-                                    longitudeExtractor={m => {
-                                        let airport = this.state.airports[m['airport']];
-                                        return airport === undefined ? null : airport['longitude'];
-                                    }}
-                                    latitudeExtractor={m => {
-                                        let airport = this.state.airports[m['airport']];
-                                        return airport === undefined ? null : airport['latitude'];
-                                    }}
-                                    intensityExtractor={m => parseFloat(m['intensity'])}/>
+                            <Map center={[40, -95]} zoom={4}>
+                                {this.state.activeMap === 'traffic' ?
+                                    <HeatmapLayer
+                                        fitBoundsOnLoad
+                                        fitBoundsOnUpdate
+                                        points={this.state.traffic}
+                                        longitudeExtractor={m => {
+                                            let airport = this.state.airports[m['airport']];
+                                            return airport === undefined ? null : airport['longitude'];
+                                        }}
+                                        latitudeExtractor={m => {
+                                            let airport = this.state.airports[m['airport']];
+                                            return airport === undefined ? null : airport['latitude'];
+                                        }}
+                                        intensityExtractor={m => parseFloat(m['intensity'])}/> : null}
                                 <TileLayer
                                     url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 />
 
+                                {this.state.activeMap === 'routes' ?
+                                    <Polyline color="lime" opacity="0.6" style={{lineWidth: '1px'}}positions={this.state.routeLines}/> : null}
+
+
                                 <Control position="topright">
-                                    <Button color="primary" variant="contained"
-                                            onClick={() => alert("YES")}
+                                    <Button color={this.state.activeMap === 'performance' ? 'secondary' : 'default'}
+                                            variant="contained"
+                                            onClick={() => this.changeActive('performance')}
                                     >
                                         Performance
                                     </Button>
-                                    <Button color="secondary" variant="contained"
-                                            onClick={() => alert("YES")}
+                                    <Button color={this.state.activeMap === 'traffic' ? 'secondary' : 'default'}
+                                            variant="contained"
+                                            onClick={() => this.changeActive('traffic')}
                                     >
                                         Traffic
                                     </Button>
-                                    <Button color="primary" variant="contained"
-                                            onClick={() => alert("YES")}
+                                    <Button color={this.state.activeMap === 'routes' ? 'secondary' : 'default'}
+                                            variant="contained"
+                                            onClick={() => this.changeActive('routes')}
                                     >
                                         Routes
                                     </Button>
@@ -175,7 +218,7 @@ class Route extends Component {
 
                     <div id="predictor">
 
-                        <div style={{textAlign: "center", color:'whitesmoke', marginBottom: '10px'}}>
+                        <div style={{textAlign: "center", color: 'whitesmoke', marginBottom: '10px'}}>
                             <Typography color="inherit" variant="h3" gutterBottom>
                                 Route Explorer
                             </Typography>
@@ -230,17 +273,23 @@ class Route extends Component {
                         </div>
 
                         <div id="results" style={{display: 'flex', flexDirection: 'row', height: '100%'}}>
-                            <div style={{width: '40%', height: '80%', textAlign: 'center', borderStyle:'solid', marginRight: '5px'}}>
-                                <Typography color="inherit" variant="h5" gutterBottom style={{color:'#22bc2b'}}>
+                            <div style={{
+                                width: '40%',
+                                height: '80%',
+                                textAlign: 'center',
+                                borderStyle: 'solid',
+                                marginRight: '5px'
+                            }}>
+                                <Typography color="inherit" variant="h5" gutterBottom style={{color: '#22bc2b'}}>
                                     Route Results
                                 </Typography>
-                                <Typography color="inherit" variant="h6" gutterBottom style={{color:'#22bc2b'}}>
+                                <Typography color="inherit" variant="h6" gutterBottom style={{color: '#22bc2b'}}>
                                     Origin: DFW - Destination: ATL
                                 </Typography>
                             </div>
-                            <div style={{width: '60%', height: '80%', textAlign: 'center' , borderStyle:'solid'}}>
-                                <Typography color="inherit" variant="h5" gutterBottom style={{color:'#22bc2b'}}>
-                                    AA Route Breakdown
+                            <div style={{width: '60%', height: '80%', textAlign: 'center', borderStyle: 'solid'}}>
+                                <Typography color="inherit" variant="h5" gutterBottom style={{color: '#22bc2b'}}>
+                                    AA Route Connections
                                 </Typography>
                                 {this.state.keys.length !== 0 ?
                                     <ResponsiveChordCanvas
@@ -303,14 +352,14 @@ class Route extends Component {
                                         motionStiffness={90}
                                         motionDamping={7}
                                     /> :
-                                    <div style={{position: 'fixed', 'top': '50%'}}>
-                                    <RingLoader
-                                        css={override}
-                                        sizeUnit={"px"}
-                                        size={'350'}
-                                        color={'#22bc2b'}
-                                        loading={true}
-                                    />
+                                    <div style={{position: 'fixed', 'top': '50%', 'right': '7%'}}>
+                                        <RingLoader
+                                            css={override}
+                                            sizeUnit={"px"}
+                                            size={'350'}
+                                            color={'#22bc2b'}
+                                            loading={true}
+                                        />
                                     </div>
                                 }
                             </div>
