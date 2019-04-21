@@ -18,8 +18,27 @@ body {
     height: 100%;
     margin-top: 5%;
     position: fixed;
-    background-color: #43ed2d;
     visibility: hidden;
+    display: flex;
+}
+
+#map {
+    width: 50%;
+    justify-content: center;
+    margin: 10px;
+    padding-bottom: 5%;
+}
+
+.leaflet-container{
+    height: 100%;
+    width: 100%;
+}
+
+#predictor{
+    display: flex;
+    flex-direction: column;
+    background-color: mediumpurple;
+    width: 50%;
 }
 
 .app {

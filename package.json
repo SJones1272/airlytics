@@ -24,11 +24,13 @@
     "firebase": "^5.10.0",
     "firebase-admin": "^7.3.0",
     "firebase-functions": "^2.3.0",
+    "leaflet": "^1.4.0",
     "pixi": "^0.3.1",
     "pixi-viewport": "^3.22.0",
     "pixi.js": "^4.8.7",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-leaflet": "^2.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

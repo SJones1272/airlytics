@@ -3,6 +3,7 @@ import Header from "./header";
 import Visual from "../visual/visual";
 import data from "./airline-data"
 import axios from "axios";
+import Route from "../visual/route";
 
 class App extends Component {
 
@@ -226,7 +227,7 @@ class App extends Component {
 
                 {this.state.activeVisual === 'route' ?
                     <div id="routes" style={ {visibility: "visible"}}>
-
+                        <Route/>
                     </div> :
                     <div id="routes">
                     </div>
