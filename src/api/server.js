@@ -1,8 +1,7 @@
 const express = require('express');
-const functions = require('firebase-functions')
+const bodyParser = require('body-parser');
 
 const app = express();
-const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -20,4 +19,3 @@ app.use('/api/airports', require('./routes/airports'));
 app.listen(port);
 console.log('Server is up on port ' + port);
 
-exports.api = functions.https.onRequest(app);
