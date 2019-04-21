@@ -14,9 +14,7 @@ router.get("/", async function (req, res) {
         body: {
             size: 8000,
             query: {
-                "match": {
-                    "match_all": {}
-                }
+                "match_all": {}
             }
         }
     });
