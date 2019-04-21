@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@nivo/chord": "^0.56.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "color": "^3.1.0",

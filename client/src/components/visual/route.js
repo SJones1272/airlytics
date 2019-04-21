@@ -3,6 +3,7 @@ import {Map, Marker, Popup, TileLayer} from 'react-leaflet'
 import axios from "axios";
 import HeatmapLayer from "react-leaflet-heatmap-layer";
 import chordMpr from "./utils";
+import {ResponsiveChordCanvas} from "@nivo/chord";
 
 
 class Route extends Component {
@@ -12,7 +13,9 @@ class Route extends Component {
         this.state = {
             airports: [],
             traffic: [],
-            routes: []
+            routes: [],
+            matrix: [],
+            mmp: {}
         }
     }
 
@@ -43,8 +46,10 @@ class Route extends Component {
                 return 1;
             });
 
-        console.log(mpr.getMatrix());
-        console.log(mpr.getMmap());
+        this.setState({
+            matrix: mpr.getMatrix(),
+            mmp: mpr.getMmap()
+        });
     }
 
 
@@ -88,8 +93,68 @@ class Route extends Component {
                     <div>
                         <h1>Form</h1>
                     </div>
-                    <div>
+                    <div style={{width: '100%', height: '50%'}}>
                         chord diagram of routes
+                        <ResponsiveChordCanvas
+                            matrix={[[1, 2],[1, 2]]}
+                            keys={["a", "b"]}
+                            margin={{
+                                "top": 60,
+                                "right": 60,
+                                "bottom": 60,
+                                "left": 60
+                            }}
+                            pixelRatio={1}
+                            padAngle={0.006}
+                            innerRadiusRatio={0.86}
+                            innerRadiusOffset={0}
+                            arcOpacity={1}
+                            arcBorderWidth={1}
+                            arcBorderColor={{
+                                "from": "color",
+                                "modifiers": [
+                                    [
+                                        "darker",
+                                        0.4
+                                    ]
+                                ]
+                            }}
+                            ribbonOpacity={0.5}
+                            ribbonBorderWidth={1}
+                            ribbonBorderColor={{
+                                "from": "color",
+                                "modifiers": [
+                                    [
+                                        "darker",
+                                        0.4
+                                    ]
+                                ]
+                            }}
+                            enableLabel={true}
+                            label="id"
+                            labelOffset={9}
+                            labelRotation={-90}
+                            labelTextColor={{
+                                "from": "color",
+                                "modifiers": [
+                                    [
+                                        "darker",
+                                        1
+                                    ]
+                                ]
+                            }}
+                            colors={{
+                                "scheme": "paired"
+                            }}
+                            isInteractive={true}
+                            arcHoverOpacity={1}
+                            arcHoverOthersOpacity={0.4}
+                            ribbonHoverOpacity={0.75}
+                            ribbonHoverOthersOpacity={0}
+                            animate={true}
+                            motionStiffness={90}
+                            motionDamping={7}
+                        />
                     </div>
 
                 </div>
