@@ -37,6 +37,7 @@ class App extends Component {
             setState: this.setState.bind(this),
         });
 
+
     }
 
     updateRankingIndex = (value) => {
@@ -78,26 +79,14 @@ class App extends Component {
             this.forceUpdate();
         });
 
-
-        document.addEventListener('mousemove', e => {
-            this.setState({_hoverX: e.pageX, _hoverY: e.pageY});
-        });
-
         this.refreshVisual();
 
 
     }
 
-    componentDidUpdate(prevProps, prevState) {
-
-        if(prevState !== this.state && this.state.activeVisual !== prevState.activeVisual) {
-
-            this.refreshAirline();
-            this.refreshVisual();
-        }
-        else if(this.state.rankingSortIndex !== prevState.rankingSortIndex){
-            this.refreshVisual();
-        }
+    componentDidUpdate() {
+        this.refreshAirline();
+        this.refreshVisual();
     }
 
     refreshVisual() {
@@ -145,7 +134,8 @@ class App extends Component {
 
     render() {
         const displayHeatHoverDiv = (this.state.activeVisual === 'ranking' || this.state.activeVisual === 'airline') && this.state.heatmapHover;
-        const displayAirlineHoverDiv = this.state.airlineHover;
+        const displayAirlineHoverDiv = this.state.activeVisual !== 'route' && this.state.airlineHover;
+        console.log(displayAirlineHoverDiv);
         return (
             <div className="app">
 
@@ -178,7 +168,7 @@ class App extends Component {
                                 }}
                             />
                         </div>
-                    </div> : <div></div>}
+                    </div> : null}
 
 
                 {this.state.activeVisual === 'data' ?
@@ -236,14 +226,12 @@ class App extends Component {
                                 }}
                             />
                         </div>
-                    </div> : <div></div>}
+                    </div> : null}
 
                 {this.state.activeVisual === 'route' ?
                     <div id="routes" style={{visibility: "visible"}}>
                         <Route iata={"AA"}/>
-                    </div> :
-                    <div id="routes">
-                    </div>
+                    </div> : null
                 }
 
             </div>

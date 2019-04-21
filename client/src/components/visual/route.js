@@ -132,7 +132,7 @@ class Route extends Component {
                             />
                             </div>
                             :
-                            <Map center={[40, -95]} zoom={4}>
+                            <Map center={[40, -95]} zoom={15}>
                                 <HeatmapLayer
                                     fitBoundsOnLoad
                                     fitBoundsOnUpdate
