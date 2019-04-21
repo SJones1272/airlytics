@@ -278,7 +278,8 @@ class Route extends Component {
                                 height: '80%',
                                 textAlign: 'center',
                                 borderStyle: 'solid',
-                                marginRight: '5px'
+                                marginRight: '5px',
+                                borderRadius: 10
                             }}>
                                 <Typography color="inherit" variant="h5" gutterBottom style={{color: '#22bc2b'}}>
                                     Route Results
@@ -287,7 +288,7 @@ class Route extends Component {
                                     Origin: DFW - Destination: ATL
                                 </Typography>
                             </div>
-                            <div style={{width: '60%', height: '80%', textAlign: 'center', borderStyle: 'solid'}}>
+                            <div style={{width: '60%', height: '80%', textAlign: 'center', borderStyle: 'solid', borderRadius: 10}}>
                                 <Typography color="inherit" variant="h5" gutterBottom style={{color: '#22bc2b'}}>
                                     {this.props.airline} Route Connections
                                 </Typography>
