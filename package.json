@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "npm run build",
-    "heroku-postbuild": "node /src/api/server.js",
+    "heroku-postbuild": "npm server",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/api/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
