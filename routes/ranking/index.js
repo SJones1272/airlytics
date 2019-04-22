@@ -1,4 +1,10 @@
-// const express = require('express');
+const express = require('express');
+const elasticsearch = require('elasticsearch');
+const client = new elasticsearch.Client({
+    hosts: ['http://24.2.97.148:9200']
+});
+//COMMENTED OUT ONLY RUNS WITH API KEY
+
 // const admin = require('firebase-admin');
 // const serviceAccount = require('../../airlytics-service-key.json');
 //
@@ -6,7 +12,7 @@
 //     credential: admin.credential.cert(serviceAccount)
 // });
 //
-// let router = express.Router();
+let router = express.Router();
 // const db = admin.firestore();
 //
 // async function generateEntry(doc){
@@ -46,4 +52,73 @@
 //     resp.send(result);
 // });
 //
-// module.exports = router;
+// const airlines = require('../airline-data');
+
+async function retrieveAirlinesForRoute(origin, destination){
+    let elasticResults = await client.search({
+        index: 'routes',
+        type: 'routes',
+        body: {
+            "size": 0,
+            query: {
+                "bool": {
+                    "must": [
+                        {
+                            "match": {
+                                "sourceAirport.keyword": origin
+                            }
+                        },
+                        {
+                            "match": {
+                                "destinationAirport.keyword": destination
+                            }
+                        }
+                    ]
+                }
+            },
+            "aggs": {
+                "airline": {
+                    "terms": {
+                        "field": "airline.keyword",
+                        "size": 10000
+                    }
+                }
+            }
+        }
+    });
+
+    return elasticResults.aggregations.airline.buckets.map(x => x.key);
+}
+
+let airlineData = require('../airline-data');
+
+router.post("/routes/:from-:to", async function(req, res){
+    let factors = req.body;
+    console.log(factors);
+    let airlines = await retrieveAirlinesForRoute(req.params['from'], req.params['to']).catch(err => console.log(err));
+    let results = []; //{iata, name, score}
+
+    airlineData.airlines.forEach(airline => {
+        if(airlines.includes(airline.iata)){
+            let score = 0;
+            airline.data.forEach(value => {
+                let key = Object.keys(value)[0];
+                let v = value[key];
+                if(factors[key] !== undefined){
+                    score += v * factors[key]
+                }
+            })
+
+            let entry = {
+                "iata": airline.iata,
+                "name": airline.name,
+                "score": score
+            }
+
+            results.push(entry)
+        }
+    })
+    res.send(results)
+})
+
+module.exports = router;

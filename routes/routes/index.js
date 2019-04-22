@@ -16,6 +16,11 @@ router.get("/airline/:iata/traffic", async function (req, res) {
     res.send(results)
 });
 
+router.get("/:from-:to", async function (req, res) {
+    let results = await retrieveAirlinesForRoute(req.params['from'], req.params['to']);
+    res.send(results);
+});
+
 router.get("/", async function (req, res) {
     let results = await retrieveRoutes();
     res.send(results)
@@ -156,5 +161,41 @@ async function retrieveRoutesForAirline(airlineCode) {
     return results
 }
 
+async function retrieveAirlinesForRoute(origin, destination){
+    let elasticResults = await client.search({
+        index: 'routes',
+        type: 'routes',
+        body: {
+            "size": 10000,
+            query: {
+                "bool": {
+                    "must": [
+                        {
+                            "match": {
+                                "sourceAirport.keyword": origin
+                            }
+                        },
+                        {
+                            "match": {
+                                "destinationAirport.keyword": destination
+                            }
+                        }
+                    ]
+                }
+            },
+            "aggs": {
+                "airline": {
+                    "terms": {
+                        "field": "airline.keyword",
+                        "size": 10000
+                    }
+                }
+
+            }
+        }
+    });
+
+    return elasticResults.aggregations.airline.buckets.map(x => x.key);
+}
 
 module.exports = router;

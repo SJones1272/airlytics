@@ -70,9 +70,10 @@ class Route extends Component {
             routes: [],
             routeLines: [],
             activeMap: 'traffic',
-            origin: '',
-            destination: '',
+            origin: 'DFW',
+            destination: 'LAX',
             open: false,
+            rankings: [],
             factors: {
                 'seatComfort': .45,
                 'entertainment': .21,
@@ -85,6 +86,8 @@ class Route extends Component {
                 'recommendedPercentage': .5
             }
         }
+
+        this.find = this.find.bind(this);
     }
 
     async componentDidMount() {
@@ -107,7 +110,6 @@ class Route extends Component {
     generateRouteLines = (routes) => {
 
         let routeLines = [];
-        console.log(this.state.airports['ABE']);
         routes.data.forEach(route => {
             try {
                 let source = this.state.airports[route.sourceAirport];
@@ -146,8 +148,14 @@ class Route extends Component {
 
     }
 
-    find = () => {
-        alert("FOUND");
+    async find() {
+        let results = await axios.post(`/api/airline/routes/${this.state.origin}-${this.state.destination}`, this.state.factors).catch(err => console.log(err));
+        console.log(results);
+        this.setState({
+            rankings: (results.data).sort((a, b) => b.score - a.score)
+        })
+
+        console.log(this.state.routes);
     }
 
     changeActive = (map) => {
@@ -163,6 +171,12 @@ class Route extends Component {
     handleClose = () => {
         this.setState({open: false});
     };
+
+    changeRoute = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
 
     render() {
         const {classes} = this.props;
@@ -410,11 +424,13 @@ class Route extends Component {
                             </Typography>
                             <form className={classes.container} noValidate autoComplete="off">
                                 <TextField
-                                    id="outlined-name"
+                                    id="origin"
                                     label="Origin"
                                     className={classes.textField}
                                     margin="normal"
                                     variant="outlined"
+                                    onChange={this.changeRoute}
+                                    value={this.state.origin}
                                     InputLabelProps={{
                                         classes: {
                                             root: classes.cssLabel,
@@ -430,11 +446,13 @@ class Route extends Component {
                                     }}
                                 />
                                 <TextField
-                                    id="outlined-uncontrolled"
+                                    id="destination"
                                     label="Destination"
                                     className={classes.textField}
                                     margin="normal"
                                     variant="outlined"
+                                    onChange={this.changeRoute}
+                                    value={this.state.destination}
                                     InputLabelProps={{
                                         classes: {
                                             root: classes.cssLabel,
@@ -475,8 +493,13 @@ class Route extends Component {
                                     Route Results
                                 </Typography>
                                 <Typography color="inherit" variant="h6" gutterBottom style={{color: '#22bc2b'}}>
-                                    Origin: DFW - Destination: ATL
+                                    Origin: {this.state.origin} - Destination: {this.state.destination}
                                 </Typography>
+
+                                {console.log(this.state.rankings)}
+                                <ul style={{textAlign: "left", color:"whitesmoke"}}>
+                                    {this.state.rankings.map(x => <li>{x.iata} - {x.score}</li>)}
+                                </ul>
                             </div>
                             <div style={{
                                 width: '60%',

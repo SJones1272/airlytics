@@ -140,7 +140,6 @@ class App extends Component {
     render() {
         const displayHeatHoverDiv = (this.state.activeVisual === 'ranking' || this.state.activeVisual === 'airline') && this.state.heatmapHover;
         const displayAirlineHoverDiv = this.state.activeVisual !== 'route' && this.state.airlineHover;
-        console.log(displayAirlineHoverDiv);
         return (
             <div className="app">
 

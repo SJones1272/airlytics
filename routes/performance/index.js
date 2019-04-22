@@ -8,12 +8,17 @@ let router = express.Router();
 
 router.get("/airline/:iata", async function (req, res) {
     let results = await retrieveAirlinePerformance(req.params['iata'].toUpperCase());
-    console.log(Object.keys(results).length);
     res.send(results)
 });
 
-router.get("/airline/:iata/:from-:to", async function(req, res){
-    let results = await retireveAirlineRoutePerformance(req.params['iata'], req.params['from'], req.params['to']);
+// router.get("/airline/:iata/:from-:to", async function (req, res) {
+//     let results = await retireveAirlineRoutePerformance(req.params['iata'], req.params['from'], req.params['to']);
+//
+//     res.send(results)
+// });
+
+router.get("/route/:from-:to", async function (req, res) {
+    let results = await retireveRoutePerformance(req.params['from'], req.params['to']);
 
     res.send(results)
 });
@@ -37,89 +42,58 @@ router.get("/airline/:iata/date", async function (req, res) {
     res.send(results);
 });
 
-async function retireveAirlineRoutePerformance(airlineCode, origin, destination){
+async function retireveRoutePerformance(origin, destination) {
     let elasticResults = await client.search({
         index: 'ontimeperformance',
         type: 'ontimeperformance',
         body: {
-            size: "12",
+            size: "0",
             query: {
                 "bool": {
                     "must": [
                         {
                             "match": {
-                                "reporting_Airline.keyword": `${airlineCode}`
-                            }
-                        }, {
-                            "match": {
-                                "year": `${year}`
-                            }
-                        }, {
-                            "match": {
-                                "month": `${month}`
+                                "origin.keyword": origin
                             }
                         },
                         {
-                            "range": {
-                                "depDelay": {
-                                    "gt": 0
-                                }
+                            "match": {
+                                "dest.keyword": destination
                             }
                         }
                     ]
                 }
             },
             "aggs": {
-                "airlinesAgg": {
+                "airline": {
                     "terms": {
-                        "field": "reporting_Airline.keyword"
+                        "field": "reporting_Airline.keyword",
+                        "size": 8000
                     },
                     "aggs": {
-                        "originAgg": {
-                            "terms": {
-                                "field": "origin.keyword",
-                                "size": 550,
-                                "order": {
-                                    "_term": "asc"
-                                }
-                            },
-                            "aggs": {
-                                "destinationAgg": {
-                                    "terms": {
-                                        "field": "dest.keyword",
-                                        "size": 550
-                                        , "order": {
-                                            "_term": "asc"
-                                        }
-                                    },
-                                    "aggs": {
-                                        "departureDelay": {
-                                            "avg": {
-                                                "field": "depDelay"
-                                            }
-                                        },
-                                        "arrivalDelay": {
-                                            "avg": {
-                                                "field": "arrDelay"
-                                            }
-                                        },
-                                        "carrierDelay": {
-                                            "avg": {
-                                                "field": "carrierDelay"
-                                            }
-                                        },
-                                        "lateAircraftDelay": {
-                                            "avg": {
-                                                "field": "lateAircraftDelay"
-                                            }
-                                        },
-                                        "securityDelay": {
-                                            "avg": {
-                                                "field": "securityDelay"
-                                            }
-                                        }
-                                    }
-                                }
+                        "departureDelay": {
+                            "avg": {
+                                "field": "depDelay"
+                            }
+                        },
+                        "arrivalDelay": {
+                            "avg": {
+                                "field": "arrDelay"
+                            }
+                        },
+                        "carrierDelay": {
+                            "avg": {
+                                "field": "carrierDelay"
+                            }
+                        },
+                        "lateAircraftDelay": {
+                            "avg": {
+                                "field": "lateAircraftDelay"
+                            }
+                        },
+                        "securityDelay": {
+                            "avg": {
+                                "field": "securityDelay"
                             }
                         }
                     }
@@ -127,30 +101,31 @@ async function retireveAirlineRoutePerformance(airlineCode, origin, destination)
             }
         }
     }).catch(err => console.log(err));
-    let data = elasticResults.aggregations.airlinesAgg.buckets[0].originAgg.buckets;
+    let data = elasticResults.aggregations.airline.buckets;
 
     let results = {
-        "iata": airlineCode,
-        "origin": year,
-        "destination": month
+        'origin': origin,
+        'destination': destination,
+        data: {}
     }
+
     for (let i = 0; i < data.length; i++) {
-        let destinations = data[i].destinationAgg.buckets;
-        let destinationEntries = []
-        for (let j = 0; j < destinations.length; j++) {
-            let destination = {
-                "destination": destinations[j].key,
-                "avgDepDelay": (destinations[j].arrivalDelay.value).toFixed(2),
-                "lateAircraftDelay": (destinations[j].lateAircraftDelay.value).toFixed(2),
-                "securityDelay": (destinations[j].securityDelay.value).toFixed(2),
-                "carrierDelay": (destinations[j].carrierDelay.value).toFixed(2)
-            }
-            destinationEntries.push(destination)
+        let current = data[i];
+        let entry = {
+            "iata": current.key,
+            "securityDelay": current.securityDelay.value,
+            "carrierDelay": current.carrierDelay.value,
+            "lateAircraftDelay": current.lateAircraftDelay.value,
+            "arrivalDelay": current.arrivalDelay.value,
+            "departureDelay": current.departureDelay.value
         }
-        results[data[i].key] = destinationEntries
+        results.data[current.key] = entry
     }
-    return results
+
+    return results;
 }
+
+
 
 async function retrieveAirlinePerformanceByYearAndMonth(airlineCode, year, month) {
     let elasticResults = await client.search({
