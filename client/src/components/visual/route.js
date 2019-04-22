@@ -10,6 +10,12 @@ import TextField from "@material-ui/core/TextField/TextField";
 import Button from "@material-ui/core/Button/Button";
 import Typography from "@material-ui/core/Typography/Typography";
 import Control from 'react-leaflet-control';
+import Dialog from "@material-ui/core/Dialog/Dialog";
+import DialogContent from "@material-ui/core/DialogContent/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText/DialogContentText";
+import DialogActions from "@material-ui/core/DialogActions/DialogActions";
+import DialogTitle from "@material-ui/core/DialogTitle/DialogTitle";
+import Grid from "@material-ui/core/Grid/Grid";
 
 
 const override = {
@@ -63,13 +69,23 @@ class Route extends Component {
             keys: [],
             routes: [],
             routeLines: [],
-            activeMap: 'traffic'
+            activeMap: 'traffic',
+            origin: '',
+            destination: '',
+            open: false,
+            factors: {
+                'seatComfort': .45,
+                'entertainment': .21,
+                'wifi': .21,
+                'punctuality': .65,
+                'polarity': .25,
+                'food': .2,
+                'ground': .05,
+                'value': .71,
+                'recommendedPercentage': .5
+            }
         }
     }
-
-    handleChange = (event, value) => {
-        this.setState({value});
-    };
 
     async componentDidMount() {
         let results = await axios.get(`/api/routes/airline/${this.props.iata}/traffic`).catch(err => console.log(err));
@@ -91,13 +107,13 @@ class Route extends Component {
     generateRouteLines = (routes) => {
 
         let routeLines = [];
-            console.log(this.state.airports['ABE']);
+        console.log(this.state.airports['ABE']);
         routes.data.forEach(route => {
             try {
                 let source = this.state.airports[route.sourceAirport];
                 let destination = this.state.airports[route.destinationAirport];
                 routeLines.push([[source.latitude, source.longitude], [destination.latitude, destination.longitude]])
-            }catch{
+            } catch {
 
             }
         });
@@ -107,7 +123,6 @@ class Route extends Component {
         })
 
     }
-
 
     generateChordMatrix() {
         let mpr = new chordMpr(this.state.routes);
@@ -139,21 +154,175 @@ class Route extends Component {
         this.setState({
             activeMap: map
         })
-    };å
+    };
 
+    handleClickOpen = () => {
+        this.setState({open: true});
+    };
+
+    handleClose = () => {
+        this.setState({open: false});
+    };
 
     render() {
         const {classes} = this.props;
 
         return (
             <div>
+
+                <Dialog
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                    aria-labelledby="form-dialog-title"
+                >
+                    <DialogTitle id="form-dialog-title">Customize Route Algorithm Factors</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            What matters most to you? set your preferences below so we can best match you with an
+                            airline for your trip.
+                        </DialogContentText>
+                        <Grid container spacing={24}>
+                            <Grid item xs={4}>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="seatComfort"
+                                    value={this.state.factors.seatComfort}
+                                    onChange={this.handleChange}
+                                    label="Seat Comfort"
+                                    type="number" inputProps={{min: "0", max: "1", step: ".1"}}
+                                    helperText="Value between 0 and 1"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={4}>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="entertainment"
+                                    label="Entertainment"
+                                    value={this.state.factors.entertainment}
+                                    onChange={this.handleChange}
+                                    type="number" inputProps={{min: "0", max: "1", step: ".1"}}
+                                    helperText="Value between 0 and 1"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={4}>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="wifi"
+                                    label="Wifi Connectivity"
+                                    value={this.state.factors.wifi}
+                                    onChange={this.handleChange}
+                                    type="number" inputProps={{min: "0", max: "1", step: ".1"}}
+                                    helperText="Value between 0 and 1"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={4}>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="punctuality"
+                                    label="Punctuality"
+                                    value={this.state.factors.punctuality}
+                                    onChange={this.handleChange}
+                                    type="number" inputProps={{min: "0", max: "1", step: ".1"}}
+                                    helperText="Value between 0 and 1"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={4}>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="polarity"
+                                    label="Passenger Sentiment"
+                                    value={this.state.factors.polarity}
+                                    onChange={this.handleChange}
+                                    type="number" inputProps={{min: "0", max: "1", step: ".1"}}
+                                    helperText="Value between 0 and 1"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={4}>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="food"
+                                    label="Food"
+                                    value={this.state.factors.food}
+                                    onChange={this.handleChange}
+                                    type="number" inputProps={{min: "0", max: "1", step: ".1"}}
+                                    helperText="Value between 0 and 1"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={4}>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="value"
+                                    label="Value"
+                                    value={this.state.factors.value}
+                                    onChange={this.handleChange}
+                                    type="number" inputProps={{min: "0", max: "1", step: ".1"}}
+                                    helperText="Value between 0 and 1"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={4}>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="recommendedPercentage"
+                                    label="Recommended"
+                                    value={this.state.factors.recommendedPercentage}
+                                    onChange={this.handleChange}
+                                    type="number" inputProps={{min: "0", max: "1", step: ".1"}}
+                                    helperText="Value between 0 and 1"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={4}>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="ground"
+                                    label="Ground Service"
+                                    value={this.state.factors.ground}
+                                    onChange={this.handleChange}
+                                    type="number" inputProps={{min: "0", max: "1", step: ".1"}}
+                                    helperText="Value between 0 and 1"
+                                    fullWidth
+                                />
+                            </Grid>
+                        </Grid>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={this.handleClose} variant="outlined" color="secondary">
+                            Cancel
+                        </Button>
+                        <Button onClick={this.handleClose} variant="outlined" color="primary">
+                            save
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+
+
                 <Typography variant="h5" gutterBottom style={{color: 'whitesmoke'}}>
                     Currently Exploring: {this.props.airline}
                 </Typography>
                 <div style={{display: 'flex', position: 'fixed', width: '100%', height: '100%'}}>
 
-                    <div id="map" style={{pointerEvents: 'auto'}}>
-
+                    {/*<div id="map" style={{*/}
+                    {/*borderStyle: 'solid',*/}
+                    {/*borderColor: 'whitesmoke',*/}
+                    {/*borderRadius: 10,*/}
+                    {/*}}>*/}
+                    <div id="map">
                         {this.state.traffic.length === 0 ?
                             <div style={{position: 'fixed', 'top': '30%', left: '5%'}}>
                                 <RingLoader
@@ -202,8 +371,8 @@ class Route extends Component {
                                 />
 
                                 {this.state.activeMap === 'routes' ?
-                                    <Polyline color="#22bc2b" opacity="0.1" style={{lineWidth: '.5px'}}positions={this.state.routeLines}/> : null}
-
+                                    <Polyline color="#22bc2b" opacity="0.1" style={{lineWidth: '.5px'}}
+                                              positions={this.state.routeLines}/> : null}
 
                                 <Control position="topright">
                                     <Button color={this.state.activeMap === 'performance' ? 'secondary' : 'default'}
@@ -280,10 +449,16 @@ class Route extends Component {
                                         }
                                     }}
                                 />
+
                             </form>
+                            <Button color="secondary" variant="contained" style={{marginRight: 10}}
+                                    onClick={this.handleClickOpen}>
+                                Customize Factors
+                            </Button>
                             <Button variant="contained" color="primary" onClick={this.find}>
                                 Explore
                             </Button>
+
                         </div>
 
                         <div id="results" style={{display: 'flex', flexDirection: 'row', height: '100%'}}>
@@ -292,6 +467,7 @@ class Route extends Component {
                                 height: '80%',
                                 textAlign: 'center',
                                 borderStyle: 'solid',
+                                borderColor: 'whitesmoke',
                                 marginRight: '5px',
                                 borderRadius: 10
                             }}>
@@ -302,7 +478,14 @@ class Route extends Component {
                                     Origin: DFW - Destination: ATL
                                 </Typography>
                             </div>
-                            <div style={{width: '60%', height: '80%', textAlign: 'center', borderStyle: 'solid', borderRadius: 10}}>
+                            <div style={{
+                                width: '60%',
+                                height: '80%',
+                                textAlign: 'center',
+                                borderStyle: 'solid',
+                                borderColor: 'whitesmoke',
+                                borderRadius: 10
+                            }}>
                                 <Typography color="inherit" variant="h5" gutterBottom style={{color: '#22bc2b'}}>
                                     {this.props.airline} Route Connections
                                 </Typography>
@@ -313,7 +496,7 @@ class Route extends Component {
                                         margin={{
                                             "top": 60,
                                             "right": 60,
-                                            "bottom": 150,
+                                            "bottom": 90,
                                             "left": 60
                                         }}
                                         pixelRatio={1}
@@ -331,14 +514,14 @@ class Route extends Component {
                                                 ]
                                             ]
                                         }}
-                                        ribbonOpacity={0.8}
-                                        ribbonBorderWidth={10}
+                                        ribbonOpacity={0.5}
+                                        ribbonBorderWidth={1}
                                         ribbonBorderColor={{
                                             "from": "color",
                                             "modifiers": [
                                                 [
                                                     "darker",
-                                                    0.6
+                                                    0.4
                                                 ]
                                             ]
                                         }}
@@ -361,7 +544,7 @@ class Route extends Component {
                                         isInteractive={true}
                                         arcHoverOpacity={1}
                                         arcHoverOthersOpacity={0.4}
-                                        ribbonHoverOpacity={1}
+                                        ribbonHoverOpacity={0.75}
                                         ribbonHoverOthersOpacity={0}
                                         animate={true}
                                         motionStiffness={90}
