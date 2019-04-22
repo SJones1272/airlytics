@@ -148,6 +148,11 @@ class Route extends Component {
 
     }
 
+    handleChange = (e) => {
+        this.setState({ factors: { ...this.state.factors, [e.target.id]: e.target.value} });
+
+    }
+
     async find() {
         let results = await axios.post(`/api/airline/routes/${this.state.origin}-${this.state.destination}`, this.state.factors).catch(err => console.log(err));
         console.log(results);
