@@ -59,7 +59,7 @@ const Header = (props) => {
                             active: false,
                         })}
                         onClick={() => {
-                            alert("About modal")
+                            window.location.href='https://stephenjones965007.typeform.com/to/CW43xc';
                         }}
                         title="about"
                     />
