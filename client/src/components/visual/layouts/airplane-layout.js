@@ -1,6 +1,6 @@
 import Layout from "./layout";
 import * as PIXI from "pixi.js";
-import airplane from "../../../static/american.png";
+import airplane from "../../../static/airline.png";
 
 class AirplaneLayout extends Layout {
     layout({airline}) {
