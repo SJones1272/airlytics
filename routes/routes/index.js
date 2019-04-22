@@ -1,5 +1,7 @@
 const express = require('express');
 const elasticsearch = require('elasticsearch');
+const routeAlg = require('./dijkstra.js');
+
 const client = new elasticsearch.Client({
     hosts: ['http://24.2.97.148:9200']
 });
@@ -13,6 +15,11 @@ router.get("/airline/:iata", async function (req, res) {
 
 router.get("/airline/:iata/traffic", async function (req, res) {
     let results = await retrieveRouteTrafficForAirline(req.params['iata']);
+    res.send(results)
+});
+
+router.get("/bestroute/:orig/:dest/:airl", async function (req, res) {
+    let results = await retrieveBestRoute(req.params['orig'],req.params['dest'],req.params['airl']).catch(err => console.log(err));
     res.send(results)
 });
 
@@ -67,6 +74,66 @@ async function retrieveRoutes() {
     return results
 
 }
+
+async function retrieveBestRoute(origin, destination, airlineCode) {
+    let elasticResults = await client.search({
+        index: 'routes',
+        type: 'routes',
+        body: {
+            "size": 0,
+            "query": {
+            "bool": {
+                "must": [
+                    {"match": {"airline.keyword": `${airlineCode}`}}
+                ]
+            }
+            },
+            "aggs": {
+                "destinationAgg": {
+                "terms": {
+                    "field": "sourceAirport.keyword",
+                    "size": 10000,
+                    "order": {
+                    "_term": "asc"
+                    }
+                },
+                "aggs": {
+                    "destinationAgg": {
+                    "terms": {
+                        "field": "destinationAirport.keyword",
+                        "size": 10000,
+                        "order": {
+                        "_term": "asc"
+                        }
+                    },
+                    "aggs": {
+                        "airlineAgg": {
+                        "terms": {
+                            "field": "airline.keyword",
+                            "size": 10000,
+                            "order": {
+                            "_term": "asc"
+                            }
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+            }
+        // }
+    }
+    
+    
+    );
+
+    let routeData = elasticResults;
+
+    bestRoute = routeAlg.calculateBestPath(routeData, origin, destination, airlineCode);
+    return bestRoute;
+}
+
 
 async function retrieveRouteTrafficForAirline(airlineCode) {
     let elasticResults = await client.search({
