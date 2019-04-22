@@ -1,7 +1,6 @@
 
 
 function calculateBestPath(data, originStr, destStr, preferredAirline) {
-    console.log(data);
     var preferredAirline = [preferredAirline];
     var AllData = data.aggregations.destinationAgg.buckets;
 

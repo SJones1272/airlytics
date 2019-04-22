@@ -74,6 +74,7 @@ class Route extends Component {
             destination: 'LAX',
             open: false,
             rankings: [],
+            bestRoute: [],
             factors: {
                 'seatComfort': .45,
                 'entertainment': .21,
@@ -155,12 +156,21 @@ class Route extends Component {
 
     async find() {
         let results = await axios.post(`/api/airline/routes/${this.state.origin}-${this.state.destination}`, this.state.factors).catch(err => console.log(err));
-        console.log(results);
         this.setState({
             rankings: (results.data).sort((a, b) => b.score - a.score)
         })
 
-        console.log(this.state.routes);
+        let bestRouteResults = await axios.get(`/api/routes/best/${this.state.origin}/${this.state.destination}/${this.state.rankings[0].iata}`);
+        if(bestRouteResults.data.path.length > 1){
+            this.setState({
+                bestRoute: bestRouteResults.data.path.map(x => {
+                    let airport = this.state.airports[x];
+                    return [airport.latitude, airport.longitude]
+                })
+            })
+        }
+
+
     }
 
     changeActive = (map) => {
@@ -393,6 +403,14 @@ class Route extends Component {
                                     <Polyline color="#22bc2b" opacity="0.1" style={{lineWidth: '.5px'}}
                                               positions={this.state.routeLines}/> : null}
 
+                                {this.state.bestRoute.length > 1 ?
+                                    <div>
+                                        {this.state.bestRoute.map(x => <Marker position={x}/>)}
+                                        <Polyline color="red" opacity="0.6" style={{lineWidth: '2px'}}
+                                              positions={this.state.bestRoute}/>
+                                    </div>: null}
+
+
                                 <Control position="topright">
                                     <Button color={this.state.activeMap === 'performance' ? 'secondary' : 'default'}
                                             variant="contained"
@@ -501,7 +519,6 @@ class Route extends Component {
                                     Origin: {this.state.origin} - Destination: {this.state.destination}
                                 </Typography>
 
-                                {console.log(this.state.rankings)}
                                 <ul style={{textAlign: "left", color:"whitesmoke"}}>
                                     {this.state.rankings.map(x => <li>{x.iata} - {x.score}</li>)}
                                 </ul>

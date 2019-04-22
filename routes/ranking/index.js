@@ -94,7 +94,6 @@ let airlineData = require('../airline-data');
 
 router.post("/routes/:from-:to", async function(req, res){
     let factors = req.body;
-    console.log(factors);
     let airlines = await retrieveAirlinesForRoute(req.params['from'], req.params['to']).catch(err => console.log(err));
     let results = []; //{iata, name, score}
 

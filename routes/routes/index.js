@@ -18,7 +18,7 @@ router.get("/airline/:iata/traffic", async function (req, res) {
     res.send(results)
 });
 
-router.get("/bestroute/:orig/:dest/:airl", async function (req, res) {
+router.get("/best/:orig/:dest/:airl", async function (req, res) {
     let results = await retrieveBestRoute(req.params['orig'],req.params['dest'],req.params['airl']).catch(err => console.log(err));
     res.send(results)
 });

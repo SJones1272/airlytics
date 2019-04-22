@@ -31,7 +31,6 @@ class ChordMpr {
         let filter = this.filter;
         let accessor = this.accessor;
 
-        console.log(data)
 
         Object.keys(this.mmap).forEach(a => {
             if(!matrix[mmap[a].id]){
