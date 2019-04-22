@@ -1,5 +1,4 @@
 import Layout from "./layout";
-import data from "../../frame/airline-data"
 
 class RankingLayout extends Layout {
 
@@ -67,7 +66,6 @@ class RankingLayout extends Layout {
         })
     }
 
-    //TODO fix buggy
     sortAirlinesByRecommended = () => {
         this.airlines = this.airlines.slice().sort((a,b) => {
             return a.data[7].recommendedPercentage > b.data[7].recommendedPercentage ? -1 : 1;

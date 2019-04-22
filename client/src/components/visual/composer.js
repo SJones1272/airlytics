@@ -107,11 +107,11 @@ class Composer {
         return height - (height * .3);
     }
 
-    rescale(s) {
+    rescale(size) {
         const heatmap = this.layout === this.layouts.heatmap;
 
         this.airlines.forEach(a => {
-            a.scale = heatmap ? 1 : (2 + 1 / (s * s)) / 3;
+            a.scale = heatmap ? 1 : (2 + 1 / Math.pow(size, 2)) / 3;
         });
     }
 
@@ -172,10 +172,10 @@ class Composer {
         this.visual.setState({
             activeVisual: 'data',
             activeAirline: values[0],
-            xAxis: 1
         })
         this.visual.setLayout('data', {
-            xAxis: values[1]
+            xAxis: 'polarity',
+            yAxis: 'Recommended'
         });
     }
 

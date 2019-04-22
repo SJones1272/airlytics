@@ -89,9 +89,12 @@ class App extends Component {
 
     }
 
-    componentDidUpdate() {
-        this.refreshAirline();
-        this.refreshVisual();
+    componentDidUpdate(prevPros, prevState) {
+
+        if(prevState.activeVisual !== this.state.activeVisual || this.state.xAxisIndex != prevState.xAxisIndex || this.state.yAxisIndex !== prevState.yAxisIndex || this.state.rankingSortIndex !== prevState.rankingSortIndex) {
+            this.refreshAirline();
+            this.refreshVisual();
+        }
     }
 
     refreshVisual() {
@@ -140,7 +143,6 @@ class App extends Component {
     render() {
         const displayHeatHoverDiv = (this.state.activeVisual === 'ranking' || this.state.activeVisual === 'airline') && this.state.heatmapHover;
         const displayAirlineHoverDiv = this.state.activeVisual !== 'route' && this.state.airlineHover;
-        console.log(displayAirlineHoverDiv);
         return (
             <div className="app">
 

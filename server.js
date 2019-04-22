@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 // app.use('/api/financial', require('routes/financial'));
-// app.use('/api/airline', require('./routes/ranking'));
+app.use('/api/airline', require('./routes/ranking'));
 app.use('/api/performance', require('./routes/performance/index'));
 app.use('/api/routes', require('./routes/routes'));
 app.use('/api/airports', require('./routes/airports'));

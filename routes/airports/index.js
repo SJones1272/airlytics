@@ -7,7 +7,6 @@ const client = new elasticsearch.Client({
 let router = express.Router();
 
 router.get("/", async function (req, res) {
-    console.log("searching")
     let results = await client.search({
         index: 'airports',
         type: 'airports',
@@ -18,7 +17,6 @@ router.get("/", async function (req, res) {
             }
         }
     });
-    console.log(results.hits.hits);
     let airports = {};
     results.hits.hits.forEach(x => airports[x['_source']['iATA']] = x['_source']);
     res.send(airports);

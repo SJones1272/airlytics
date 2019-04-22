@@ -1,29 +1,4 @@
 import * as d3 from 'd3';
-
-//
-// initAxis(){
-//     const size = 2;
-//     this.xAxis = new PIXI.Graphics();
-//     this.xAxis.beginFill(0x000000, 0.46);
-//     this.xAxis.drawRect(
-//         -w / 2 - this.padding,
-//         h / 2 + this.padding,
-//         w + this.padding * 2,
-//         size,
-//     );
-//     this.env.addChild(this.xAxis);
-//
-//     this.yAxis = new PIXI.Graphics();
-//     this.yAxis.beginFill(0x000000, 0.6);
-//     this.yAxis.drawRect(
-//         -w / 2 - this.padding,
-//         -h / 2 - this.padding,
-//         size,
-//         h + this.padding * 2,
-//     );
-//     this.env.addChild(this.yAxis);
-// }
-
 import Layout from "./layout";
 import * as PIXI from "pixi.js";
 const axisToLocation = {
@@ -100,7 +75,7 @@ class DataLayout extends Layout {
         let height = composer.getHeight();
         composer.hideHeatMap();
         this.drawAxis();
-        yAxis = yAxis === undefined ? 'polarity' : yAxis;
+
 
         let xIndex = axisToLocation[xAxis]['dataIndex'];
         let xKey = axisToLocation[xAxis]['key'];
@@ -135,7 +110,6 @@ class DataLayout extends Layout {
 
         this.composer.layoutHolder.addChild(axisContainer);
 
-        //     const size = 2;
         this.xAxis = new PIXI.Graphics();
         this.xAxis.beginFill(0x000000, 0.46);
         this.xAxis.drawRect(
