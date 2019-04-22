@@ -3,19 +3,14 @@ import * as PIXI from "pixi.js";
 
 class RouteLayout extends Layout {
     layout({}) {
-        this.composer.clearLayoutHolder();
 
+        //Just clears data - last page does not use pixi due to its content
+        this.composer.clearLayoutHolder();
         this.composer.airlines.forEach(a => {
             a.props.alpha.set(0);
             a.props.x.set(-1000);
         })
         this.composer.hideHeatMap();
-
-        let leafletContainer = new PIXI.Container();
-
-
-
-        this.composer.layoutHolder.addChild(leafletContainer);
 
     }
 }
