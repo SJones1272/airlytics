@@ -69,7 +69,7 @@ class Route extends Component {
             keys: [],
             routes: [],
             routeLines: [],
-            activeMap: 'traffic',
+            activeMap: 'performance',
             origin: 'DFW',
             destination: 'LAX',
             open: false,
